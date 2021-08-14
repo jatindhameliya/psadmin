@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<title>PS Admin</title>
+	<style>
+		.login-content-holder {
+			background: #f5f5f5;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.login-content-holder .card {
+			margin: 0 auto;
+			min-width: 500px;
+		}
+		.login-content-holder h1 {
+			font-weight: 700;
+		}
+		.login-form {
+			text-align: center;
+		}
+		.login-form .fom-group {
+			text-align: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="login-content-holder">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="logoholder d-flex align-items-center ">
+					<img src="/assets/img/user-icon.png" class="img-fluid" alt="">
+					<h1 class="ml-3">PS-Admin</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="card">
+					<div class="card-header justify-content-center">
+						<h3>Login</h3>
+					</div>
+					<div class="card-body">
+						<form action="/" method="post" id="loginForm" class="login-form">
+							<div class="fom-group">
+								<label for="">User Name</label>
+								<input type="text" name="username" id="Username" class="form-control"
+									placeholder="Enter Username">
+							</div>
+							<div class="fom-group mt-3">
+								<label for="">Password</label>
+								<input type="password" name="password" id="Password" class="form-control"
+									placeholder="Enter Password">
+							</div>
+							<button type="button" onclick="validateForm()" class="btn theme-btn mt-3 mx-auto">Sign
+								In</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/assets/js/jquery.min.js"></script>
+	<script>
+		function validateForm() {
+			$('#loginForm').submit();
+		}
+	</script>
+</body>
+</html>

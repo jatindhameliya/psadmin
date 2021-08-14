@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/angular", express.static(__dirname + "/node_modules/angular"));
 app.use("/ngdropzone", express.static(__dirname + "/node_modules/ngdropzone/dist"));
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGO_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useFindAndModify: false
@@ -38,19 +38,19 @@ mongoose.connection.once('open', () => {
 });
 const paths = [
 	{ pathUrl: '/', routeFile: 'login' },
-	{ pathUrl: '/main', routeFile: 'main' },
-	{ pathUrl: '/category', routeFile: 'category' },
-	{ pathUrl: '/product', routeFile: 'product' },
-	{ pathUrl: '/order', routeFile: 'order' },
-	{ pathUrl: '/store', routeFile: 'store' },
-	{ pathUrl: '/awsupload', routeFile: 'awsupload' },
-	{ pathUrl: '/influencer', routeFile: 'influencer' },
-	{ pathUrl: '/supplier', routeFile: 'supplier' },
-	{ pathUrl: '/country', routeFile: 'country' },
-	{ pathUrl: '/support', routeFile: 'support' },
-	{ pathUrl: '/specialp', routeFile: 'specialp' },
-	{ pathUrl: '/trendingp', routeFile: 'trendingp' },
-	{ pathUrl: '/veriantp', routeFile: 'veriantp' }
+// 	{ pathUrl: '/main', routeFile: 'main' },
+// 	{ pathUrl: '/category', routeFile: 'category' },
+// 	{ pathUrl: '/product', routeFile: 'product' },
+// 	{ pathUrl: '/order', routeFile: 'order' },
+// 	{ pathUrl: '/store', routeFile: 'store' },
+// 	{ pathUrl: '/awsupload', routeFile: 'awsupload' },
+// 	{ pathUrl: '/influencer', routeFile: 'influencer' },
+// 	{ pathUrl: '/supplier', routeFile: 'supplier' },
+// 	{ pathUrl: '/country', routeFile: 'country' },
+// 	{ pathUrl: '/support', routeFile: 'support' },
+// 	{ pathUrl: '/specialp', routeFile: 'specialp' },
+// 	{ pathUrl: '/trendingp', routeFile: 'trendingp' },
+// 	{ pathUrl: '/veriantp', routeFile: 'veriantp' }
 ];
 paths.forEach((path) => {
 	app.use(path.pathUrl, require('./routes/' + path.routeFile));
