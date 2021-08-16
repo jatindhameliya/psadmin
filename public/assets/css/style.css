@@ -128,7 +128,7 @@ ul.dropdown-holder {
 
 /* sidebar */
 .sidebar-main {
-    width: 230px;
+    width: 185px;
     height: 100%;
     position: fixed;
     background-color: #fff;
@@ -186,7 +186,7 @@ ul.sidebar-menu li a {
 
 main.main-content {
     background: #f5f5f5;
-    width: calc(100% - 230px);
+    width: calc(100% - 185px);
     display: block;
     margin-left: auto;
     min-height: 100vh;
@@ -344,7 +344,7 @@ label.col-form-label.form-control-label.icon-holder + .form-input input {
     object-fit: cover;
 }
 .dataTables_wrapper {
-    padding: 20px;
+    padding:15px;
 }
 
 td.tb-pro-name {
@@ -637,4 +637,14 @@ ul.sidebar-menu li a.add-box i {
 }
 .product-img {
     height: 32px;
+}
+.count-item.sp-box {
+    width: 20%;
+}
+.st-ctry-count span.count4panding {
+    width: 20%;
+}
+.st-ctry-count span.count4panding strong {
+    width: 100%;
+    display: block;
 }
