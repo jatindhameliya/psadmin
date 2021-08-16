@@ -1,0 +1,455 @@
+<style>
+	.imageError {
+		color: red;
+	}
+</style>
+<script src="/javascripts/controllers/vendors.controller.js"></script>
+<div class="main-content" ng-controller="VendorsController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+				<form class="mb-4" ng-submit="onSubmit()">
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									{{(VendorId != 0) ? 'Edit' : 'Add New' }} Vendor
+								</h6>
+								<h1 class="header-title">
+									Company Details
+								</h1>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col">
+								<ul class="nav nav-tabs nav-overflow header-tabs">
+									<li class="nav-item">
+										<a href="#" class="nav-link active" id="general" data-bs-toggle="tab" data-bs-target="#generalToggle" role="tab" aria-controls="generalToggle" aria-selected="true">
+											General
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link" id="addresses" data-bs-toggle="tab" data-bs-target="#addressesToggle" role="tab"
+											aria-controls="addressesToggle" aria-selected="true">
+											Addresses
+										</a>
+									</li>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link" id="banking" data-bs-toggle="tab" data-bs-target="#bankingToggle" role="tab"
+											aria-controls="bankingToggle" aria-selected="true">
+											Banking Details
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#" class="nav-link" id="taxes" data-bs-toggle="tab" data-bs-target="#taxesToggle" role="tab"
+											aria-controls="taxesToggle" aria-selected="true">
+											Tax Details
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col" align="right">
+								<button class="btn btn-primary" type="submit">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="generalToggle" role="tabpanel"
+						aria-labelledby="generalToggle">
+						<div class="row justify-content-between align-items-center">
+								<div class="col">
+									<div class="row align-items-center">
+										<div class="col-auto">
+											<div class="avatar">
+												<img id="preview-image" class="avatar-img rounded-circle"
+												ng-src="{{(Company.company.icon!=null && Company.company.icon != '') ?s3_img_url + Company.company.icon:'/images/companyavtar.png'}}" alt="...">
+											</div>
+										</div>
+										<div class="col ms-n2">
+											<h4 class="mb-1">
+												Your Company Logo <small class="fe fe-help-circle text-muted"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</h4>
+											<small class="text-muted">
+												PNG or JPG no bigger than 1000px wide and tall.
+											</small><br />
+											<span class="imageError"></span>
+										</div>
+									</div>
+								</div>
+								<div class="col-auto">
+									<label for="fileupForIcon" class="btn btn-sm btn-primary">
+										Upload
+									</label>
+									<input type="file" name="uploadfileIcon" id="fileupForIcon"
+										style="display: none;" onchange="angular.element(this).scope().fileSelected(this)">
+									<input type="hidden" name="uploadfileIconExt" id="hiddenfileext">
+									<input type="hidden" name="hiddenIcon" id="hiddenIconid" value="">
+								</div>
+						</div>
+						<hr class="mt-5 mb-5">
+						<div class="row">
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<label class="form-label">
+										First Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+											title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control" placeholder="Enter Your First Name"
+										ng-model="Company.company.firstname">
+								</div>
+							</div>
+							<div class="col-12 col-md-4">
+								<div class="form-group">
+									<label class="form-label">
+										Last Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+											title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control" placeholder="Enter Your Last Name"
+										ng-model="Company.company.lastname">
+								</div>
+							</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label class="form-label">
+											Company Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+												data-bs-placement="right" title="This will be used for API reference.">
+											</small> <b class="text-danger">*</b>
+										</label>
+										<input type="text" class="form-control"
+											placeholder="Enter Your Company name" ng-model="Company.company.companyname">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label class="form-label">
+											E-mail <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+												data-bs-placement="right" title="This will be used for API reference.">
+											</small> <b class="text-danger">*</b>
+										</label>
+										<input type="email" class="form-control"
+											placeholder="Enter Your Company email" ng-model="Company.company.companyemail">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label class="form-label">
+											Telephone Number <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+												data-bs-placement="right" title="This will be used for API reference.">
+											</small> <b class="text-danger">*</b>
+										</label>
+										<input type="text" class="form-control"
+											placeholder="Enter Your Telephone Number" ng-model="Company.company.companyphone">
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="form-group">
+										<label class="form-label">
+											Mobile Number <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+												title="This will be used for API reference.">
+											</small> <b class="text-danger">*</b>
+										</label>
+										<input type="text" class="form-control" placeholder="Enter Your Mobile Number"
+											ng-model="Company.company.companymobile">
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label class="form-label mb-1">
+											Active <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+												title="This will be used for API reference.">
+											</small> <b class="text-danger">*</b>
+										</label>
+										<div class="form-check form-switch">
+											<input class="form-check-input" id="switchOne" type="checkbox" ng-model="Company.company.status">
+											<label class="form-check-label" for="switchOne"></label>
+										</div>
+									</div>
+								</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="addressesToggle" role="tabpanel" aria-labelledby="addressesToggle">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<h3>Saved Addresses</h3>
+										<div class="card" ng-repeat="address in Company.addresses">
+											<div class="card-header">
+												<h4 class="card-header-title me-auto">
+													{{address.locationname}}
+												</h4>
+												<div class="dropdown">
+													<a href="#" class="dropdown-ellipses dropdown-toggle" role="button"
+														data-bs-toggle="dropdown" aria-haspopup="true" data-expanded="false">
+														<i class="fe fe-more-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<button type="button" ng-click="editAddressData($index);" class="dropdown-item">Edit</button>
+														<button type="button" ng-click="deleteAddressData($index);" class="dropdown-item">Delete</button>
+													</div>
+												</div>
+											</div>
+											<div class="card-body">
+												<address class="card-text">
+													{{address.address}}, <br>
+													{{address.city}},
+													{{address.district}},
+													{{address.state}}, <br>
+													{{address.country}}
+													{{address.pincode}}
+												</address>
+											</div>
+										</div>
+								</div>
+
+								<div class="col-12 col-md-6">
+									<h3>Add New</h3>
+									<div class="row">
+										<div class="col-12">
+											<div class="form-group">
+												<label class="form-label">
+													Location Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control"
+													placeholder="Location Name" ng-model="Addresses.locationname">
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-12 col-md-12">
+											<div class="form-group">
+												<label class="form-label">
+													Address <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<textarea type="text" class="form-control"
+													placeholder="Location Address" ng-model="Addresses.address"></textarea>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-12 col-md-4">
+											<div class="form-group">
+												<label class="form-label">
+													City <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control" placeholder="City" ng-model="Addresses.city">
+											</div>
+										</div>
+
+										<div class="col-12 col-md-4">
+											<div class="form-group">
+												<label class="form-label">
+													District <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+														title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control" placeholder="District" ng-model="Addresses.district">
+											</div>
+										</div>
+
+										<div class="col-12 col-md-4">
+											<div class="form-group">
+												<label class="form-label">
+													Pincode <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control" placeholder="Pin-code" ng-model="Addresses.pincode">
+											</div>
+										</div>
+										<div class="col-12 col-md-6">
+											<div class="form-group">
+												<label class="form-label">
+													State <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control"
+													placeholder="State / Provience" ng-model="Addresses.state">
+											</div>
+										</div>
+										<div class="col-12 col-md-6">
+											<div class="form-group">
+												<label class="form-label">
+													Country <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+														title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control" placeholder="Country" ng-model="Addresses.country">
+											</div>
+										</div>
+									</div>
+
+									<hr class="my-3">
+									<button class="btn w-100 btn-primary" type="button" ng-click="onNewAddress()">Save Address</button>
+									<button class="btn w-100 btn-link text-muted mt-2" type="button" ng-click="onClearAddress()">Cancel</button>
+								</div>
+							</div>
+					</div>
+					<div class="tab-pane fade" id="bankingToggle" role="tabpanel" aria-labelledby="bankingToggle">
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label class="form-label">
+										Account Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+											data-bs-placement="right" title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control"
+										placeholder="Account Holder Name" ng-model="Company.bank.accountname">
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label class="form-label">
+										Bank Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+											title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control" placeholder="Bank Name" ng-model="Company.bank.bankname">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label class="form-label">
+										Account Number <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+											data-bs-placement="right" title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control"
+										placeholder="01XXXXXXXXX789" ng-model="Company.bank.accountnumber">
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label class="form-label">
+										IFSC <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+											title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control" placeholder="ABCXXX789"
+										ng-model="Company.bank.ifscnumber">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label class="form-label">
+										Branch <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+											title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control"
+										placeholder="Branch Name" ng-model="Company.bank.bankbranchname">
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label class="form-label">
+										PAN Card Number <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+											title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control" placeholder="PAN Card Number" ng-model="Company.bank.pannumber">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12 col-md-12">
+								<div class="form-group">
+									<label class="form-label">
+										Bank Key <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+											data-bs-placement="right" title="This will be used for API reference.">
+										</small> <b class="text-danger">*</b>
+									</label>
+									<input type="text" class="form-control" placeholder="Bank Key" ng-model="Company.bank.bankkey">
+								</div>
+							</div>
+						</div>
+						<hr class="mt-5 mb-5">
+					</div>
+					<div class="tab-pane fade" id="taxesToggle" role="tabpanel" aria-labelledby="taxesToggle">
+							<div class="row">
+								<div class="col-12 col-md-6">
+									<h3>Saved GST Details</h3>
+										<div class="card" ng-repeat="tax in Company.taxes">
+											<div class="card-header">
+												<h4 class="card-header-title me-auto">
+													{{tax.placename}}
+												</h4>
+												<div class="dropdown">
+													<a href="#" class="dropdown-ellipses dropdown-toggle" role="button"
+														data-bs-toggle="dropdown" aria-haspopup="true" data-expanded="false">
+														<i class="fe fe-more-vertical"></i>
+													</a>
+													<div class="dropdown-menu dropdown-menu-end">
+														<button type="button" ng-click="editTaxData($index);"
+															class="dropdown-item">Edit</button>
+														<button type="button" ng-click="deleteTaxData($index);" class="dropdown-item">Delete</button>
+													</div>
+												</div>
+											</div>
+											<div class="card-body">
+												<address class="card-text">
+													GST - {{tax.gst}}
+												</address>
+											</div>
+										</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<h3>Add New</h3>
+									<div class="row">
+										<div class="col-12">
+											<div class="form-group">
+												<label class="form-label">
+													Place Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control"
+													placeholder="Place Name" ng-model="Taxes.placename">
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<div class="form-group">
+												<label class="form-label">
+													GST Number <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+														data-bs-placement="right" title="This will be used for API reference.">
+													</small> <b class="text-danger">*</b>
+												</label>
+												<input type="text" class="form-control" placeholder="ABCXXXXXXXXXX012" ng-model="Taxes.gst">
+											</div>
+										</div>
+									</div>
+									<hr class="my-3">
+									<button class="btn w-100 btn-primary" type="button" ng-click="onNewTax()">Save Tax</button>
+									<button class="btn w-100 btn-link text-muted mt-2" type="button" ng-click="onClearTax()">Cancel</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

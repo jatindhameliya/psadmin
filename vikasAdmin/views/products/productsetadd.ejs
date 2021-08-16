@@ -1,0 +1,270 @@
+<style>
+	.sticky-table thead th,.sticky-table tfoot th {
+	    position: sticky;
+		top: 0;
+		color: white;
+		z-index: 99;
+	}
+	.sticky-table tfoot th{
+		bottom: 0;
+		background-color: #f9fbfd;
+	}
+</style>
+<script src="/javascripts/controllers/productsets.controller.js"></script>
+<div class="main-content" ng-controller="ProductsetController" id="ProductsetController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+				<form class="mb-4" ng-submit="onSubmit()">
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									{{(setId != 0) ? 'Edit' : 'Add New' }} Product Set
+								</h6>
+								<h1 class="header-title">
+									{{(setId != 0) ? 'Edit' : 'Add New' }} Product Set
+								</h1>
+							</div>
+							<div class="col" align="right">
+								<button class="btn btn-primary" type="submit">Save</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-md-12">
+						<div class="form-group">
+							<label class="form-label">
+								Select Category <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+									data-bs-placement="right" title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<select kendo-drop-down-list k-options="customOptionsCategories" k-ng-model="category" style="width: 100%;"  required></select>
+
+							<!-- <select class="form-select mb-3" placeholder="Select Category" ng-model="category"
+								ng-change="onChangeofCategory()" required>
+								<option value="">Select Category</option>
+								<option ng-repeat="category in Categorylist" value="{{category.itemId}}">
+									{{category.displayname}}</option>
+							</select> -->
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="form-group">
+							<label class="form-label">
+								Select Vendor <small class="fe fe-help-circle text-muted"
+									title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<select kendo-drop-down-list k-options="customOptionsVendors" k-ng-model="parent_vendor" style="width: 100%;"></select>
+							<!-- <select class="form-select mb-3" placeholder="Select Vendor" ng-model="parent_vendor">
+								<option value="">Select Vendor</option>
+								<option ng-repeat="vendor in Vendorlist" value="{{vendor._id}}">
+										{{vendor.company.companyname}}</option>
+							</select> -->
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="form-group">
+							<label class="form-label">
+								Set Name
+								<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+									data-bs-placement="right" title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<input type="text" class="form-control" placeholder="Set Name" ng-model="setname">
+						</div>
+					</div>
+					<div class="col-12 col-md-8">
+						<div class="form-group">
+							<label class="form-label">
+								Select Products
+								<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right" title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<select id="customers" k-ng-model="selectedProduct" kendo-drop-down-list k-options="customOptions" k-change="productselected" k-rebind="productsList" style="width: 100%"></select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+						<div class="col-12 col-md-5">
+							<div class="form-group">
+								<label class="form-label">
+									Discount Type <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<select class="form-select mb-3" placeholder="Select Discount Type" ng-model="discounttype" ng-change="updateData()">
+									<option value="">Select Discount Type</option>
+									<option value="byPercentage">Percentage</option>
+									<option value="byFixedAmount">Fixed Amount</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-12 col-md-3">
+							<div class="form-group">
+								<label class="form-label">
+									Percentage
+									<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" placeholder="0" ng-model="discountpercentage" min="0" max="100" ng-disabled="(discounttype == 'byPercentage') ? false : true" ng-change="updateData()">
+							</div>
+						</div>
+						<div class="col-12 col-md-3">
+							<div class="form-group">
+								<label class="form-label">
+									Amount
+									<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" placeholder="0" ng-model="discountamount" min="0" ng-disabled="(discounttype == 'byFixedAmount') ? false : true" ng-change="updateData()">
+							</div>
+						</div>
+
+						<div class="col-12 col-md-1">
+							<div class="form-group">
+								<label class="form-label mb-1">
+									Active <b class="text-danger">*</b>
+								</label>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" ng-model="status">
+									<label class="form-check-label" for="productActive"></label>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-md-4">
+						<div class="form-group">
+							<label class="form-label">
+								Final Amount Before Discount
+								<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+									title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<input type="text" class="form-control" placeholder="0" ng-model="finalamountbefordiscount"
+								ng-disabled="true">
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="form-group">
+							<label class="form-label">
+								Discount Amount
+								<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+									title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<input type="text" class="form-control" placeholder="0" ng-model="finaldiscountamount" ng-disabled="true">
+						</div>
+					</div>
+					<div class="col-12 col-md-4">
+						<div class="form-group">
+							<label class="form-label">
+								Final Amount After Discount
+								<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+									title="This will be used for API reference.">
+								</small> <b class="text-danger">*</b>
+							</label>
+							<input type="text" class="form-control" placeholder="0" ng-model="finalamount" ng-disabled="true">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+						<div class="table-responsive" style="height: 400px;">
+							<table class="table table-sm table-nowrap card-table sticky-table">
+								<thead>
+									<tr>
+										<th>
+											<a href="#" class="text-muted">
+												Products
+											</a>
+										</th>
+										<th>
+											<a href="#" class="text-muted">
+												MRP
+											</a>
+										</th>
+										<th>
+											<a href="#" class="text-muted">
+												QTY
+											</a>
+										</th>
+										<th class="text-end">
+											<a href="#" class="text-muted">
+												Action
+											</a>
+										</th>
+									</tr>
+								</thead>
+								<tbody class="list">
+									<tr ng-repeat="product in products">
+										<td class="orders-product">
+											<div class="avatar avatar-xs align-middle me-2">
+												<img class="avatar-img rounded-circle"
+													ng-src="{{product.productimage}}"
+													alt="...">
+											</div>
+											<a class="item-name text-reset ng-binding" href="#" ng-click="onEdit(product._id)">{{product.productname}}</a>
+
+										</td>
+										<td class="orders-total">
+											₹{{product.mrp}}
+										</td>
+										<td class="orders-total" style="width: 14%;text-align: center;">
+											<div class="input-group">
+												<span class="input-group-btn">
+													<button type="button" class="quantity-left-minus btn btn-sm btn-primary btn-number" data-type="minus"
+														data-field="" style="border-radius: 0;" ng-click="minusQty($index)">
+														-
+													</button>
+												</span>
+												<input type="text" id="quantity" name="quantity" class="form-control input-number" ng-keyup="changeInQty($index)" ng-model="product.qty" min="1" max="100" style="height: 28px;text-align: center;padding: 0;">
+												<span class="input-group-btn">
+													<button type="button" class="quantity-right-plus btn btn-sm btn-primary btn-number" data-type="plus"
+														data-field="" style="border-radius: 0;" ng-click="plusQty($index)">
+														+
+													</button>
+												</span>
+											</div>
+										</td>
+										<td class="orders-status text-end">
+											<a href="#" class="btn btn-light mx-1 btn-sm" ng-click="onDeleterow($index)"><i class="fe fe-trash-2"></i></a>
+										</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>
+											<a href="#" class="text-muted">
+												--
+											</a>
+										</th>
+										<th>
+											<a href="#" class="text-muted">
+												{{totalmrp}}
+											</a>
+										</th>
+										<th>
+											<a href="#" class="text-muted">
+												{{totalqty}}
+											</a>
+										</th>
+										<th class="text-end">
+											<a href="#" class="text-muted">
+												--
+											</a>
+										</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="/assets/css/dropdowncustomcss.css" />
+<script src="/javascripts/controllers/categories.controller.js"></script>
+<div class="main-content" ng-controller="CategoriesController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									New Category
+								</h6>
+								<h1 class="header-title">
+									Create New Category
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form class="mb-4" ng-submit="onSubmit()">
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Category Name <small class="fe fe-help-circle text-muted" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" ng-model="categoryname"
+									placeholder="Enter category name">
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Description <small class="fe fe-help-circle text-muted" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" ng-model="description" placeholder="Description">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label class="form-label">
+									Parent Category <small class="fe fe-help-circle text-muted" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<select kendo-drop-down-list k-options="customOptions" k-ng-model="parentcategory" style="width: 100%;"></select>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label mb-1">
+									Is Active ? <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<div class="form-check form-switch">
+									<input class="form-check-input" id="switchOne" type="checkbox" ng-model="status" checked>
+									<label class="form-check-label" for="switchOne"></label>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label mb-1">
+									Is Final Category ? <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip" data-bs-placement="right"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<div class="form-check form-switch">
+									<input class="form-check-input" id="switchTwo" type="checkbox" ng-model="isfinalcategory">
+									<label class="form-check-label" for="switchTwo"></label>
+								</div>
+							</div>
+						</div>
+						<hr class="mt-5 mb-5">
+						<button type="submit" class="btn w-100 btn-primary">Add Category</button>
+						<a href="#" class="btn w-100 btn-link text-muted mt-2">
+							Cancel
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

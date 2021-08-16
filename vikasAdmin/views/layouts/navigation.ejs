@@ -1,0 +1,312 @@
+<nav class="navbar navbar-vertical fixed-start navbar-expand-md navbar-light" id="sidebar">
+	<div class="container-fluid">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse"
+			aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="./index.html">
+			<img src="/assets/img/logo.png" class="navbar-brand-img mx-auto" alt="...">
+		</a>
+		<div class="navbar-user d-md-none">
+			<div class="dropdown">
+				<a href="#" id="sidebarIcon" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					<div class="avatar avatar-sm avatar-online">
+						<img src="/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle"
+							alt="...">
+					</div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-end" aria-labelledby="sidebarIcon">
+					<a href="./profile-posts.html" class="dropdown-item">Profile</a>
+					<a href="./account-general.html" class="dropdown-item">Settings</a>
+					<hr class="dropdown-divider">
+					<a href="./sign-in.html" class="dropdown-item">Logout</a>
+				</div>
+			</div>
+		</div>
+		<div class="collapse navbar-collapse" id="sidebarCollapse">
+			<form class="mt-4 mb-3 d-md-none">
+				<div class="input-group input-group-rounded input-group-merge input-group-reverse">
+					<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+					<div class="input-group-text">
+						<span class="fe fe-search"></span>
+					</div>
+				</div>
+			</form>
+			<!-- Navigation -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link <%if(activepage == 'Dashboard'){%>active<%}%>" href="/dashboard">
+						<i class="fe fe-home"></i> Dashboard
+					</a>
+				</li>
+				<hr class="navbar-divider my-3">
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarProducts" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarProducts">
+						<i class="fe fe-package"></i> Products
+					</a>
+					<div class="collapse <%if(activepage == 'ProductsList' || activepage == 'ProductsAdd'){%>show<%}%>"
+						id="sidebarProducts">
+						<ul class="nav nav-sm flex-column">
+							<li class="nav-item">
+								<a href="/products" class="nav-link <%if(activepage == 'ProductsList'){%>active<%}%>">
+									<i class="fe fe-list"></i> List Products
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/products/add" class="nav-link <%if(activepage == 'ProductsAdd'){%>active<%}%>">
+									<i class="fe fe-plus-square"></i> Add New
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarProductset" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarProductset">
+						<i class="fe fe-layers"></i> Products Sets
+					</a>
+					<div class="collapse <%if(activepage == 'ProductsetList' || activepage == 'ProductsetAdd'){%>show<%}%>"
+						id="sidebarProductset">
+						<ul class="nav nav-sm flex-column">
+							<li class="nav-item">
+								<a href="/productset" class="nav-link <%if(activepage == 'ProductsetList'){%>active<%}%>"> <i
+										class="fe fe-list"></i> List Sets </a>
+							</li>
+							<li class="nav-item">
+								<a href="/productset/add" class="nav-link <%if(activepage == 'ProductsetAdd'){%>active<%}%>"><i
+										class="fe fe-plus-square"></i> Add New</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarAdminUsers" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarAdminUsers">
+						<i class="fe fe-users"></i> Admin Users
+					</a>
+					<div class="collapse <%if(activepage == 'UserList' || activepage == 'Useradd'){%>show<%}%>" id="sidebarAdminUsers">
+						<ul class="nav nav-sm flex-column">
+							<li class="nav-item">
+								<a href="/users/" class="nav-link <%if(activepage == 'UserList'){%>active<%}%>">
+									<i class="fe fe-list"></i> List Users
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/users/add" class="nav-link <%if(activepage == 'Useradd'){%>active<%}%>">
+									<i class="fe fe-plus-square"></i> Add New
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarCustomers" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarCustomers">
+						<i class="fe fe-shopping-cart"></i> Customers
+					</a>
+					<div class="collapse <%if(activepage == 'CustomersSync' || activepage == 'CustomersList' || activepage == 'CustomersAdd'){%>show<%}%>"
+						id="sidebarCustomers">
+						<ul class="nav nav-sm flex-column">
+							<li class="nav-item">
+								<a href="/customers/sync" class="nav-link <%if(activepage == 'CustomersSync'){%>active<%}%>">
+									<i class="fe fe-repeat"></i> Sync From SAP
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/customers" class="nav-link <%if(activepage == 'CustomersList'){%>active<%}%>">
+									<i class="fe fe-list"></i> List Customers
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/customers/add" class="nav-link <%if(activepage == 'CustomersAdd'){%>active<%}%>">
+									<i class="fe fe-plus-square"></i> Add New Customer
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-layers"></i> Customer Groups
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarMasterSettings" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarMasterSettings">
+						<i class="fe fe-cpu"></i> Master Settings
+					</a>
+					<div class="collapse <%if(activepage == 'Adminroles' || activepage == 'Permissions' || activepage == 'CategoryList' || activepage == 'AttributesList' || activepage == 'Tags' || activepage == 'CustomerTypes'){%>show<%}%>"
+						id="sidebarMasterSettings">
+						<ul class="nav nav-sm flex-column">
+
+							<li class="nav-item">
+								<a class="nav-link <%if(activepage == 'Adminroles'){%>active<%}%>" href="/adminroles">
+									<i class="fe fe-check-circle"></i> Admin Roles
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <%if(activepage == 'Permissions'){%>active<%}%>" href="/permissions">
+									<i class="fe fe-toggle-left"></i> Permissions
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/categories" class="nav-link <%if(activepage == 'CategoryList'){%>active<%}%>">
+									<i class="fe fe-list"></i> Categories
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/attributes"
+									class="nav-link <%if(activepage == 'AttributesList'){%>active<%}%>">
+									<i class="fe fe-loader"></i> Attributes
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/tags" class="nav-link <%if(activepage == 'Tags'){%>active<%}%>">
+									<i class="fe fe-tag"></i> Tags
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ">
+									<i class="fe fe-dollar-sign"></i> Order Value
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ">
+									<i class="fe fe-truck"></i> Order Status
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <%if(activepage == 'CustomerTypes'){%>active<%}%>" href="/customers/customertypes">
+									<i class="fe fe-users"></i> Customer Types
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link <%if(activepage == 'Gst'){%>active<%}%>" href="/gst">
+									<i class="fe fe-type"></i> GST
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarGeneralSettings" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarGeneralSettings">
+						<i class="fe fe-settings"></i> General Settings
+					</a>
+					<div class="collapse " id="sidebarGeneralSettings">
+						<ul class="nav nav-sm flex-column">
+							<li class="nav-item">
+								<a href="#" class="nav-link ">
+									<i class="fe fe-sun"></i> Affiliate Settings
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="#" class="nav-link ">
+									<i class="fe fe-globe"></i> Multi-Language
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</li>
+				<hr class="navbar-divider my-3">
+				<li class="nav-item">
+					<a class="nav-link" href="#sidebarVendors" data-bs-toggle="collapse" role="button" aria-expanded="false"
+						aria-controls="sidebarVendors">
+						<i class="fe fe-briefcase"></i> Vendors
+					</a>
+					<div class="collapse <%if(activepage == 'VendorList' || activepage == 'VendorAdd'){%>show<%}%>" id="sidebarVendors">
+						<ul class="nav nav-sm flex-column">
+							<li class="nav-item">
+								<a href="/vendors" class="nav-link <%if(activepage == 'VendorList'){%>active<%}%>">
+									<i class="fe fe-list"></i> Vendors List
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/vendors/add" class="nav-link <%if(activepage == 'VendorAdd'){%>active<%}%>">
+									<i class="fe fe-plus-square"></i> Add New
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<hr class="navbar-divider my-3">
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-file-minus"></i> Reports
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-dollar-sign"></i> Shipping Charges
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-volume-1"></i> Promotional Activities
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-user-check"></i> Accounts
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-database"></i> Dispatch Panel
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-shopping-bag"></i> Sales
+					</a>
+				</li>
+				<hr class="navbar-divider my-3">
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-repeat"></i> Return
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link " href="#">
+						<i class="fe fe-message-square"></i> Notification
+					</a>
+				</l
+				i>
+			</ul>
+			<hr class="navbar-divider my-3">
+			<div class="mt-auto"></div>
+			<div class="navbar-user d-none d-md-flex" id="sidebarUser">
+				<a class="navbar-user-link" data-bs-toggle="offcanvas" href="#sidebarOffcanvasActivity"
+					aria-controls="sidebarOffcanvasActivity">
+					<span class="icon">
+						<i class="fe fe-bell"></i>
+					</span>
+				</a>
+				<div class="dropup">
+					<a href="#" id="sidebarIconCopy" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						<div class="avatar avatar-sm avatar-online">
+							<img src="/assets/img/avatars/profiles/avatar-1.jpg" class="avatar-img rounded-circle"
+								alt="...">
+						</div>
+					</a>
+					<div class="dropdown-menu" aria-labelledby="sidebarIconCopy">
+						<a href="./profile-posts.html" class="dropdown-item">Profile</a>
+						<a href="./account-general.html" class="dropdown-item">Settings</a>
+						<hr class="dropdown-divider">
+						<a href="./sign-in.html" class="dropdown-item">Logout</a>
+					</div>
+				</div>
+				<a class="navbar-user-link" data-bs-toggle="offcanvas" href="#sidebarOffcanvasSearch"
+					aria-controls="sidebarOffcanvasSearch">
+					<span class="icon">
+						<i class="fe fe-search"></i>
+					</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</nav>

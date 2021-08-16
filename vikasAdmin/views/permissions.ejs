@@ -1,0 +1,85 @@
+<script src="/javascripts/controllers/permissions.controller.js"></script>
+<div class="main-content" ng-controller="PermissionController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<div class="header">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									Permission
+								</h6>
+								<h1 class="header-title text-truncate ">
+									Permission Settings
+								</h1>
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-primary ms-2" ng-click="onSavePermissions()">Save Changes
+								</button>
+							</div>
+						</div>
+
+						<div class="table-responsive mt-4">
+							<table class="table borderless">
+								<thead>
+									<tr>
+										<th width="300rem" class="bg-info text-white">Roles</th>
+										<th width="300rem" ng-repeat="collection in collections" style="background-color: #f7f7f7">
+											{{ collection.text.toUpperCase() }}
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="struc in structureList">
+										<td style="background-color: #f7f7f7">
+											<h5>{{ struc.roleName }}</h5>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input" id="customCheckOverAll{{ $index }}"
+													ng-model="struc.overAll" ng-change="allowDisallowOverAll(struc.roleId)" />
+												<label class="custom-control-label" for="customCheckOverAll{{ $index }}">&nbsp; Provide Full
+													Permission</label>
+											</div>
+										</td>
+										<td ng-repeat="collect in struc.permission">
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input"
+													id="customCheckAll{{ struc.roleName }}{{ $index }}" ng-model="collect.all"
+													ng-change="allowDisallowAll(struc.roleId,collect.collectionName)" />
+												<label class="custom-control-label" for="customCheckAll{{ struc.roleName }}{{ $index }}">&nbsp;
+													All</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input"
+													id="customCheckView{{ struc.roleName }}{{ $index }}" ng-model="collect.view"
+													ng-change="allowDisallowPurticular(struc.roleId,collect.collectionName)" />
+												<label class="custom-control-label" for="customCheckView{{ struc.roleName }}{{ $index }}">&nbsp;
+													View</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input"
+													id="customCheckInsert{{ struc.roleName }}{{ $index }}" ng-model="collect.insertUpdate"
+													ng-change="allowDisallowPurticular(struc.roleId,collect.collectionName)" />
+												<label class="custom-control-label"
+													for="customCheckInsert{{ struc.roleName }}{{ $index }}">&nbsp; Insert | Update</label>
+											</div>
+											<div class="custom-control custom-checkbox">
+												<input type="checkbox" class="custom-control-input"
+													id="customCheckDelete{{ struc.roleName }}{{ $index }}" ng-model="collect.delete"
+													ng-change="allowDisallowPurticular(struc.roleId,collect.collectionName)" />
+												<label class="custom-control-label"
+													for="customCheckDelete{{ struc.roleName }}{{ $index }}">&nbsp; Delete</label>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

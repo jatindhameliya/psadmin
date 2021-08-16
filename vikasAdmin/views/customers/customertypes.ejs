@@ -1,0 +1,318 @@
+<style>
+	.badge-success {
+		font-size: 12px;
+		background-color: #44a675
+	}
+
+	.badge-danger {
+		font-size: 12px;
+		background-color: #f44336
+	}
+</style>
+<script src="/javascripts/controllers/customertypes.controller.js"></script>
+<div class="main-content" ng-controller="CustomertypesController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12">
+				<div class="header">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									List
+								</h6>
+								<h1 class="header-title text-truncate ">
+									List of Customer Types
+								</h1>
+							</div>
+							<div class="col-auto">
+								<button ng-click="opencustomertypesModal()" class="btn btn-primary ms-2">
+									Add New Customer Type
+								</button>
+							</div>
+						</div>
+						<div class="row align-items-center">
+							<div class="col">
+								<ul class="nav nav-tabs nav-overflow header-tabs">
+									<li class="nav-item">
+										<a href="#!" class="nav-link text-nowrap {{tabName == 'all' ? 'active' : ''}}"
+											ng-click="onTabChange('all')">
+											All Customer Types <span class="badge rounded-pill bg-secondary-soft"
+												id="allusercount">{{Counts.active+Counts.inactive}}</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#!"
+											class="nav-link text-nowrap {{tabName == 'active' ? 'active' : ''}}"
+											ng-click="onTabChange('active')">
+											Active <span class="badge rounded-pill bg-secondary-soft"
+												id="activeusercount">{{Counts.active}}</span>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a href="#!"
+											class="nav-link text-nowrap {{tabName == 'inactive' ? 'active' : ''}}"
+											ng-click="onTabChange('inactive')">
+											In-Active <span class="badge rounded-pill bg-secondary-soft"
+												id="inactiveusercount">{{Counts.inactive}}</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="contactsListPane" role="tabpanel"
+						aria-labelledby="contactsListTab">
+						<div class="card" id="contactsList">
+							<div class="card-header">
+								<div class="row align-items-center">
+									<div class="col">
+										<form>
+											<div
+												class="input-group input-group-flush input-group-merge input-group-reverse">
+												<input class="form-control list-search" type="search" ng-model="search"
+													ng-keyup="getcustomertypes()" placeholder="Search">
+												<span class="input-group-text">
+													<i class="fe fe-search"></i>
+												</span>
+											</div>
+										</form>
+									</div>
+									<div class="col-auto me-n3">
+										<form>
+											<select class="form-select form-select-sm form-control-flush"
+												ng-model="limit" ng-change="onLimitChange()">
+												<option value="10">10 per page</option>
+												<option value="25">25 per page</option>
+												<option value="50">50 per page</option>
+												<option value="100">100 per page</option>
+											</select>
+										</form>
+									</div>
+									<div class="col-auto">
+										<div class="dropdown">
+											<button class="btn btn-sm btn-white" type="button" aria-haspopup="true"
+												aria-expanded="false">
+												<i class="fe fe-sliders me-1"></i> Filter <span
+													class="badge bg-primary ms-1">0</span>
+											</button>
+											<form class="dropdown-menu dropdown-menu-end dropdown-menu-card">
+												<div class="card-header">
+													<h4 class="card-header-title">
+														Filters
+													</h4>
+													<button class="btn btn-sm btn-link text-reset" type="reset">
+														<small>Clear filters</small>
+													</button>
+												</div>
+												<div class="card-body">
+													<div class="list-group list-group-flush mt-n4 mb-4">
+														<div class="list-group-item">
+															<div class="row">
+																<div class="col">
+																	<small>Customer Types</small>
+																</div>
+																<div class="col-auto">
+																	<select class="form-select form-select-sm"
+																		name="item-category">
+																		<option value="*" selected>Any
+																		</option>
+																		<option value="Saree">Saree</option>
+																		<option value="Lehenga">Lehenge
+																		</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</div>
+													<button class="btn w-100 btn-primary" type="submit">
+														Apply filter
+													</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="col-auto">
+										<button class="btn btn-sm btn-white" type="button" aria-haspopup="false"
+											aria-expanded="false">
+											<i class="fe fe-upload me-1"></i> Import</span>
+										</button>
+										<button class="btn btn-sm btn-white" type="button" aria-haspopup="false"
+											aria-expanded="false">
+											<i class="fe fe-download me-1"></i> Export</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="table-responsive">
+								<table class="table table-sm table-hover table-nowrap card-table">
+									<thead>
+										<tr>
+											<th>
+												<div class="form-check mb-n2">
+													<input class="form-check-input" ng-click="checkAll()"
+														ng-model="selectAll" id="listCheckboxAll" type="checkbox">
+													<label class="form-check-label" for="listCheckboxAll"></label>
+												</div>
+											</th>
+											<th>
+												<a class="list-sort text-muted" href="#"
+													ng-click="sortByFn('customertype')">Customer Type</a>
+											</th>
+											<th>
+												<a class="list-sort text-muted" href="#"
+													ng-click="sortByFn('status')">Status</a>
+											</th>
+											<th>
+												<a class="list-sort text-muted" href="#"
+													ng-click="sortByFn('createdAt')">Created At</a>
+											</th>
+											<th>
+												<a class="list-sort text-muted" href="#"
+													ng-click="sortByFn('updatedAt')">Created By</a>
+											</th>
+											<th class="text-end">
+												<a class="list-sort text-muted" href="#">Action</a>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr ng-repeat="customertype in customertypes.docs">
+											<td>
+												<div class="form-check">
+													<input class="form-check-input" ng-model="customertype.selected"
+														type="checkbox">
+													<label class="form-check-label" for="listCheckboxOne"></label>
+												</div>
+											</td>
+											<td>
+												<a class="item-name text-reset" href="#"
+													ng-click="onEdit(customertype)">{{customertype.customertype}}</a>
+											</td>
+											<td>
+												<span
+													class="item-name badge badge-{{(customertype.status) ? 'success' : 'danger'}}">{{(customertype.status)
+													? 'Active' : 'In-Active'}}</span>
+											</td>
+											<td>
+												<span class="item-email">{{customertype.createdAt | date:'medium'}}</span>
+											</td>
+											<td>
+												<span class="item-email">{{customertype.createdBy.name}}</span>
+											</td>
+											<td class="text-end">
+												<a href="#" class="btn btn-light mx-1 btn-sm" ng-click="onEdit(customertype)"><i
+														class="fe fe-edit"></i></a>
+												<a href="#" class="btn btn-light mx-1 btn-sm"
+													ng-click="onDelete(customertype)"><i class="fe fe-trash-2"></i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="card-footer d-flex justify-content-between">
+								<ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+									<li class="page-item {{ customertypes.hasPrevPage ? '' : 'disabled' }}">
+										<a class="page-link ps-0 pe-4 border-end" href="#"
+											ng-click="switchPage(customertypes.prevPage)">
+											<i class="fe fe-arrow-left me-1"></i> Prev
+										</a>
+									</li>
+								</ul>
+								<ul class="list-pagination pagination pagination-tabs card-pagination">
+									<li class="page-item {{ page == n ? 'active' : '' }} {{ n==0 ? 'disabled' : '' }}"
+										ng-repeat="n in pageNumberList track by $index">
+										<a href="" class="page-link" ng-click="switchPage(n)">
+											{{n==0?'...':n}}
+										</a>
+									</li>
+								</ul>
+								<ul class="list-pagination-next pagination pagination-tabs card-pagination">
+									<li class="page-item {{ customertypes.hasNextPage ? '' : 'disabled' }}">
+										<a class="page-link  ps-4 pe-0 border-start" href="#"
+											ng-click="switchPage(customertypes.nextPage)">
+											Next <i class="fe fe-arrow-right ms-1"></i>
+										</a>
+									</li>
+								</ul>
+								<div class="list-alert alert alert-dark alert-dismissible border fade" role="alert">
+									<div class="row align-items-center">
+										<div class="col">
+											<div class="form-check">
+												<input class="form-check-input" id="listAlertCheckbox" type="checkbox"
+													checked disabled>
+												<label class="form-check-label text-white" for="listAlertCheckbox">
+													<span class="list-alert-count">0</span> product(s)
+												</label>
+											</div>
+										</div>
+										<div class="col-auto me-n3">
+											<button class="btn btn-sm btn-white-20">
+												Edit
+											</button>
+											<button class="btn btn-sm btn-white-20">
+												Delete
+											</button>
+										</div>
+									</div>
+									<button type="button" class="list-alert-close btn-close"
+										aria-label="Close"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="addnewcustomertypesModel" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-card card">
+					<div class="card-header">
+						<h4 class="card-header-title" id="roleModalCenterTitle">
+							Add New Customer Type
+						</h4>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="card-body" style="max-height: 435px !important;">
+						<form class="mb-4" ng-submit="onSubmit()">
+							<div class="col-12">
+								<div class="row">
+									<div class="col-12">
+										<div class="form-group">
+											<label class="form-label">
+												Customer Type <small class="fe fe-help-circle text-muted" title="#">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<input type="text" class="form-control" placeholder="Customer Type" ng-model="customertype">
+										</div>
+									</div>
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label class="form-label mb-1">
+												Active <small class="fe fe-help-circle text-muted"
+													data-bs-toggle="tooltip" data-bs-placement="right"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<div class="form-check form-switch">
+												<input class="form-check-input" id="switchOne" type="checkbox"
+													ng-model="status">
+												<label class="form-check-label" for="switchOne"></label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<hr class="my-3">
+								<button class="btn w-100 btn-primary" type="submit">Save Changes</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,307 @@
+<style>
+	.select2-container--default.select2-container--focus .select2-selection--multiple {
+		border: solid #d2ddec 1px !important;
+		min-height: 39px !important;
+	}
+	.select2-container--default .select2-selection--multiple {
+		border: 1px solid #d2ddec !important;
+		min-height: 39px !important;
+	}
+	.dz-success-mark {
+		display: none !important;
+	}
+	.dz-error-mark {
+		display: none !important;
+	}
+	.dz-image.avatar {
+    	float: left;
+	}
+	.dz-details {
+		margin-left: 10px;
+		float: left;
+	}
+	a.dz-remove {
+		float: right;
+		margin-top:11px;
+	}
+	.dz-preview {
+		padding: 7px;
+		border: 1px solid #d2ddec;
+		margin-top: 8px;
+		display: inline-block;
+    	width: 100%;
+	}
+</style>
+<script src="/javascripts/controllers/products.controller.js"></script>
+<div class="main-content" ng-controller="ProductsController" id="ProductsController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									{{(ProductId != 0) ? 'Edit' : 'New' }} Product
+								</h6>
+								<h1 class="header-title">
+									{{(ProductId != 0) ? 'Edit' : 'Add New' }} Product Details
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form class="mb-4" ng-submit="onSubmit()">
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label class="form-label">
+									Select Vendor <small class="fe fe-help-circle text-muted"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<select kendo-drop-down-list k-options="customOptionsVendors" k-ng-model="parent_vendor" style="width: 100%;"></select>
+								<!-- <select class="form-select mb-3" placeholder="Select Category" ng-model="parent_vendor">
+									<option value="">Select Vendor</option>
+									<option ng-repeat="vendor in Vendorlist" value="{{vendor._id}}">
+										{{vendor.company.companyname}}</option>
+								</select> -->
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Reference ID
+									<small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" placeholder="Product Reference-ID"
+									ng-model="productreferenceID">
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Product Name <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" placeholder="Product Name"
+									ng-model="productname">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<label class="form-label">
+									Select Category <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<select kendo-drop-down-list k-options="customOptionsCategories" k-ng-model="productcategory" style="width: 100%;"></select>
+								<!-- <select class="form-select mb-3" placeholder="Select Category"
+									ng-model="productcategory">
+									<option value="">Select Category</option>
+									<option ng-repeat="category in Categorylist" value="{{category.itemId}}">
+										{{category.displayname}}</option>
+								</select> -->
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<label class="form-label">
+									HSN Code <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" placeholder="HSN Code"
+									ng-model="producthsncode">
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<label class="form-label">
+									SKU <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" placeholder="SKU" ng-model="productsku">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<label class="form-label">
+									Select Tag <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<select select2 multiple class="form-select mb-3" placeholder="Select Tags" ng-model="producttags">
+									<option value="{{tags._id}}" ng-repeat="tags in Tagslist" >{{tags.tagname}}</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<label class="form-label">
+									Price <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control number-only" placeholder="0.00" ng-model="productprice">
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<label class="form-label">
+									MRP <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control number-only" placeholder="0.00" ng-model="productmrp">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label mb-1">
+							Product description <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+								data-bs-placement="right" title="This will be used for API reference.">
+							</small> <b class="text-danger">*</b>
+						</label>
+						<small class="form-text text-muted">
+							This is how others will learn about the product, so make it good!
+						</small>
+						<div data-quill id="pdiescription"></div>
+					</div>
+
+
+					<div class="form-group">
+						<label class="form-label mb-1">
+							Product Images <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+								data-bs-placement="right" title="This will be used for API reference.">
+							</small> <b class="text-danger">*</b>
+						</label>
+						<small class="form-text text-muted">
+							Please use an image no larger than 1200px * 600px.
+						</small>
+						<div class="dropzone dropzone-multiple" options="dzOptions" callbacks="dzCallbacks"
+							methods="dzMethods" ng-dropzone></div>
+					</div>
+
+					<div class="form-group">
+						<div class="dz-preview dz-processing dz-image-preview dz-success dz-complete" ng-repeat="pimg in productEditImages">
+							<div class="dz-image avatar">
+								<img data-dz-thumbnail="" class="avatar-img rounded" alt="pimg" ng-src="{{s3_img_url}}{{pimg}}">
+							</div>
+							<div class="dz-details">
+								<div class="dz-filename"><span data-dz-name="">{{pimg}}</span></div>
+							</div>
+							<a class="dz-remove" style="cursor: pointer;" ng-click="removeEditedFile($index)">Remove file</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Attributes <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<small class="form-text text-muted">
+									You can use as many attributes as you like. Uploading image is optional.
+								</small>
+							</div>
+						</div>
+						<div class="col-12 col-md-6" style="text-align: right;">
+							<button ng-click="addAttribute()" type="button"
+								class="btn btn-sm btn-rounded-circle btn-primary ms-2"><i
+									class="fe fe-plus"></i></button>
+						</div>
+					</div>
+					<div class="row" id="attributeDivid" ng-repeat="attr in localAttr">
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<select kendo-drop-down-list k-options="customOptionsAttributes" k-ng-model="attr.attributeid" style="width: 100%;"></select>
+								<!-- <select class="form-select" ng-model="attr.attributeid" placeholder="Please Select Variant Name">
+									<option value="">Please Select Variants Name</option>
+									<option ng-repeat="attribute in Attributelist" value="{{attribute._id}}">
+										{{attribute.attributename}}</option>
+								</select> -->
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<input type="text" class="form-control" ng-model="attr.attributevalue"
+									placeholder="Attribute Value">
+							</div>
+						</div>
+						<div class="col-12 col-md-4">
+							<div class="form-group">
+								<div class="row justify-content-between align-items-center">
+									<div class="col">
+										<div class="row align-items-center">
+											<div class="col-auto">
+												<div class="avatar">
+													<img id="preview-image{{$index}}" class="avatar-img rounded-circle" ng-src="{{attr.attributeimg!=null?s3_img_url + attr.attributeimg:'/assets/img/avatars/products/products-icon.png'}}" alt="...">
+												</div>
+											</div>
+											<div class="col ms-n2">
+
+												<small class="text-muted">
+													PNG or JPG no bigger than 1000px wide and tall.
+												</small><br>
+												<span class="imageError{{$index}}"></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-auto">
+										<label for="fileupForIcon" class="btn btn-sm btn-primary" ng-click="uploadFileview($index)">
+											Upload
+										</label>
+										<input type="file" id="fileupForAttribute{{$index}}" style="display: none;"
+											onchange="angular.element(this).scope().fileSelected(this)">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label mb-1">
+									Active <small class="fe fe-help-circle text-muted" data-bs-toggle="tooltip"
+										data-bs-placement="right" title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" ng-model="status">
+									<label class="form-check-label" for="productActive"></label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div style="display:none;" id="pimgDiv"></div>
+					<input type="hidden" name="productdescription" id="productdescriptionid">
+					<hr class="mt-3 mb-3">
+					<button type="submit" class="btn w-100 btn-primary">{{(ProductId != 0) ? 'Edit' : 'Add' }} Product</button>
+					<a href="#" class="btn w-100 btn-link text-muted mt-2">Cancel</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$('.number-only').keypress(function (e) {
+			if (isNaN(this.value + "" + String.fromCharCode(e.charCode))) return false;
+		})
+	});
+</script>

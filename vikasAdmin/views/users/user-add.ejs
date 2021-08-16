@@ -1,0 +1,95 @@
+<script src="/javascripts/controllers/adminusers.controller.js"></script>
+<div class="main-content" ng-controller="AdminUserController">
+				<div class="container-fluid">
+					<div class="row justify-content-center">
+						<div class="col-12 col-lg-10 col-xl-8">
+							<div class="header mt-md-5">
+								<div class="header-body">
+									<div class="row align-items-center">
+										<div class="col">
+											<h6 class="header-pretitle">
+												New User
+											</h6>
+											<h1 class="header-title">
+												Register New User
+											</h1>
+										</div>
+									</div>
+								</div>
+							</div>
+							<form class="mb-4" ng-submit="onSubmit()">
+								<div class="row">
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label class="form-label">
+												Name <small class="fe fe-help-circle text-muted"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<input type="text" class="form-control" ng-model="name"
+												placeholder="Enter full name" required>
+										</div>
+									</div>
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label class="form-label">
+												Email <small class="fe fe-help-circle text-muted"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<input type="Email" class="form-control" ng-model="email"
+												placeholder="Enter email-id" required>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label class="form-label">
+												Phone <small class="fe fe-help-circle text-muted"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<input type="text" class="form-control" ng-model="phone"
+												placeholder="Enter phone number" required>
+										</div>
+									</div>
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label class="form-label">
+												Role <small class="fe fe-help-circle text-muted"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<select class="form-select" placeholder="Please Select Category" ng-model="Roleid" required>
+												<option value="">Please Select Role</option>
+												<option ng-repeat="role in Roleslist" value="{{role._id}}">{{role.roleName}}</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-12 col-md-6">
+										<div class="form-group">
+											<label class="form-label mb-1">
+												Active <small class="fe fe-help-circle text-muted"
+													title="This will be used for API reference.">
+												</small> <b class="text-danger">*</b>
+											</label>
+											<div class="form-check form-switch">
+												<input class="form-check-input" id="switchOne" type="checkbox" ng-model="status">
+												<label class="form-check-label" for="switchOne"></label>
+											</div>
+										</div>
+									</div>
+									<hr class="mt-5 mb-5">
+									<button type="submit" class="btn w-100 btn-primary">Add User</button>
+									<a href="#" class="btn w-100 btn-link text-muted mt-2">
+										Cancel
+									</a>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+</div>
