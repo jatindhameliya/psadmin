@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/richtext.min.css">
+  <link href="css/jquery-ui.css" rel="stylesheet"/>
+
+<title></title>
+</head>
+<body>
+  <div class="all-content-holder">
+  	<aside class="sidebar-main">
+        <div class="brand-logo">
+          <a href="dashboard.html">
+             <img src="img/user-icon.png" class="img-fluid logo-icon" alt="">
+             <h5>Top Admin</h5>            
+          </a>
+          <hr>
+        </div>
+         <ul class="sidebar-menu">
+           <li class="active">
+             <a href="dashboard.html">
+               <i class="fa fa-tachometer" aria-hidden="true"></i>
+               <span>Deshbord</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="cat-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="cat-list.html">
+               <i class="fa fa-list-alt" aria-hidden="true"></i>
+               <span>Categories</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="pp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="pp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Popular</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="sp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Special</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="tp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="tp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Trending </span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="vp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="vp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Variant</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="sup-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sup-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Suppliers</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="influ-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="influ-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Influencers</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="order-list.html">
+               <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+               <span>List Orders</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="Countries-list.html">
+               <i class="fa fa-flag" aria-hidden="true"></i>
+               <span>Countries</span>
+             </a>
+           </li>
+           <hr>
+         </ul>
+     </aside> 
+  	 <main class="main-content">
+  	 	    <header class="header">
+          <!-- <a href="" class="bars"><i class="fa fa-bars" aria-hidden="true"></i></a> -->
+            <h5 class="title-bar">Add New Supplier </h5>
+            <div class="logout-icon">
+              <ul class="d-flex">
+                <li class="bell-ico"><a href=""class="fa fa-sign-out"></a></li>
+              </ul>
+           </div>
+        </header>
+
+        <div class="page-content">
+          <form id="createSupplierForm" action="/supplier/addNew" method="POST">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="p-0">
+                                <div class="card-header">Supplier Details</div>
+                                <div class="form-group px-3">
+                                    <label class="col-form-label form-control-label">Supplier Image <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <label for="pro_main_img_upload" class="pro_upload_label">Select Supplier Image</label>
+                                        <input type="file" id="pro_main_img_upload" name="main_upload_imgs">
+                                        <div class="uploaded_img_preview d-flex" id="main_img_preview">
+                                            <div class="pre_img_item mr-3">
+                                                <img src="/assets/images/favicon.png" alt="" class="img-fluid" id="main_image_preview">
+                                                <input type="hidden" name="supplier_image" id="product_main_image_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Shop </label>
+                                    <div class="form-input">
+                                        <input class="form-control" type="text" name="supplier_shop" id="supplier_shop_id" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvElEQVQ4T2NkoBAwIukXALL9gViBgJkPgPIbgfgDSB2yAQVAfj+RDioEqpuAbkADUKAeiB0JGLIfKN8IxCD1KC6AGYDsqgtANf+B2BDJUBCfaAM2QDUGkGMAcpjA/Qx1EVEugHkJZDlcA7EGgKJSHi0wHwL5D4g1wAGoEISRwQEgB4SJCkSQZns0Aw6SYgDICyCMDEDOJ8oL6E5HMwfsDayxQHFSBmUmUIJBdzq6C0DeWAATRE626AqJ4gMAKh82EQu8MAEAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Name <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input class="form-control" type="text" name="supplier_name" id="supplier_name_id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Website <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input class="form-control" type="text" name="supplier_website" id="supplier_website_id">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Description </label>
+                                    <div class="form-input">
+                                        <textarea id="supplier_description_id" name="supplier_description" class="form-control" placeholder="Supplier Description"></textarea>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Category <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" id="sup_cat_select" name="supplier_category">
+                                            
+                                                <option value="5fd05c700778063f393ce427">Apparel / Clothing</option>
+                                            
+                                                <option value="5fd05cfb0778063f393d3504">Art &amp; Supplies</option>
+                                            
+                                                <option value="5fd05d260778063f393d4ca6">Wholesale</option>
+                                            
+                                                <option value="5fd05d690778063f393d7348">Baby Items</option>
+                                            
+                                                <option value="5fd05d890778063f393d83f6">Cell Phone Accessories</option>
+                                            
+                                                <option value="5fd05dac0778063f393d9661">Fashion Accessories</option>
+                                            
+                                                <option value="5fd05ddb0778063f393dc567">Electronics</option>
+                                            
+                                                <option value="5fd05df30778063f393e0c92">Food &amp; Grocery</option>
+                                            
+                                                <option value="5fd05e0e0778063f393e54e0">Gifts</option>
+                                            
+                                                <option value="5fd05e340778063f393ebe3f">Handbags &amp; Luggage</option>
+                                            
+                                                <option value="5fd05e4f0778063f393ef4a2">Health, Beauty &amp; Wellness</option>
+                                            
+                                                <option value="5fd05e710778063f393f162c">Housewares / Home Decor</option>
+                                            
+                                                <option value="5fd05e9f0778063f393f3880">Jewellery</option>
+                                            
+                                                <option value="5fd05eb50778063f393f4b19">Leather</option>
+                                            
+                                                <option value="5fd05ed80778063f393f6943">Novelties</option>
+                                            
+                                                <option value="5fd05ef80778063f393f836a">Office &amp; School Supplies</option>
+                                            
+                                                <option value="5fd05f0e0778063f393f94d9">Perfume</option>
+                                            
+                                                <option value="5fd05f370778063f393fb46b">Pet Supplies</option>
+                                            
+                                                <option value="5fd05f540778063f393fce92">Shoes &amp; Footwear</option>
+                                            
+                                                <option value="5fd05f840778063f393ff049">Sunglasses &amp; Eyewear</option>
+                                            
+                                                <option value="5fd05fa40778063f3940070a">Tools &amp; Hardware</option>
+                                            
+                                                <option value="5fd05fc40778063f39402418">Toys &amp; Hobbies</option>
+                                            
+                                                <option value="5fd05fda0778063f39403198">Watches</option>
+                                            
+                                                <option value="5fd05feb0778063f39403b96">Dropshippers</option>
+                                            
+                                                <option value="5fd060230778063f3940d3cb">Computer Products</option>
+                                            
+                                                <option value="5fd060410778063f39412e88">COVID-19 Supplies</option>
+                                            
+                                                <option value="5fd0605d0778063f39415f1c">Crafts &amp; Supplies</option>
+                                            
+                                                <option value="5fd0bdd80778063f399ab8bc">Automotive Parts &amp; Supplies</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Email <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input class="form-control" type="text" name="supplier_email" id="supplier_email_id">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Phone <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input class="form-control" type="text" name="supplier_phone" id="supplier_phone_id">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier Country <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" id="sup_country_id" name="supplier_country">
+                                            <option value="Worldwide">Worldwide</option>
+                                            <option value="Australia">Australia</option>
+                                            <option value="Canada">Canada</option>
+                                            <option value="China">China</option>
+                                            <option value="India">India</option>
+                                            <option value="New Zealand">New Zealand</option>
+                                            <option value="Spain">Spain</option>
+                                            <option value="Turkey">Turkey</option>
+                                            <option value="United Arab Emirates">United Arab Emirates</option>
+                                            <option value="United Kingdom">United Kingdom</option>
+                                            <option value="United States of America">United States of America</option>
+                                            <option value="France">France</option>
+                                            <option value="Rasia">Rasia</option>
+                                            <option value="Italy">Italy</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="HongKong">HongKong</option>
+                                            <option value="Poland">Poland</option>
+                                            <option value="Brazil">Brazil</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3">
+                                <div class="form-group mt-3 mb-0">
+                                    <label class="col-form-label form-control-label">Supplier State <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input class="form-control" type="text" name="supplier_state" id="supplier_state_id">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <label class="col-form-label form-control-label">Select Supplier Status <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="supplier_status" id="supplier_status_id">
+                                            <option value="Approved">Approved</option>
+                                            <option value="InReview">InReview</option>
+                                            <option value="InActive">InActive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group">
+                        <label class="col-form-label form-control-label"></label>
+                        <div class="form-input text-center">
+                            <input type="button" class="btn theme-btn mx-auto" value="Save" onclick="validateAddSupplierForm()">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+  	 </main>
+  </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.richtext.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+ <script>
+
+        // $('#datepicker').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        // });
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+        });
+        $(document).ready(function() {
+            $('.txt_to_html').richText();
+        });
+    </script>
+</body>
+</html>

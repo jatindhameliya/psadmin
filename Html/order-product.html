@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/richtext.min.css">
+  <link href="css/jquery-ui.css" rel="stylesheet"/>
+
+<title></title>
+</head>
+<body>
+  <div class="all-content-holder">
+  	<aside class="sidebar-main">
+        <div class="brand-logo">
+          <a href="dashboard.html">
+             <img src="img/user-icon.png" class="img-fluid logo-icon" alt="">
+             <h5>Top Admin</h5>            
+          </a>
+          <hr>
+        </div>
+         <ul class="sidebar-menu">
+           <li class="active">
+             <a href="dashboard.html">
+               <i class="fa fa-tachometer" aria-hidden="true"></i>
+               <span>Deshbord</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="cat-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="cat-list.html">
+               <i class="fa fa-list-alt" aria-hidden="true"></i>
+               <span>Categories</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="pp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="pp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Popular</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="sp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Special</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="tp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="tp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Trending </span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="vp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="vp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Variant</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="sup-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sup-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Suppliers</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="influ-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="influ-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Influencers</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="order-list.html">
+               <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+               <span>List Orders</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="Countries-list.html">
+               <i class="fa fa-flag" aria-hidden="true"></i>
+               <span>Countries</span>
+             </a>
+           </li>
+           <hr>
+         </ul>
+     </aside> 	 
+  	 <main class="main-content">
+  	 	    <header class="header">
+          <!-- <a href="" class="bars"><i class="fa fa-bars" aria-hidden="true"></i></a> -->
+            <h5 class="title-bar">Order Product<Category></Category></h5>
+            <div class="logout-icon">
+              <ul class="d-flex">
+                <li class="bell-ico"><a href=""class="fa fa-sign-out"></a></li>
+              </ul>
+           </div>
+        </header>
+         <div class="page-content">
+             <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-12 px-0">
+                        <div class="card">
+                            <div class="card-header">Niche Order Details</div>
+                            <div class="p-3 n_order_de">
+                                <div class=" col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label class="col-form-label form-control-label">Order Date:</label>
+                                        <div class="lab-value">
+                                            3-Dec-2020
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group">
+                                        <label class="col-form-label form-control-label">Order ID:</label>
+                                        <div class="lab-value">
+                                            <input type="hidden" name="order_id" id="orderid" value="PSTP1607026425640">
+                                            PSTP1607026425640
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <div class="form-group ">
+                                        <label class="col-form-label form-control-label">Shope Name:</label>
+                                        <div class="lab-value">
+                                            <input type="hidden" name="shop_name" id="shop_nameid" value="pet-tech-one-shop.myshopify.com">
+                                            pet-tech-one-shop.myshopify.com
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-12">
+                                    <div class="form-group ">
+                                        <label class="col-form-label form-control-label">Niche / category:</label>
+                                        <div class="lab-value">
+                                            eyewear
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+          <form action="/specialp/addNew" id="add_special_product_form" method="post">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Details </div>
+                            <div class="p-3">
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Name <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input name="product_name" id="product_name_id" class="form-control" type="text" placeholder="Product Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Category <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_category" id="product_category_id">
+                                            <option value="--">Select Product Categoty</option>
+                                            
+                                                <option value="5fd9ebce2b3e7f6d2bf60261">Sport-Optics,Hunting &amp; Shooting</option>
+                                            
+                                                <option value="5fc73c73d1919f27be9c57ed">Hair Accessaories</option>
+                                            
+                                                <option value="5fbfdcc715e3c73f46af5a82">Pet</option>
+                                            
+                                                <option value="5fa18968511e922393cc0ee2">Christmas</option>
+                                            
+                                                <option value="5f5cd98c81d67e5d8a7fc699">Car Accessories</option>
+                                            
+                                                <option value="5f5bc20f81d67e5d8a7fc695">Beauty Appliances</option>
+                                            
+                                                <option value="5f59282c81d67e5d8a7fc68e">Home Decor</option>
+                                            
+                                                <option value="5f55159b81d67e5d8a7fc681">Health Care</option>
+                                            
+                                                <option value="5f53eab881d67e5d8a7fc67e">Baby, Kids &amp; Maternity</option>
+                                            
+                                                <option value="5f52693481d67e5d8a7fc675">Kitchen Tools</option>
+                                            
+                                                <option value="5f2fe1ce3c569759436ad3be">Electronics &amp; Gadgets</option>
+                                            
+                                                <option value="5f2fe1923c569759436ad3bc">Jewellery</option>
+                                            
+                                                <option value="5f2fe1643c569759436ad3bb">Toys &amp; Kids</option>
+                                            
+                                                <option value="5f2fe1393c569759436ad3ba">Lights &amp; Lighting Crafts</option>
+                                            
+                                                <option value="5f2fe0dd3c569759436ad3b9">Men's Fashion</option>
+                                            
+                                                <option value="5f2fe0543c569759436ad3b6">Women's Fashion</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Main Image <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <label for="pro_main_img_upload" class="pro_upload_label">Select Product Main Image</label>
+                                        <input type="file" id="pro_main_img_upload" name="main_upload_imgs">
+                                        <div class="uploaded_img_preview d-flex" id="main_img_preview">
+                                            <div class="pre_img_item mr-3">
+                                                <img src="/assets/images/favicon.png" alt="" class="img-fluid" id="main_image_preview">
+                                                <input type="hidden" name="product_main_image" id="product_main_image_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Sub Images</label>
+                                    <div class="form-input">
+                                        <label for="sub_upload_imgs" class="pro_upload_label">Select Products Images +</label>
+                                        <input type="file" id="sub_upload_imgs" name="sub_upload_imgs" class="sub_upload_imgs">
+                                        <div class="uploaded_img_preview d-flex" id="sub_img_preview">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Discription 
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                       <textarea id="txttohtml_editor" class="txt_to_html" name = "product_description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Link
+                            </div>
+                            <div class="px-3 mt-3 d-flex flex-wrap">
+                                <div class=" col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <div class="form-input w-100">
+                                            <input class="form-control w-100" type="text" placeholder="Product Source URL" name="product_link" id="product_link_id">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Price
+                            </div>
+                            <div class="px-3 mt-3">
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Price Type <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_price_type" id="product_price_type_id">
+                                            <option value="--">Select Product Price Type</option>
+                                            <option value="$" selected="">$</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Price <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Product Price" name="product_price" id="product_price_id" onchange="getProfit()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Sales Price <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Product Sales Price" name="product_sales_price" id="product_sales_price_id" onchange="getProfit()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Profit <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Product Profit" name="product_profit" id="product_profit_id" value="0.00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Analytics
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group mt-3">
+                                            <label class="col-form-label form-control-label">Source <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <select class="form-control" name="product_source" id="product_source_id">
+                                                    <option value="--">Select Product Source</option>
+                                                    <option value="Amazon">Amazon</option>
+                                                    <option value="Aliexpress">Aliexpress</option>
+                                                    <option value="DHGate">DHGate</option>
+                                                    <option value="Ebay">Ebay</option>
+                                                    <option value="Etsy">Etsy</option>
+                                                    <option value="Walmart">Walmart</option>
+                                                    <option value="Overstock">Overstock</option>
+                                                    <option value="Wish">Wish</option>
+                                                    <option value="Shein">Shein</option>
+                                                    <option value="Opticsplanet">Opticsplanet</option>
+                                                    <option value="Target">Target</option>
+                                                    <option value="Partycity">Partycity</option>
+                                                    <option value="Staples">Staples</option>
+                                                    <option value="Gmarket">Gmarket</option>
+                                                    <option value="Flipkart">Flipkart</option>
+                                                    <option value="Sephora">Sephora</option>
+                                                    <option value="Shopbop">Shopbop</option>
+                                                    <option value="CoxCox">Cox &amp; Cox</option>
+                                                    <option value="Prettylittlething">Prettylittlething</option>
+                                                    <option value="Bigbuy">Bigbuy</option>
+                                                    <option value="Decathlon">Decathlon</option>
+                                                    <option value="Zalando">Zalando</option>
+                                                    <option value="Theiconic">Theiconic</option>
+                                                    <option value="Missguidedau">Missguidedau</option>
+                                                    <option value="Showpo">Showpo</option>
+                                                    <option value="DavidJones">David Jones.com</option>
+                                                    <option value="Noon">Noon.com</option>
+                                                    <option value="Namshi">Namshi.com </option>
+                                                    <option value="Laredoute">La redoute</option>
+                                                    <option value="Rueducommerce">Rueducommerce</option>
+                                                    <option value="N11">n11.com </option>
+                                                    <option value="Hepsiburada">Hepsiburada</option>
+                                                    <option value="Buywow">Buywow.com </option>
+                                                    <option value="Wayfair">Wayfair</option>
+                                                    <option value="ASOS">ASOS.com</option>
+                                                    <option value="Grabone">Grabone</option>
+                                                    <option value="Wildberries">Wildberries.ru</option>
+                                                    <option value="TIU">TIU.ru</option>
+                                                    <option value="Kupivip">Kupivip</option>
+                                                    <option value="Italiancollection">Italian-collection.com</option>
+                                                    <option value="Giglio">Giglio</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group mt-3">
+                                            <label class="col-form-label form-control-label">Orders <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Number of Orders" name="product_orders" id="product_orders_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group mt-3">
+                                            <label class="col-form-label form-control-label">Reviews <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Number of Reviews" name="product_reviews" id="product_reviews_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Give Rating <span style="color:red">*</span></label>
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" name="product_rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                        <input type="radio" id="star4half" name="product_rating" value="4.5"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                        <input type="radio" id="star4" name="product_rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                        <input type="radio" id="star3half" name="product_rating" value="3.5"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                        <input type="radio" id="star3" name="product_rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                                        <input type="radio" id="star2half" name="product_rating" value="2.5"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                        <input type="radio" id="star2" name="product_rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                        <input type="radio" id="star1half" name="product_rating" value="1.5"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                        <input type="radio" id="star1" name="product_rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                        <input type="radio" id="starhalf" name="product_rating" value="0.5"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Type</div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <label class="col-form-label form-control-label">Product Type <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_type" id="product_type_id">
+                                            <option value="WithVariants">With Variants</option>
+                                            <option value="WithoutVariants">Without Variants</option>
+                                        </select>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Select Variants
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-6 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Add Colors <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <select class="form-control" id="vr_color_select" multiple="multiple" name="product_colors">
+                                                    <option value="Black">Black</option>
+                                                    <option value="Blue">Blue</option>
+                                                    <option value="Green">Green</option>
+                                                    <option value="Grey">Grey</option>
+                                                    <option value="Gold">Gold</option>
+                                                    <option value="Indigo">Indigo</option>
+                                                    <option value="Orange">Orange</option>
+                                                    <option value="Pink">Pink</option>
+                                                    <option value="Purple">Purple</option>
+                                                    <option value="Red">Red</option>
+                                                    <option value="Silver">Silver</option>
+                                                    <option value="Violet">Violet</option>
+                                                    <option value="White">White</option>
+                                                    <option value="Yellow">Yellow</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Add Sizes <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <select class="form-control" id="vr_size_select" multiple="multiple" name="product_sizes">
+                                                    <option value="XS">XS</option>
+                                                    <option value="S">S</option>
+                                                    <option value="M">M</option>
+                                                    <option value="L">L</option>
+                                                    <option value="XL">XL</option>
+                                                    <option value="XXL">XXL</option>
+                                                    <option value="XXXL">XXXL</option>
+                                                    <option value="28">28</option>
+                                                    <option value="30">30</option>
+                                                    <option value="32">32</option>
+                                                    <option value="34">34</option>
+                                                    <option value="36">36</option>
+                                                    <option value="38">38</option>
+                                                    <option value="40">40</option>
+                                                    <option value="42">42</option>
+                                                    <option value="44">44</option>
+                                                    <option value="46">46</option>
+                                                    <option value="48">48</option>
+                                                    <option value="50">50</option>
+                                                    <option value="52">52</option>
+                                                    <option value="US-5">US-5</option>
+                                                    <option value="US-5.5">US-5.5</option>
+                                                    <option value="US-6">US-6</option>
+                                                    <option value="US-6.5">US-6.5</option>
+                                                    <option value="US-7">US-7</option>
+                                                    <option value="US-7.5">US-7.5</option>
+                                                    <option value="US-8">US-8</option>
+                                                    <option value="US-8.5">US-8.5</option>
+                                                    <option value="US-9">US-9</option>
+                                                    <option value="US-9.5">US-9.5</option>
+                                                    <option value="US-10">US-10</option>
+                                                    <option value="US-10.5">US-10.5</option>
+                                                    <option value="US-11">US-11</option>
+                                                    <option value="US-11.5">US-11.5</option>
+                                                    <option value="US-12">US-12</option>
+                                                    <option value="US-13">US-13</option>
+                                                    <option value="US-14">US-14</option>
+                                                    <option value="US-15">US-15</option>
+                                                    <option value="US-16">US-16</option>
+                                                    <option value="14-Inch">14-Inch</option>
+                                                    <option value="16-Inch">16-Inch</option>
+                                                    <option value="18-Inch">18-Inch</option>
+                                                    <option value="22-Inch">22-Inch</option>
+                                                    <option value="24-Inch">24-Inch</option>
+                                                    <option value="26-Inch">26-Inch</option>
+                                                    <option value="30-Inch">30-Inch</option>
+                                                    <option value="33-Inch">33-Inch</option>
+                                                    <option value="36-Inch">36-Inch</option>
+                                                    <option value="King">King</option>
+                                                    <option value="Queen">Queen</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Delivery &amp; Refund Information
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Estimated Delivery Time</label>
+                                            <div class="form-input">
+                                               <input type="text" class="form-control" placeholder="" name="estimated_delivery_time_name" id="estimated_delivery_time_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Min. Delivery Charge</label>
+                                            <div class="form-input">
+                                               <input type="text" class="form-control" placeholder="" name="min_delivery_charge_name" id="min_delivery_charge_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Is Replace Available ?</label>
+                                            <div class="form-input">
+                                                <select class="form-control" name="is_replace_available_name" id="is_replace_available_id">
+                                                    <option value="Yes">Yes</option>
+                                                    <option value="No">No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Seller Information
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Seller Name <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                               <input type="text" class="form-control" placeholder="" name="seller_name" id="seller_name_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Product Return / Refund<span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input type="text" class="form-control" placeholder="" name="return_policy" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Shipment To <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <select class="form-control" id="pr_shipment_select" name="shipment_to">
+                                                    <option value="Worldwide">Worldwide</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="Canada">Canada</option>
+                                                    <option value="China">China</option>
+                                                    <option value="India">India</option>
+                                                    <option value="New Zealand">New Zealand</option>
+                                                    <option value="Spain">Spain</option>
+                                                    <option value="Turkey">Turkey</option>
+                                                    <option value="United Arab Emirates">United Arab Emirates</option>
+                                                    <option value="United Kingdom">United Kingdom</option>
+                                                    <option value="United States of America">United States of America</option>
+                                                    <option value="France">France</option>
+                                                    <option value="Rasia">Rasia</option>
+                                                    <option value="Italy">Italy</option>
+                                                    <option value="Germany">Germany</option>
+                                                    <option value="South Africa">South Africa</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Engagements
+                            </div>
+                            <div class="px-3 mt-3 d-flex flex-wrap">
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Like"><i class="fa fa-thumbs-up"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Likes" name="products_likes" id="products_likes_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Comment"><i class="fa fa-comments"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Comments" name="products_comments" id="products_comments_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="View"><i class="fa fa-eye"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Views" name="products_views" id="products_views_id">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Display Date
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                        <input type="text" class=" form-control " id="datepicker" placeholder="Select Product Display Date" data-date-format="dd-mm-yyyy" name="display_date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Comments</div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                        <textarea id="pro_commnets" class="form-control" name="product_comments" placeholder="Product Comments"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Status</div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <label class="col-form-label form-control-label">Product Status <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_status" id="product_status_id">
+                                            <option value="Active">Active</option>
+                                            <option value="InActive">InActive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label form-control-label"></label>
+                    <div class="form-input text-center">
+                        <input type="button" class="btn btn-white mx-auto theme-btn" value="Save" onclick="validateSpecialProductForm()">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+  	 </main>
+  </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.richtext.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery-ui.js"></script> 
+ <script>
+        $("#vr_color_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#vr_size_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#pr_return_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#pr_shipment_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        // $('#datepicker').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        // });
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+        });
+        $(document).ready(function() {
+            $('.txt_to_html').richText();
+        });
+
+         $(document).ready(function() {
+          $('#example').DataTable();
+      } );
+    </script>
+
+</body>
+</html>

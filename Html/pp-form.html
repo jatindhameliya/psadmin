@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/richtext.min.css">
+  <link href="css/jquery-ui.css" rel="stylesheet"/>
+
+<title></title>
+</head>
+<body>
+  <div class="all-content-holder">
+  	<aside class="sidebar-main">
+        <div class="brand-logo">
+          <a href="dashboard.html">
+             <img src="img/user-icon.png" class="img-fluid logo-icon" alt="">
+             <h5>Top Admin</h5>            
+          </a>
+          <hr>
+        </div>
+         <ul class="sidebar-menu">
+           <li class="active">
+             <a href="dashboard.html">
+               <i class="fa fa-tachometer" aria-hidden="true"></i>
+               <span>Deshbord</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="cat-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="cat-list.html">
+               <i class="fa fa-list-alt" aria-hidden="true"></i>
+               <span>Categories</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="pp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="pp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Popular</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="sp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Special</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="tp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="tp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Trending </span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="vp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="vp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Variant</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="sup-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sup-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Suppliers</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="influ-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="influ-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Influencers</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="order-list.html">
+               <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+               <span>List Orders</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="Countries-list.html">
+               <i class="fa fa-flag" aria-hidden="true"></i>
+               <span>Countries</span>
+             </a>
+           </li>
+           <hr>
+         </ul>
+     </aside>	 
+  	 <main class="main-content">
+  	 	    <header class="header">
+          <!-- <a href="" class="bars"><i class="fa fa-bars" aria-hidden="true"></i></a> -->
+            <h5 class="title-bar">Popular Products</h5>
+            <div class="logout-icon">
+              <ul class="d-flex">
+                <li class="bell-ico"><a href=""class="fa fa-sign-out"></a></li>
+              </ul>
+           </div>
+        </header>
+
+        <div class="page-content">
+          <form action="/product/addNew" id="add_new_product_form" method="post">
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Add New Popular Product </div>
+                            <div class="p-3">
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Name <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <input name="product_name" id="product_name_id" class="form-control" type="text" placeholder="Product Name" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Category <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_category" id="product_category_id">
+                                            <option value="--">Select Product Categoty</option>
+                                            
+                                                <option value="5fd9ebce2b3e7f6d2bf60261">Sport-Optics,Hunting &amp; Shooting</option>
+                                            
+                                                <option value="5fc73c73d1919f27be9c57ed">Hair Accessaories</option>
+                                            
+                                                <option value="5fbfdcc715e3c73f46af5a82">Pet</option>
+                                            
+                                                <option value="5fa18968511e922393cc0ee2">Christmas</option>
+                                            
+                                                <option value="5f5cd98c81d67e5d8a7fc699">Car Accessories</option>
+                                            
+                                                <option value="5f5bc20f81d67e5d8a7fc695">Beauty Appliances</option>
+                                            
+                                                <option value="5f59282c81d67e5d8a7fc68e">Home Decor</option>
+                                            
+                                                <option value="5f55159b81d67e5d8a7fc681">Health Care</option>
+                                            
+                                                <option value="5f53eab881d67e5d8a7fc67e">Baby, Kids &amp; Maternity</option>
+                                            
+                                                <option value="5f52693481d67e5d8a7fc675">Kitchen Tools</option>
+                                            
+                                                <option value="5f2fe1ce3c569759436ad3be">Electronics &amp; Gadgets</option>
+                                            
+                                                <option value="5f2fe1923c569759436ad3bc">Jewellery</option>
+                                            
+                                                <option value="5f2fe1643c569759436ad3bb">Toys &amp; Kids</option>
+                                            
+                                                <option value="5f2fe1393c569759436ad3ba">Lights &amp; Lighting Crafts</option>
+                                            
+                                                <option value="5f2fe0dd3c569759436ad3b9">Men's Fashion</option>
+                                            
+                                                <option value="5f2fe0543c569759436ad3b6">Women's Fashion</option>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Main Image <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <label for="pro_main_img_upload" class="pro_upload_label">Select Product Main Image</label>
+                                        <input type="file" id="pro_main_img_upload" name="main_upload_imgs">
+                                        <div class="uploaded_img_preview d-flex" id="main_img_preview">
+                                            <div class="pre_img_item mr-3">
+                                                <img src="/assets/images/favicon.png" alt="" class="img-fluid" id="main_image_preview">
+                                                <input type="hidden" name="product_main_image" id="product_main_image_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Sub Images</label>
+                                    <div class="form-input">
+                                        <label for="sub_upload_imgs" class="pro_upload_label">Select Products Images +</label>
+                                        <input type="file" id="sub_upload_imgs" name="sub_upload_imgs" class="sub_upload_imgs">
+                                        <div class="uploaded_img_preview d-flex" id="sub_img_preview">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Discription
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                         <textarea id="txttohtml_editor" class="txt_to_html" name = "product_description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Links
+                            </div>
+                            <div class="px-3 mt-3 d-flex flex-wrap">
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Walmart"><svg id="Layer_1" width="30px" height="30px" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 684.43 767.23"><title>walmart</title><path d="M556,167.92c-5.12,56-11,118.8-16.44,181.59-.76,8.72-5.11,14.28-11.83,18.62-13,8.41-34.19,7.86-47.05-.94C474.58,363,471,357.75,470.34,350c-4.12-48.19-8.52-96.36-12.86-144.54-1.38-15.33-3-30.64-4.2-46-1.44-18,5.11-29.57,21.5-36.86,19.36-8.62,39.1-9,58.71-.62C551.37,129.65,557.93,141,556,167.92Z" transform="translate(-162.82 -115.97)" style="fill:#fcba30"></path><path d="M215.07,277.29a28.37,28.37,0,0,1,16.83,5.34q79.71,55.92,159.51,111.72c8.73,6.11,12.17,14.64,10.61,24.84-1.84,11.93-7.1,22.26-16.57,30.18s-19.21,10.09-31.34,4.34q-85-40.26-170.52-79.33c-14.76-6.74-21.3-18-20.73-33.05,1-26.53,13.45-46.72,36.78-59.84A37.44,37.44,0,0,1,215.07,277.29Z" transform="translate(-162.82 -115.97)" style="fill:#fcba30"></path><path d="M847.2,341.83c-.58,14.29-6,25.82-21.34,32.79-57.4,26.11-114.49,52.92-171.57,79.74-9.81,4.61-18.44,3.57-26.83-2.51a47.23,47.23,0,0,1-19.66-33.12c-1.29-9.66,1.58-18.08,10.06-24q79.82-55.8,159.56-111.7c13.63-9.57,26.34-5.83,38.89,2.08C833.83,296.14,847,319.94,847.2,341.83Z" transform="translate(-162.82 -115.97)" style="fill:#fcba30"></path><path d="M793.49,722c-5.91.85-11.37-1.51-16.71-5.26Q698,661.43,619.08,606.38c-8-5.55-12.11-12.87-11.39-22.34,1.25-16.37,8.77-29.36,23-37.85,7.44-4.43,15.32-4.17,23.2-.5q87.71,40.88,175.44,81.65c10.67,5,15.71,13.83,17.41,25,3.94,25.89-16,59-40.73,68C802.1,721.79,798.2,722.08,793.49,722Z" transform="translate(-162.82 -115.97)" style="fill:#fcba30"></path><path d="M503.92,883a56.53,56.53,0,0,1-26-4.11c-18.84-7.72-26.37-19.39-24.61-39.27,5.58-62.85,11.49-125.68,16.89-188.55.87-10.13,5.92-16.59,14.38-20.4,13.74-6.18,27.86-6.18,41.5.52,8,3.94,12.7,10.22,13.5,19.83,4.06,48.63,8.53,97.22,12.89,145.83,1.15,12.78,2.42,25.56,3.65,38.34,2.73,28.31-12.61,46.08-41.31,47.78C511.54,883.19,508.22,883,503.92,883Z" transform="translate(-162.82 -115.97)" style="fill:#fcba30"></path><path d="M366.26,543.08c14-.19,28,12.14,33.71,29.39,5.28,15.94,2.17,25.77-11.27,35.2q-75.63,53.05-151.31,106.08c-17.2,12-31.79,12-47.9-1.67-19-16.09-29.28-36.35-25.74-62,1.46-10.63,7.19-18.24,16.91-22.77q87.71-40.85,175.44-81.66C359.46,544.05,362.9,542.86,366.26,543.08Z" transform="translate(-162.82 -115.97)" style="fill:#fcba30"></path></svg></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Walmart Link" name="walmart_link" id="walmartlink_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Amazon">
+                                          <svg enable-background="new 0 0 24 24" id="Layer_1" version="1.1" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M18.9326,13.2490234C18.9228344,13.2329102,17.9999828,11.6293945,17.9999828,10.5V6.4384766   c0-3.4052734-1.8691406-5.4384766-5-5.4384766C9.5234203,1,7.6201,2.3984375,7.0097485,5.4003906L6.9072094,5.9082031   l3.9755859,0.6625977l0.1044922-0.4594727C11.1679516,5.3217773,11.6064281,5,12.4999828,5   c0.6708984,0,1.3554688,0.1948242,1.4804688,1.5371094c-1.015625,0.0869141-3.3476563,0.3505859-4.7001953,1.0141602   C7.4091625,8.46875,6.4999828,9.9238281,6.4999828,12c0,2.3925781,1.6074219,4,4,4   c2.2480469,0,3.4238281-0.6508789,4.0283203-1.2456055c0.7773438,0.7270508,1.7109375,1.175293,1.7568359,1.1972656   l0.3193359,0.1513672l2.5205078-2.5214844L18.9326,13.2490234z M11.9999828,12.5c-0.6640625,0-1-0.3364258-1-1   c0-1.5478516,1.8007813-1.9116211,2.9765625-1.9838867C13.7753735,11.6953125,12.3281078,12.4960938,11.9999828,12.5z" fill="#333333"/><path d="M12.9999828,1.25c3.1308594,0,5,2.0332031,5,5.4384766v-0.25   c0-3.4052734-1.8691406-5.4384766-5-5.4384766C9.5234203,1,7.6201,2.3984375,7.0097485,5.4003906L6.9072094,5.9082031   l0.0488281,0.0081177l0.0537109-0.2659302C7.6201,2.6484375,9.5234203,1.25,12.9999828,1.25z" fill="#FFFFFF" opacity="0.1"/><path d="M16.604475,15.8530273l-0.3193359-0.1513672   c-0.0458984-0.0219727-0.9794922-0.4702148-1.7568359-1.1972656C13.923811,15.0991211,12.7480297,15.75,10.4999828,15.75   c-2.3578491,0-3.9456787-1.5650635-3.9914551-3.9002686C6.5073681,11.9009399,6.4999828,11.947998,6.4999828,12   c0,2.3925781,1.6074219,4,4,4c2.2480469,0,3.4238281-0.6508789,4.0283203-1.2456055   c0.7773438,0.7270508,1.7109375,1.175293,1.7568359,1.1972656l0.3193359,0.1513672l2.5205078-2.5214844l-0.0916138-0.1583252   L16.604475,15.8530273z" fill="#010101" opacity="0.2"/><path d="M21.5439281,18.7036133c-0.125-0.1694336-0.3408203-0.2436523-0.5439453-0.1831055   C20.9492016,18.5351563,16.3105297,20,11.9999828,20c-4.59375,0-9.8535156-1.5610352-11.1464844-2.8535156   c-0.1914063-0.1904297-0.4980469-0.1962891-0.6943359-0.012207c-0.1972656,0.1835938-0.2128906,0.4902344-0.0371094,0.6938477   C0.3056471,18.0390625,4.7001781,23,11.9999828,23c7.3388672,0,9.4550781-3.5698242,9.5566406-3.7216797   C21.673811,19.1030273,21.6689281,18.8735352,21.5439281,18.7036133z" fill="#F79120"/><path d="M21.9999828,16.5c-1.2861328,0-2.6240234,0.5117188-2.6806641,0.5336914   c-0.2167969,0.0839844-0.3476563,0.3071289-0.3144531,0.5375977s0.2216797,0.4077148,0.4541016,0.4267578   c0.9414063,0.0786133,2.0742188,0.2431641,2.4589844,0.3833008c0.0126953,0.4140625-0.1845703,1.5649414-0.4052734,2.5048828   c-0.0527344,0.2265625,0.0576172,0.4599609,0.2675781,0.5625C21.8505688,21.4833984,21.9257641,21.5,21.9999828,21.5   c0.1464844,0,0.2910156-0.0649414,0.3876953-0.1845703C22.5527172,21.1118164,23.9999828,19.2929688,23.9999828,18   C23.9999828,16.5,22.4951,16.5,21.9999828,16.5z" fill="#F79120"/><path d="M21.5566235,19.0283203C21.455061,19.1801758,19.33885,22.75,11.9999828,22.75   c-7.2998047,0-11.6943359-4.9609375-11.8779297-5.171875c-0.0498657-0.0577393-0.0802002-0.1243286-0.0994873-0.1934814   c-0.036499,0.1520386-0.0098877,0.3167725,0.0994873,0.4434814C0.3056471,18.0390625,4.7001781,23,11.9999828,23   c7.3388672,0,9.4550781-3.5698242,9.5566406-3.7216797c0.0822754-0.1231079,0.0825806-0.2676392,0.045166-0.4047852   C21.5878735,18.9259644,21.5879345,18.9814453,21.5566235,19.0283203z" fill="#010101" opacity="0.1"/><path d="M19.3193188,17.2836914C19.3759594,17.2617188,20.71385,16.75,21.9999828,16.75   c0.4800415,0,1.8973999,0.0123291,1.9840088,1.3793335C23.9868603,18.0869751,23.9999828,18.0413818,23.9999828,18   c0-1.5-1.5048828-1.5-2-1.5c-1.2861328,0-2.6240234,0.5117188-2.6806641,0.5336914   c-0.2167969,0.0839844-0.3476563,0.3071289-0.3144531,0.5375977c0.0025635,0.0178833,0.0118408,0.0328979,0.0162354,0.0501099   C19.0617504,17.4713135,19.1674023,17.3425293,19.3193188,17.2836914z" fill="#FFFFFF" opacity="0.2"/><linearGradient gradientUnits="userSpaceOnUse" id="SVGID_1_" x1="4.0998583" x2="24.26618" y1="8.5967216" y2="18.000433"><stop offset="0" style="stop-color:#FFFFFF;stop-opacity:0.2"/><stop offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/></linearGradient><path d="M6.4999828,12c0,2.3925781,1.6074219,4,4,4c2.2480469,0,3.4238281-0.6508789,4.0283203-1.2456055   c0.7773438,0.7270508,1.7109375,1.175293,1.7568359,1.1972656l0.3193359,0.1513672l2.5205078-2.5214844L18.9326,13.2490234   C18.9228344,13.2329102,17.9999828,11.6293945,17.9999828,10.5V6.4384766c0-3.4052734-1.8691406-5.4384766-5-5.4384766   C9.5234203,1,7.6201,2.3984375,7.0097485,5.4003906L6.9072094,5.9082031l3.9755859,0.6625977l0.1044922-0.4594727   C11.1679516,5.3217773,11.6064281,5,12.4999828,5c0.6708984,0,1.3554688,0.1948242,1.4804688,1.5371094   c-1.015625,0.0869141-3.3476563,0.3505859-4.7001953,1.0141602C7.4091625,8.46875,6.4999828,9.9238281,6.4999828,12z    M13.9765453,9.5161133C13.7753735,11.6953125,12.3281078,12.4960938,11.9999828,12.5c-0.6640625,0-1-0.3364258-1-1   C10.9999828,9.9521484,12.8007641,9.5883789,13.9765453,9.5161133z M21.5439281,18.7036133   c-0.125-0.1694336-0.3408203-0.2436523-0.5439453-0.1831055C20.9492016,18.5351563,16.3105297,20,11.9999828,20   c-4.59375,0-9.8535156-1.5610352-11.1464844-2.8535156c-0.1914063-0.1904297-0.4980469-0.1962891-0.6943359-0.012207   c-0.1972656,0.1835938-0.2128906,0.4902344-0.0371094,0.6938477C0.3056471,18.0390625,4.7001781,23,11.9999828,23   c7.3388672,0,9.4550781-3.5698242,9.5566406-3.7216797C21.673811,19.1030273,21.6689281,18.8735352,21.5439281,18.7036133z    M21.9999828,16.5c-1.2861328,0-2.6240234,0.5117188-2.6806641,0.5336914   c-0.2167969,0.0839844-0.3476563,0.3071289-0.3144531,0.5375977s0.2216797,0.4077148,0.4541016,0.4267578   c0.9414063,0.0786133,2.0742188,0.2431641,2.4589844,0.3833008c0.0126953,0.4140625-0.1845703,1.5649414-0.4052734,2.5048828   c-0.0527344,0.2265625,0.0576172,0.4599609,0.2675781,0.5625C21.8505688,21.4833984,21.9257641,21.5,21.9999828,21.5   c0.1464844,0,0.2910156-0.0649414,0.3876953-0.1845703C22.5527172,21.1118164,23.9999828,19.2929688,23.9999828,18   C23.9999828,16.5,22.4951,16.5,21.9999828,16.5z" fill="url(#SVGID_1_)"/></g><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/><g/></svg>
+                                        </label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Amazon Link" name="amazon_link" id="amazon_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Ali Express">
+                                          
+                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66 65" fill="#fff" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round"><use xlink:href="#A" x=".5" y=".5"/><symbol id="A" overflow="visible"><g stroke="none" fill-rule="nonzero"><path d="M5 0a5 5 0 0 0-5 5v54a5 5 0 0 0 5 5h54a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5z" fill="#e62e04"/><path d="M17.6 21.452c.245 1 .107 2.08.348 3.097.84-.615 1.4-1.63 1.285-2.687-.017-1.892-2.145-3.375-3.926-2.738-1.12.32-1.948 1.325-2.136 2.46-.224 1.3.557 2.63 1.718 3.224-.115-1.12-.384-2.3-.083-3.396.46-1.194 2.37-1.17 2.795.04zm33.138 1.356c.408-1.468-.48-3.17-1.936-3.64-1.4-.55-3.133.15-3.75 1.514-.688 1.263-.272 3.06.986 3.8.248-1.014.065-2.1.36-3.085.47-1.177 2.355-1.143 2.784.05.273 1.066.026 2.186-.077 3.262.854-.264 1.387-1.08 1.632-1.898z" fill="#b32100"/><path d="M46.4 21.396c-.296.995-.113 2.072-.36 3.085-.732 4.4-3.678 8.332-7.667 10.303a14.2 14.2 0 0 1-12.798-.016c-3.952-1.966-6.875-5.865-7.626-10.218-.24-1.018-.104-2.087-.348-3.097-.424-1.2-2.334-1.235-2.794-.04-.3 1.106-.03 2.277.083 3.396.84 5.44 4.48 10.325 9.412 12.75a17.34 17.34 0 0 0 14.635.346c5.333-2.303 9.32-7.446 10.173-13.2.103-1.076.35-2.197.076-3.262-.43-1.193-2.314-1.226-2.785-.05z"/><path d="M5 0a5 5 0 0 0-5 5v9.5a5 5 0 0 1 5-5h54a5 5 0 0 1 5 5V5a5 5 0 0 0-5-5z" fill="#f90"/></g></symbol></svg>
+                                        </label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Aliexpress Link" name="ali_express_link" id="ali_express_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Ebay"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                               viewBox="0 0 512.019 512.019" style="enable-background:new 0 0 512.019 512.019;" xml:space="preserve">
+                                            <path style="fill:#F44336;" d="M64,320.009c-35.346,0-64-28.654-64-64s28.654-64,64-64s64,28.654,64,64
+                                              c0,5.891-4.776,10.667-10.667,10.667H22.677c4.865,18.842,21.863,32.005,41.323,32c27.093,0,34.624-4.096,44.928-17.259
+                                              c3.635-4.636,10.34-5.448,14.976-1.813c4.636,3.635,5.448,10.34,1.813,14.976l0,0C111.391,313.767,87.684,323.535,64,320.009z
+                                               M22.677,245.343h82.645c-5.891-22.816-29.162-36.537-51.978-30.646c-15.029,3.88-26.766,15.617-30.646,30.646H22.677z"/>
+                                            <g>
+                                              <path style="fill:#2196F3;" d="M192,320.009c-35.346,0-64-28.654-64-64s28.654-64,64-64s64,28.654,64,64
+                                                S227.346,320.009,192,320.009z M192,213.343c-23.564,0-42.667,19.103-42.667,42.667s19.103,42.667,42.667,42.667
+                                                s42.667-19.103,42.667-42.667S215.564,213.343,192,213.343z"/>
+                                              <path style="fill:#2196F3;" d="M138.667,320.009c-5.891,0-10.667-4.776-10.667-10.667V160.009c0-5.891,4.776-10.667,10.667-10.667
+                                                s10.667,4.776,10.667,10.667v149.333C149.333,315.234,144.558,320.009,138.667,320.009z"/>
+                                            </g>
+                                            <g>
+                                              <path style="fill:#FFC107;" d="M373.333,320.009c-5.891,0-10.667-4.776-10.667-10.667v-64c0-21.099-29.867-32-42.667-32
+                                                c-13.28-1.865-26.394,4.361-33.344,15.829c-2.907,5.124-9.418,6.92-14.541,4.013c-5.045-2.863-6.877-9.232-4.125-14.338
+                                                c10.657-18.284,30.934-28.747,52.011-26.837c22.976,0,64,17.813,64,53.333v64C384,315.234,379.224,320.009,373.333,320.009z"/>
+                                              <path style="fill:#FFC107;" d="M309.333,320.009c-46.4,0-53.333-26.731-53.333-42.667c-0.04-7.061,2.867-13.819,8.021-18.645
+                                                c16.192-15.552,53.333-15.445,93.355-13.824c6.272,0.256,11.755,0.469,15.957,0.469c5.891-0.007,10.672,4.764,10.679,10.655
+                                                c0.002,1.885-0.495,3.737-1.441,5.367c1.523,2.634,1.849,5.793,0.896,8.683C371.813,300.706,342.126,320.714,309.333,320.009z
+                                                 M329.045,265.503c-17.207-1.857-34.591,1.097-50.219,8.533c-0.991,0.805-1.544,2.031-1.493,3.307c0,10.539,3.797,21.333,32,21.333
+                                                c22.409,0.733,43.096-11.965,52.587-32.277l-5.397-0.235C349.269,265.908,339.371,265.503,329.045,265.503z"/>
+                                            </g>
+                                            <g>
+                                              <path style="fill:#4CAF50;" d="M437.333,309.343c-3.568-0.002-6.898-1.787-8.875-4.757l-64-96
+                                                c-3.27-4.901-1.947-11.525,2.955-14.795s11.525-1.947,14.795,2.955l64,96c3.264,4.904,1.934,11.526-2.971,14.79
+                                                c-1.749,1.164-3.803,1.785-5.904,1.786V309.343z"/>
+                                              <path style="fill:#4CAF50;" d="M416,362.676c-5.891,0.01-10.675-4.758-10.685-10.649c-0.003-1.862,0.481-3.692,1.405-5.309
+                                                l85.333-149.333c2.946-5.119,9.483-6.882,14.603-3.936c5.119,2.946,6.882,9.483,3.936,14.603l-85.333,149.333
+                                                C423.339,360.676,419.81,362.692,416,362.676z"/>
+                                            </svg></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Ebay Link" name="ebay_link" id="ebay_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="DHGate"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 653 334"><defs><style>.cls-1 {fill: #727171;}.cls-1, .cls-2 {fill-rule: evenodd;}.cls-2 {fill: #fdd000;}</style></defs><path id="D" class="cls-1" d="M148.506-.258H-0.477V333.5h144.8q55.782,0,97.85-20.686t64.962-58.337q22.89-37.653,22.893-88.088,0-49.97-22.428-87.856T244.264,20.2Q203.353-.254,148.506-0.258h0Zm-38.35,85.764h36.026q32.3,0,51.6,22.312t19.291,59.5q0,36.727-17.78,58.571t-47.763,21.847H110.156V85.506Z"></path><path id="H" class="cls-2" d="M653.238,334.117V0.359h-110.4V129.818h-103.2V0.359H329.009V334.117H439.642v-120.4h103.2v120.4h110.4Z"></path></svg></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="DHGate Link" name="dhgate_link" id="dhgate_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Etsy"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px"><path fill="#fa772f" d="M23.181,3,7,3.04a1,1,0,0,0-1,1v2a1,1,0,0,0,1,1H9.013a3.005,3.005,0,0,1,3.013,3V38.007a3.005,3.005,0,0,1-3.013,3H7a1,1,0,0,0-1,1v2a1,1,0,0,0,1,1h33.43a2,2,0,0,0,1.985-1.694l1.569-10.142A1,1,0,0,0,43,32.013H40.954a1,1,0,0,0-.98.782l-1.135,5.08A4.013,4.013,0,0,1,34.917,41H22.07a3.005,3.005,0,0,1-3.013-3V26.019h8.035a4.006,4.006,0,0,1,4.017,4h0a1,1,0,0,0,1,1h1a1,1,0,0,0,1-1V17.028a1,1,0,0,0-1-1h-1a1,1,0,0,0-1,1v1a4.006,4.006,0,0,1-4.017,4H19.057V10.035a3.005,3.005,0,0,1,3.013-3H34.122a4.008,4.008,0,0,1,4.018,4v3a1,1,0,0,0,1,1h1.085a1,1,0,0,0,1-.916l.837-9.992a1,1,0,0,0-1-1.082Z"></path></svg></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Etsy Link" name="etsy_link" id="etsy_id">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Price
+                            </div>
+                            <div class="px-3 mt-3">
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Product Price Type <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_price_type" id="product_price_type_id">
+                                            <option value="--">Select Product Price Type</option>
+                                            <option value="$">$</option>
+                                            <option value="₹">₹</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Price <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Product Price" name="product_price" id="product_price_id" onchange="getProfit()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Sales Price <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Product Sales Price" name="product_sales_price" id="product_sales_price_id" onchange="getProfit()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group">
+                                            <label class="col-form-label form-control-label">Profit <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Product Profit" name="product_profit" id="product_profit_id" value="0.00">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Analytics
+                            </div>
+                            <div class="px-3">
+                                <div class="d-flex flex-wrap">
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group mt-3">
+                                            <label class="col-form-label form-control-label">Source <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <select class="form-control" name="product_source" id="product_source_id">
+                                                    <option value="--">Select Product Source</option>
+                                                    <option value="Amazon">Amazon</option>
+                                                    <option value="Aliexpress">Aliexpress</option>
+                                                    <option value="DHGate">DHGate</option>
+                                                    <option value="Ebay">Ebay</option>
+                                                    <option value="Etsy">Etsy</option>
+                                                    <option value="Walmart">Walmart</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group mt-3">
+                                            <label class="col-form-label form-control-label">Orders <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Number of Orders" name="product_orders" id="product_orders_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 pl-0">
+                                        <div class="form-group mt-3">
+                                            <label class="col-form-label form-control-label">Reviews <span style="color:red">*</span></label>
+                                            <div class="form-input">
+                                                <input class="form-control" type="text" placeholder="Number of Reviews" name="product_reviews" id="product_reviews_id">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label form-control-label">Give Rating <span style="color:red">*</span></label>
+                                    <fieldset class="rating">
+                                        <input type="radio" id="star5" name="product_rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                        <input type="radio" id="star4half" name="product_rating" value="4.5"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                        <input type="radio" id="star4" name="product_rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                        <input type="radio" id="star3half" name="product_rating" value="3.5"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                        <input type="radio" id="star3" name="product_rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
+                                        <input type="radio" id="star2half" name="product_rating" value="2.5"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                        <input type="radio" id="star2" name="product_rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                        <input type="radio" id="star1half" name="product_rating" value="1.5"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                        <input type="radio" id="star1" name="product_rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                        <input type="radio" id="starhalf" name="product_rating" value="0.5"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Engagements
+                            </div>
+                            <div class="px-3 mt-3 d-flex flex-wrap">
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Like"><i class="fa fa-thumbs-up"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Likes" name="products_likes" id="products_likes_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Comment"><i class="fa fa-comments"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Comments" name="products_comments" id="products_comments_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Share"><i class="tp-link-icon share"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Shares" name="products_shares" id="products_shares_id">
+                                        </div>
+                                    </div>
+                                </div> -->
+                                <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="View"><i class="fa fa-eye"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Views" name="products_views" id="products_views_id">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-4 col-12 pl-0">
+                                    <div class="form-group d-flex">
+                                        <label class="col-form-label form-control-label icon-holder" title="Reaction"><i class="tp-link-icon view"></i></label>
+                                        <div class="form-input">
+                                            <input class="form-control" type="text" placeholder="Number of Reactions" name="products_reactions" id="products_reactions_id">
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Interest
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                        <textarea id="pro_interest" name="product_interest" class="pro_interest_area form-control" placeholder="Product Interest"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Display Date
+                            </div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                        <input type="text" class="form-control " id="datepicker" placeholder="Select Product Display Date" data-date-format="dd-mm-yyyy" name="display_date">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Comments</div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <div class="form-input">
+                                        <textarea id="pro_commnets" class="form-control" name="product_comments" placeholder="Product Comments"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-lg-12">
+                        <div class="card">
+                            <div class="card-header">Product Status</div>
+                            <div class="px-3">
+                                <div class="form-group mt-3">
+                                    <label class="col-form-label form-control-label">Product Status <span style="color:red">*</span></label>
+                                    <div class="form-input">
+                                        <select class="form-control" name="product_status" id="product_status_id">
+                                            <option value="Active">Active</option>
+                                            <option value="InActive">InActive</option>
+                                        </select>
+                                    </div>
+                                </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label form-control-label"></label>
+                    <div class="form-input text-center">
+                        <input type="button" class="btn theme-btn mx-auto" value="Save Changes" onclick="validateProductForm()">
+                    </div>
+                </div>
+            </form>
+        </div>
+  	 </main>
+  </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.richtext.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+ <script>
+        $("#vr_color_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#vr_size_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#pr_return_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#pr_shipment_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        // $('#datepicker').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        // });
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+        });
+        $(document).ready(function() {
+            $('.txt_to_html').richText();
+        });
+    </script>
+</body>
+</html>

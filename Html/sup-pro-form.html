@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/select2.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/richtext.min.css">
+  <link href="css/jquery-ui.css" rel="stylesheet"/>
+
+<title></title>
+</head>
+<body>
+  <div class="all-content-holder">
+    <aside class="sidebar-main">
+        <div class="brand-logo">
+          <a href="dashboard.html">
+             <img src="img/user-icon.png" class="img-fluid logo-icon" alt="">
+             <h5>Top Admin</h5>            
+          </a>
+          <hr>
+        </div>
+         <ul class="sidebar-menu">
+           <li class="active">
+             <a href="dashboard.html">
+               <i class="fa fa-tachometer" aria-hidden="true"></i>
+               <span>Deshbord</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="cat-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="cat-list.html">
+               <i class="fa fa-list-alt" aria-hidden="true"></i>
+               <span>Categories</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="pp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="pp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Popular</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="sp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Special</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="tp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="tp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Trending </span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="vp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="vp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Variant</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="sup-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sup-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Suppliers</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="influ-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="influ-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Influencers</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="order-list.html">
+               <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+               <span>List Orders</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="Countries-list.html">
+               <i class="fa fa-flag" aria-hidden="true"></i>
+               <span>Countries</span>
+             </a>
+           </li>
+           <hr>
+         </ul>
+     </aside>   
+     <main class="main-content">
+        <header class="header">
+          <!-- <a href="" class="bars"><i class="fa fa-bars" aria-hidden="true"></i></a> -->
+            <h5 class="title-bar">Supplier Product<Category></Category></h5>
+            <div class="logout-icon">
+              <ul class="d-flex">
+                <li class="bell-ico"><a href=""class="fa fa-sign-out"></a></li>
+              </ul>
+           </div>
+        </header>
+        <div class="page-content">
+           <form action="/specialp/addNew" id="add_special_product_form" method="post">
+             <div class="card">
+                <div class="card-header">Add Product For Supplier</div>
+                <div class="p-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-control-label">Supplier <span style="color:red">*</span></label>
+                        <div class="form-input">
+                            <select class="form-control" name="product_supplier" id="product_supplier_id">
+                                <option value="--">Select Supplier</option>
+                                
+                                    <option value="5fe0984e2b3e7f6d2bf603cf">Gym Clothes </option>
+                                
+                                    <option value="5fe095af2b3e7f6d2bf603cd">dk active</option>
+                                
+                                    <option value="5fdc757e2b3e7f6d2bf6037c"> John F. Allen &amp; Son </option>
+                                
+                                    <option value="5fdc72d62b3e7f6d2bf6037b"> Pen Kit Mall Wholesale</option>
+                                
+                                    <option value="5fdc71142b3e7f6d2bf60379">S &amp; S Worldwide</option>
+                                
+                                    <option value="5fdc57502b3e7f6d2bf60372">British Footwear Association</option>
+                                
+                                    <option value="5fdc55e82b3e7f6d2bf60370">Avery Leather Consulting</option>
+                                
+                                    <option value="5fdc53d02b3e7f6d2bf6036f">Authenticae</option>
+                                
+                                    <option value="5fdc52a82b3e7f6d2bf6036e">2Surface Leather Ltd.</option>
+                                
+                                    <option value="5fdc4bdf2b3e7f6d2bf6036b">Kiko Wireless</option>
+                                
+                                    <option value="5fdc4a202b3e7f6d2bf6036a">Dream Wireless</option>
+                                
+                                    <option value="5fdc48b02b3e7f6d2bf60369">Revamp Wholesale</option>
+                                
+                                    <option value="5fdc47b42b3e7f6d2bf60368">Eternity Wireless</option>
+                                
+                                    <option value="5fdc46a72b3e7f6d2bf60367">VoiceComm</option>
+                                
+                                    <option value="5fdc459c2b3e7f6d2bf60366">MyCoolCell</option>
+                                
+                                    <option value="5fdc43f52b3e7f6d2bf60365">Polytek Development Corp</option>
+                                
+                                    <option value="5fdc43412b3e7f6d2bf60363">Abujardar</option>
+                                
+                                    <option value="5fdc42892b3e7f6d2bf60362">Scansite 3D</option>
+                                
+                                    <option value="5fdc40a92b3e7f6d2bf60361">Belger Crane Yard</option>
+                                
+                                    <option value="5fdc3efa2b3e7f6d2bf60360">Art Work Fine Art Services</option>
+                                
+                                    <option value="5fdc3e0b2b3e7f6d2bf6035f">Bullseye Projects</option>
+                                
+                                    <option value="5fdc3cdf2b3e7f6d2bf6035e">Blick Art Materials</option>
+                                
+                                    <option value="5fdc39b22b3e7f6d2bf6035d">Compleat Sculptor</option>
+                                
+                                    <option value="5fd223a63d58933a9da17ac3">US-PPE-WHOLESALE</option>
+                                
+                                    <option value="5fd223193d58933a9da17ac2">Medical Wholesale Outlet</option>
+                                
+                                    <option value="5fd2229c3d58933a9da17ac1">Face Cover 365</option>
+                                
+                                    <option value="5fd222033d58933a9da17ac0">Savvy Wellness</option>
+                                
+                                    <option value="5fd221973d58933a9da17abf">5 Seconds Brands</option>
+                                
+                                    <option value="5fd2212c3d58933a9da17abe">Golden State Wholesale</option>
+                                
+                                    <option value="5fd2208e3d58933a9da17abd">Medi-X inc</option>
+                                
+                                    <option value="5fd21ff43d58933a9da17abc">Kid's Dream-Kid/Adult Fabric Face Mask+ 3Ply Dispo</option>
+                                
+                                    <option value="5fd21f893d58933a9da17abb">Setinay Trading LLC</option>
+                                
+                                    <option value="5fd21f2c3d58933a9da17aba">Brooklyn Textiles</option>
+                                
+                                    <option value="5fd21eca3d58933a9da17ab9">Medical Essentials</option>
+                                
+                                    <option value="5fd21df33d58933a9da17ab8">Oem Experts</option>
+                                
+                                    <option value="5fd21d573d58933a9da17ab7">Allnet USA</option>
+                                
+                                    <option value="5fd2171f3d58933a9da17ab5">Surplus Giant</option>
+                                
+                                    <option value="5fd2162d3d58933a9da17ab4">NuEthic Dev LLC</option>
+                                
+                                    <option value="5fd215ba3d58933a9da17ab3">Trade-In Tech</option>
+                                
+                                    <option value="5fd214343d58933a9da17ab1">Gold N Diamonds Inc. - Atlanta</option>
+                                
+                                    <option value="5fd213c43d58933a9da17ab0">Doba.com</option>
+                                
+                                    <option value="5fd212323d58933a9da17aaf">Firmum Trading LLC</option>
+                                
+                                    <option value="5fd2118b3d58933a9da17aae">Awscales</option>
+                                
+                                    <option value="5fd211163d58933a9da17aad">CUTTING EDGE PRODUCTS, INC.</option>
+                                
+                                    <option value="5fd2110b3d58933a9da17aac"> Watches Intl. </option>
+                                
+                                    <option value="5fd210a93d58933a9da17aab">Jay Manufacturing-Odor Control</option>
+                                
+                                    <option value="5fd210443d58933a9da17aaa">New Fresco's</option>
+                                
+                                    <option value="5fd20f313d58933a9da17aa9">CAVA TV Products</option>
+                                
+                                    <option value="5fd20e933d58933a9da17aa7">Petra Industries, LLC.</option>
+                                
+                                    <option value="5fd20c323d58933a9da17aa5">Discount Wholesalers, Inc.</option>
+                                
+                                    <option value="5fd20bc63d58933a9da17aa4">PlasticStripCurtain.com</option>
+                                
+                                    <option value="5fd20b4f3d58933a9da17aa3">Safeland Industrial Supply Inc.</option>
+                                
+                                    <option value="5fd20b4a3d58933a9da17aa2">BlingSource.com - Hip Hop Jewelry</option>
+                                
+                                    <option value="5fd20ad13d58933a9da17aa1">Direct Liquidation LLP</option>
+                                
+                                    <option value="5fd209f13d58933a9da17aa0">ApparelCandy</option>
+                                
+                                    <option value="5fd2092e3d58933a9da17a9f">Splash Swim Goggles</option>
+                                
+                                    <option value="5fd208a83d58933a9da17a9e">365 Fashions Inc.</option>
+                                
+                                    <option value="5fd207f93d58933a9da17a9d">PR Sunglasses</option>
+                                
+                                    <option value="5fd207543d58933a9da17a9c">Sun Rayz</option>
+                                
+                                    <option value="5fd206d13d58933a9da17a9b">MIAMI WHOLESALE SUNGLASSES</option>
+                                
+                                    <option value="5fd205a83d58933a9da17a99">SHARK EYES, INC </option>
+                                
+                                    <option value="5fd2048b3d58933a9da17a97">OLYMPIC EYEWEAR - Wholesale Designer Sunglasses</option>
+                                
+                                    <option value="5fd204093d58933a9da17a96">iNFable, LLC</option>
+                                
+                                    <option value="5fd203603d58933a9da17a95">FlipFlopsBulk.com</option>
+                                
+                                    <option value="5fd202f93d58933a9da17a94">Beachcomber footwear LLC</option>
+                                
+                                    <option value="5fd202703d58933a9da17a93">Socks n Socks</option>
+                                
+                                    <option value="5fd201ec3d58933a9da17a92">Surratt Hosiery Mill Inc.</option>
+                                
+                                    <option value="5fd201313d58933a9da17a91">Good Girl Kidswear</option>
+                                
+                                    <option value="5fd200843d58933a9da17a90">ErosWholesale.com</option>
+                                
+                                    <option value="5fd200053d58933a9da17a8f">Rodeo Durango</option>
+                                
+                                    <option value="5fd1ff823d58933a9da17a8e">Star Bay /Unique Star Footwear Inc</option>
+                                
+                                    <option value="5fd1feeb3d58933a9da17a8d">Alabama Wholesale Socks Inc</option>
+                                
+                                    <option value="5fd1fe753d58933a9da17a8c">B &amp; G Trading Apparel Liquidators</option>
+                                
+                                    <option value="5fd1fdec3d58933a9da17a8b">Cheng's Enterprise, Inc.</option>
+                                
+                                    <option value="5fd1fd633d58933a9da17a8a">LAShowroom.com</option>
+                                
+                                    <option value="5fd1fca53d58933a9da17a89">Shoes Supplier</option>
+                                
+                                    <option value="5fd1fbc03d58933a9da17a88">Healing Harbors</option>
+                                
+                                    <option value="5fd1fb0c3d58933a9da17a87">Joy Organics</option>
+                                
+                                    <option value="5fd1fa2a3d58933a9da17a86">Swanson Christian Products</option>
+                                
+                                    <option value="5fd1f9593d58933a9da17a85">Holistic Tails</option>
+                                
+                                    <option value="5fd1f8ae3d58933a9da17a83">Boro Hemp Co</option>
+                                
+                                    <option value="5fd1f81a3d58933a9da17a82">Healthy Hemp Pet Co.</option>
+                                
+                                    <option value="5fd1f7673d58933a9da17a81">Nass Valley Gardens Inc.</option>
+                                
+                                    <option value="5fd1f6f03d58933a9da17a80">Exporta Wholesale</option>
+                                
+                                    <option value="5fd1f5f93d58933a9da17a7e">Sandia Pet Products, Inc.</option>
+                                
+                                    <option value="5fd1f57d3d58933a9da17a7d">King Kanine</option>
+                                
+                                    <option value="5fd1f3783d58933a9da17a7c">Honeypot Cosmetics</option>
+                                
+                                    <option value="5fd1f29d3d58933a9da17a7b">Wholesale Body Oils</option>
+                                
+                                    <option value="5fd1f2163d58933a9da17a7a">MAXAROMA</option>
+                                
+                                    <option value="5fd1f1563d58933a9da17a79">NYB International Inc.</option>
+                                
+                                    <option value="5fd1f0c13d58933a9da17a77">HBA &amp; MFL</option>
+                                
+                                    <option value="5fd1f0403d58933a9da17a75">Beauty Seller INC</option>
+                                
+                                    <option value="5fd1efc13d58933a9da17a74">FragranceNet.com</option>
+                                
+                                    <option value="5fd1ef0e3d58933a9da17a73">SAVE ON SCENTS, Inc. - WHOLESALE FRAGRANCE OILS</option>
+                                
+                                    <option value="5fd1ee643d58933a9da17a72">FragranceX.com</option>
+                                
+                                    <option value="5fd1edc83d58933a9da17a71">Perfume Center of America</option>
+                                
+                                    <option value="5fd1ed5e3d58933a9da17a70">WORLDWIDE PERFUMES (PERFUME MARKET)</option>
+                                
+                                    <option value="5fd1ece03d58933a9da17a6f">Inkology, LLC</option>
+                                
+                                    <option value="5fd1ec753d58933a9da17a6d">Backpacks USA</option>
+                                
+                                    <option value="5fd1ebc13d58933a9da17a6c">Top Grade Products INC.</option>
+                                
+                                    <option value="5fd1eb303d58933a9da17a6b">The Surplus Company</option>
+                                
+                                    <option value="5fd1ea723d58933a9da17a6a">GBE Packaging Supplies</option>
+                                
+                                    <option value="5fd1e9e63d58933a9da17a69">USA Masks Direct</option>
+                                
+                                    <option value="5fd1e9773d58933a9da17a67">AboveTEK Inc.</option>
+                                
+                                    <option value="5fd1e8a73d58933a9da17a66">PREMIER BRANDS USA LLC</option>
+                                
+                                    <option value="5fd1e7f03d58933a9da17a65">Mazer Wholesale, Inc.</option>
+                                
+                                    <option value="5fd1e74e3d58933a9da17a64">Oakfields Promo</option>
+                                
+                                    <option value="5fd1e6f53d58933a9da17a63">PRICE KING Wholesale</option>
+                                
+                                    <option value="5fd1e5bb3d58933a9da17a61">FlagShipper Wholesale</option>
+                                
+                                    <option value="5fd1e40a3d58933a9da17a5e">Magic Matt's Brilliant Blinkys</option>
+                                
+                                    <option value="5fd1e3903d58933a9da17a5d">CTS WHOLESALE SUNGLASSES</option>
+                                
+                                    <option value="5fd1e2f83d58933a9da17a5b">Empire Discount</option>
+                                
+                                    <option value="5fd1e26e3d58933a9da17a5a">HAYES SPECIALTIES CORPORATION</option>
+                                
+                                    <option value="5fd1e1c83d58933a9da17a59">Shadow Shifter, Inc. (Heat Reactive)</option>
+                                
+                                    <option value="5fd1e10f3d58933a9da17a58">Jewelry Candles , Cash Candles, Jewelry Bombs</option>
+                                
+                                    <option value="5fd1e0a53d58933a9da17a57">Jaya Lashes Inc</option>
+                                
+                                    <option value="5fd1e0063d58933a9da17a55">American Green Smoke Wholesale Inc.</option>
+                                
+                                    <option value="5fd1df243d58933a9da17a53">Rubia Import</option>
+                                
+                                    <option value="5fd1de843d58933a9da17a52">JEWELRY &amp; ACCESSORIES, INC.</option>
+                                
+                                    <option value="5fd1ddd63d58933a9da17a51">Artoy Trading LLC</option>
+                                
+                                    <option value="5fd1dd403d58933a9da17a50">NOVELTEES WHOLESALE</option>
+                                
+                                    <option value="5fd1db1d3d58933a9da17a4d">Jillian Distributors - WHOLESALER</option>
+                                
+                                    <option value="5fd1dab03d58933a9da17a4c">Gavreel Group, LLC.</option>
+                                
+                                    <option value="5fd1da423d58933a9da17a4b">Western Express</option>
+                                
+                                    <option value="5fd1d9a83d58933a9da17a49">General Belt Sales, LLC</option>
+                                
+                                    <option value="5fd1d8f23d58933a9da17a48">CKBPRODUCTS.COM</option>
+                                
+                                    <option value="5fd1d8623d58933a9da17a47">The Fair Share, LLC</option>
+                                
+                                    <option value="5fd1d7c33d58933a9da17a46">Acess Wholesale</option>
+                                
+                                    <option value="5fd1d7473d58933a9da17a44">H&amp;D Wholesale</option>
+                                
+                                    <option value="5fd1d6ba3d58933a9da17a43">XP Jewelry</option>
+                                
+                                    <option value="5fd1d6363d58933a9da17a42">Jewenior</option>
+                                
+                                    <option value="5fd1d5b53d58933a9da17a41">MMA International</option>
+                                
+                                    <option value="5fd1d5323d58933a9da17a3f">KBeads</option>
+                                
+                                    <option value="5fd1d4b63d58933a9da17a3e">Showfay Jewelry</option>
+                                
+                                    <option value="5fd1d3fa3d58933a9da17a3c">Viceni</option>
+                                
+                                    <option value="5fd1d3743d58933a9da17a3b">Rosefields</option>
+                                
+                                    <option value="5fd1d2d83d58933a9da17a3a">Hill Interiors</option>
+                                
+                                    <option value="5fd1d2433d58933a9da17a39">Pacific Lifestyle</option>
+                                
+                                    <option value="5fd1d1e43d58933a9da17a38">Artisan Furniture</option>
+                                
+                                    <option value="5fd1d1583d58933a9da17a37">Febland Group Ltd</option>
+                                
+                                    <option value="5fd1d0fa3d58933a9da17a36">CIMC Home</option>
+                                
+                                    <option value="5fd1d0543d58933a9da17a35">CTW Home Collection</option>
+                                
+                                    <option value="5fd1cfe03d58933a9da17a34">WholesaleMart</option>
+                                
+                                    <option value="5fd1cf693d58933a9da17a33">Geko Products</option>
+                                
+                                    <option value="5fd1ceca3d58933a9da17a32">Beauty for Britain</option>
+                                
+                                    <option value="5fd1ce373d58933a9da17a31">HAZ Beauty</option>
+                                
+                                    <option value="5fd1cdd23d58933a9da17a30">Janson Beauty</option>
+                                
+                                    <option value="5fd1cd403d58933a9da17a2f">WHOLESALE CROWD</option>
+                                
+                                    <option value="5fd1ccd13d58933a9da17a2e">Stealth International / Janco Beauty</option>
+                                
+                                    <option value="5fd1cc4c3d58933a9da17a2d">Cosmetix Club</option>
+                                
+                                    <option value="5fd1cba03d58933a9da17a2c">Purse-Obsession.com</option>
+                                
+                                    <option value="5fd1cabd3d58933a9da17a2a">Mak Group of Companies,Inc</option>
+                                
+                                    <option value="5fd1c9dc3d58933a9da17a29">DSK BRANDS</option>
+                                
+                                    <option value="5fd1c9493d58933a9da17a28">Montana West USA</option>
+                                
+                                    <option value="5fd1c1619dc2b5240aca948d">FashionGo.net - The Leading Online Wholesale Fashi</option>
+                                
+                                    <option value="5fd1c0959dc2b5240aca948c">Outdoor Active Gear</option>
+                                
+                                    <option value="5fd1bfb09dc2b5240aca948a">Worldly Designed - Ecozz Bags</option>
+                                
+                                    <option value="5fd1becc9dc2b5240aca9489">Mezon Handbags</option>
+                                
+                                    <option value="5fd1be4e9dc2b5240aca9487">Fashion Bulk</option>
+                                
+                                    <option value="5fd1bd159dc2b5240aca9485">DSK BRANDS </option>
+                                
+                                    <option value="5fd1bbaa9dc2b5240aca9483">HandbagShopping.com - Handbags, Accessories &amp; More</option>
+                                
+                                    <option value="5fd13a229dc2b5240aca947a"> ToteBagFactory </option>
+                                
+                                    <option value="5fd1381b9dc2b5240aca9479">Funky Hampers</option>
+                                
+                                    <option value="5fd1373c9dc2b5240aca9478">Eastwind Wholesale Gift Distributors</option>
+                                
+                                    <option value="5fd136cd9dc2b5240aca9477">CWI Gifts</option>
+                                
+                                    <option value="5fd135e29dc2b5240aca9475">Koehler Home Decor</option>
+                                
+                                    <option value="5fd135a29dc2b5240aca9474">Bertha Mae's Brownie Co.</option>
+                                
+                                    <option value="5fd134fc9dc2b5240aca9473">Personalised Trade Gifts</option>
+                                
+                                    <option value="5fd134b49dc2b5240aca9472"> Groovy Candies </option>
+                                
+                                    <option value="5fd134439dc2b5240aca9471">Oh So Cherished Dropship</option>
+                                
+                                    <option value="5fd133d39dc2b5240aca9470">Sparks Gift Wholesalers</option>
+                                
+                                    <option value="5fd133b59dc2b5240aca946f">Drift CBD Honey Sticks</option>
+                                
+                                    <option value="5fd133519dc2b5240aca946e">Gainsborough Giftware</option>
+                                
+                                    <option value="5fd132819dc2b5240aca946d">RegenaLife  (Organic Products)</option>
+                                
+                                    <option value="5fd1325f9dc2b5240aca946c">Liquidation.com</option>
+                                
+                                    <option value="5fd131a29dc2b5240aca946b">TeleDynamics</option>
+                                
+                                    <option value="5fd130cb9dc2b5240aca946a">Spire Technology</option>
+                                
+                                    <option value="5fd12fed9dc2b5240aca9469">Dropship Town</option>
+                                
+                                    <option value="5fd12fb09dc2b5240aca9468">Drappier Import Export &amp; Distribution, LLC</option>
+                                
+                                    <option value="5fd12f249dc2b5240aca9467">Mega Goods</option>
+                                
+                                    <option value="5fd12e689dc2b5240aca9466">Cut Price Wholesaler</option>
+                                
+                                    <option value="5fd12d829dc2b5240aca9465">Chinavasion</option>
+                                
+                                    <option value="5fd12d229dc2b5240aca9464">United Songs of America Corp</option>
+                                
+                                    <option value="5fd12cd29dc2b5240aca9463">SUNSKY Online</option>
+                                
+                                    <option value="5fd12b949dc2b5240aca9462">JewelryBund</option>
+                                
+                                    <option value="5fd12b129dc2b5240aca9461">Cellmost</option>
+                                
+                                    <option value="5fd1293e9dc2b5240aca945f">Yoko’s Fashion</option>
+                                
+                                    <option value="5fd1290b9dc2b5240aca945e">Reiko Wireless</option>
+                                
+                                    <option value="5fd128969dc2b5240aca945d">Trendy Wholesale</option>
+                                
+                                    <option value="5fd127fa9dc2b5240aca945c">AsuJewelry</option>
+                                
+                                    <option value="5fd1271d9dc2b5240aca945b">AccessoryKingdom</option>
+                                
+                                    <option value="5fd127169dc2b5240aca945a">JS World Trading</option>
+                                
+                                    <option value="5fd125f19dc2b5240aca9459">Glitzy Jewels</option>
+                                
+                                    <option value="5fd125619dc2b5240aca9458">i-Shine Trade</option>
+                                
+                                    <option value="5fd125459dc2b5240aca9457">8Seasons</option>
+                                
+                                    <option value="5fd123ec9dc2b5240aca9456">Fashion Bella</option>
+                                
+                                    <option value="5fd1233e9dc2b5240aca9455">My Wholesale Fashion</option>
+                                
+                                    <option value="5fd122ce9dc2b5240aca9454">Mighty Wireless</option>
+                                
+                                    <option value="5fd121cc9dc2b5240aca9453">Esprit Creations</option>
+                                
+                                    <option value="5fd1217a9dc2b5240aca9452">Ziva Wireless Inc</option>
+                                
+                                    <option value="5fd11fef9dc2b5240aca9451">KIKO Wholesale Group</option>
+                                
+                                    <option value="5fd11c769dc2b5240aca9450">Babeeni Vietnam Company Limited</option>
+                                
+                                    <option value="5fd11bc29dc2b5240aca944f">Nonomella GmbH</option>
+                                
+                                    <option value="5fd1144038c6ea1f2fa70493">The Hair Bow Company</option>
+                                
+                                    <option value="5fd1134b38c6ea1f2fa70492">Toys By Teddy</option>
+                                
+                                    <option value="5fd111e838c6ea1f2fa70491">Littletoes</option>
+                                
+                                    <option value="5fd1114238c6ea1f2fa70490">Wholesale Princess</option>
+                                
+                                    <option value="5fd110cc38c6ea1f2fa7048f">AnnLoren Baby and Childrens Clothing + Accessories</option>
+                                
+                                    <option value="5fd10fce38c6ea1f2fa7048e">Basal Baby</option>
+                                
+                                    <option value="5fd10dc4e0886d7cedc32f09">Bailey's Blossoms</option>
+                                
+                                    <option value="5fd10ceee0886d7cedc32f08">Infant Blanks</option>
+                                
+                                    <option value="5fd10c53e0886d7cedc32f07">Bambini Infant Wear</option>
+                                
+                                    <option value="5fd10b77e0886d7cedc32f06">GreenPeach</option>
+                                
+                                    <option value="5fd10a6fe0886d7cedc32f04">The PKW Group</option>
+                                
+                                    <option value="5fd109c6e0886d7cedc32f03">Keaworld LLC</option>
+                                
+                                    <option value="5fd1083ce0886d7cedc32f02">CC Wholesale Clothing</option>
+                                
+                                    <option value="5fd1075be0886d7cedc32f01">Belle Wholesale</option>
+                                
+                                    <option value="5fd1064fe0886d7cedc32f00">Technology Warehouse LTD (TW House)</option>
+                                
+                                    <option value="5fd1058de0886d7cedc32eff">Aulola UK</option>
+                                
+                                    <option value="5fd104b0e0886d7cedc32efe">Mr Mobile</option>
+                                
+                                    <option value="5fd103c8e0886d7cedc32efd">TVC Mall</option>
+                                
+                                    <option value="5fd1010be0886d7cedc32efc">Native Crafts</option>
+                                
+                                    <option value="5fd1002de0886d7cedc32efb">Pen Kit Mall Wholesale</option>
+                                
+                                    <option value="5fd0ff5ae0886d7cedc32ef8">Personal Touch Products</option>
+                                
+                                    <option value="5fd0fe9be0886d7cedc32ef7">SSWW</option>
+                                
+                                    <option value="5fd0fd44e0886d7cedc32ef6">Sun Devil Service and Supply</option>
+                                
+                                    <option value="5fd0ed7ee0886d7cedc32ef4">Black Ball Corp</option>
+                                
+                                    <option value="5fd0eb1be0886d7cedc32ef2">Premiere Vision New York</option>
+                                
+                                    <option value="5fd0eadfe0886d7cedc32ef1">Life Instyle</option>
+                                
+                                    <option value="5fd0eaa8e0886d7cedc32ef0">Christmasworld Frankfurt</option>
+                                
+                                    <option value="5fd0ea69e0886d7cedc32eef">AmericasMart Atlanta</option>
+                                
+                                    <option value="5fd0e94ce0886d7cedc32eee">IndiaMART</option>
+                                
+                                    <option value="5fd0e90ce0886d7cedc32eed">Alibaba</option>
+                                
+                                    <option value="5fd0e845e0886d7cedc32eec">Olympia Sports</option>
+                                
+                                    <option value="5fd0e74be0886d7cedc32eea">Just Vision It</option>
+                                
+                                    <option value="5fd0e6bae0886d7cedc32ee9">Top Dawg Pet Supply</option>
+                                
+                                    <option value="5fd0e62ae0886d7cedc32ee8">Mirage Pet Products</option>
+                                
+                                    <option value="5fd0e573e0886d7cedc32ee7">TBO Tech</option>
+                                
+                                    <option value="5fd0e50de0886d7cedc32ee6">JBoutman</option>
+                                
+                                    <option value="5fd0e471e0886d7cedc32ee5">Grey Eagle Trader</option>
+                                
+                                    <option value="5fd0e359e0886d7cedc32ee3">Luxjoias</option>
+                                
+                                    <option value="5fd0e321e0886d7cedc32ee2">J Goodin</option>
+                                
+                                    <option value="5fd0e2dee0886d7cedc32ee1">Gallay Jewelry</option>
+                                
+                                    <option value="5fd0e289e0886d7cedc32ee0">American Gemstone Authority LLC</option>
+                                
+                                    <option value="5fd0e0b5e0886d7cedc32edf">Trademark Poker</option>
+                                
+                                    <option value="5fd0e076e0886d7cedc32ede">MyRcMart</option>
+                                
+                                    <option value="5fd0e03ae0886d7cedc32edd">Chess Bazaar</option>
+                                
+                                    <option value="5fd0dffae0886d7cedc32edc">AGM Hobby</option>
+                                
+                                    <option value="5fd0dd33e0886d7cedc32edb">Wholesale Supplements</option>
+                                
+                                    <option value="5fd0dce5e0886d7cedc32eda">Vox Nutrition</option>
+                                
+                                    <option value="5fd0dc42e0886d7cedc32ed9">Putnam Health Co Ltd</option>
+                                
+                                    <option value="5fd0d7dce0886d7cedc32ed7">Savannah Candy</option>
+                                
+                                    <option value="5fd0d796e0886d7cedc32ed6">International Wholesale Gifts &amp; Collectibles</option>
+                                
+                                    <option value="5fd0d744e0886d7cedc32ed5">All Wrapped Up</option>
+                                
+                                    <option value="5fd0d620e0886d7cedc32ed4">Sunrise Wholesale Merchandise</option>
+                                
+                                    <option value="5fd0d542e0886d7cedc32ed3">Lightake</option>
+                                
+                                    <option value="5fd0d498e0886d7cedc32ed2">Dollar Days</option>
+                                
+                                    <option value="5fd0d420e0886d7cedc32ed1">Arts Now</option>
+                                
+                                    <option value="5fd0d2b4e0886d7cedc32ed0">YouBar</option>
+                                
+                                    <option value="5fd0d262e0886d7cedc32ecf">Spices for Less</option>
+                                
+                                    <option value="5fd0d21ce0886d7cedc32ece">Hot Sauce Harry's</option>
+                                
+                                    <option value="5fd0d1e4e0886d7cedc32ecd">Golden West Specialty Foods</option>
+                                
+                                    <option value="5fd0d0f0e0886d7cedc32ecc">Chocolate Covered Company</option>
+                                
+                                    <option value="5fd0cf41e0886d7cedc32ecb">TENSproducts, Inc.</option>
+                                
+                                    <option value="5fd0ceeae0886d7cedc32eca">Astone Fitness</option>
+                                
+                                    <option value="5fd0ccd9e0886d7cedc32ec9">Seawide</option>
+                                
+                                    <option value="5fd0cc6ae0886d7cedc32ec8">Precision Roller</option>
+                                
+                                    <option value="5fd0cbd2e0886d7cedc32ec7">CWR Electronics</option>
+                                
+                                    <option value="5fd0cb13e0886d7cedc32ec5">Active8</option>
+                                
+                                    <option value="5fd0c81be0886d7cedc32ec4">MerryGoRoundUK</option>
+                                
+                                    <option value="5fd0c7ade0886d7cedc32ec3">Baby Blankets</option>
+                                
+                                    <option value="5fd0c693e0886d7cedc32ec1">Simon Stamp</option>
+                                
+                                    <option value="5fd0c5e6e0886d7cedc32ec0">Field Notes</option>
+                                
+                                    <option value="5fd0c4d7e0886d7cedc32ebf">Serf to Surf</option>
+                                
+                                    <option value="5fd0c33ae0886d7cedc32ebe">Naio Nails Ltd</option>
+                                
+                                    <option value="5fd0c239e0886d7cedc32ebd">Hickory Ridge Soaps</option>
+                                
+                                    <option value="5fd0c184e0886d7cedc32ebc">Eastern Hair</option>
+                                
+                                    <option value="5fd0c0c8e0886d7cedc32ebb">Blacklabel Beard</option>
+                                
+                                    <option value="5fd0c02be0886d7cedc32eba">Alternative Beauty</option>
+                                
+                                    <option value="5fd0bf26e0886d7cedc32eb9">MBM Brake Boosters</option>
+                                
+                                    <option value="5fd0bebae0886d7cedc32eb8">The Car Cover</option>
+                                
+                                    <option value="5fd0bcc5e0886d7cedc32eb7">Victorian Textiles</option>
+                                
+                                    <option value="5fd0bc63e0886d7cedc32eb5">Threadless</option>
+                                
+                                    <option value="5fd0bc12e0886d7cedc32eb4">TEA N ROSE</option>
+                                
+                                    <option value="5fd0bbc1e0886d7cedc32eb3">RVCA</option>
+                                
+                                    <option value="5fd0bb71e0886d7cedc32eb2">Romwe</option>
+                                
+                                    <option value="5fd0bb1de0886d7cedc32eb1">Parisian</option>
+                                
+                                    <option value="5fd0bac7e0886d7cedc32eaf">Moda in Pelle</option>
+                                
+                                    <option value="5fd0b975e0886d7cedc32eae">ItalianModa</option>
+                                
+                                    <option value="5fd0b925e0886d7cedc32ead">good hYOUman.</option>
+                                
+                                    <option value="5fd0b8b3e0886d7cedc32eac">Global Leathers</option>
+                                
+                                    <option value="5fd0b7f6e0886d7cedc32eaa">Gentle Fawn</option>
+                                
+                                    <option value="5fd0b78ce0886d7cedc32ea8">Dex Clothing</option>
+                                
+                                    <option value="5fd0b730e0886d7cedc32ea7">Dear Lover</option>
+                                
+                                    <option value="5fd0b676e0886d7cedc32ea6">Chic Star</option>
+                                
+                                    <option value="5fd0b607e0886d7cedc32ea5">Brunette the Label</option>
+                                
+                                    <option value="5fd0b595e0886d7cedc32ea3">Bollman Hat Company</option>
+                                
+                                    <option value="5fd0b015e0886d7cedc32ea1">BB Dakota</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label form-control-label">Product Name <span style="color:red">*</span></label>
+                        <div class="form-input">
+                            <input name="product_name" id="product_name_id" class="form-control" type="text" placeholder="Product Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label form-control-label">Product Main Image <span style="color:red">*</span></label>
+                        <div class="form-input">
+                            <label for="pro_main_img_upload" class="pro_upload_label">Select Product Main Image</label>
+                            <input type="file" id="pro_main_img_upload" name="main_upload_imgs">
+                            <div class="uploaded_img_preview d-flex" id="main_img_preview">
+                                <div class="pre_img_item mr-3">
+                                    <img src="/assets/images/favicon.png" alt="" class="img-fluid" id="main_image_preview">
+                                    <input type="hidden" name="product_main_image" id="product_main_image_id">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label form-control-label">Product Sub Images</label>
+                        <div class="form-input">
+                            <label for="sub_upload_imgs" class="pro_upload_label">Select Products Images +</label>
+                            <input type="file" id="sub_upload_imgs" name="sub_upload_imgs" class="sub_upload_imgs">
+                            <div class="uploaded_img_preview d-flex" id="sub_img_preview">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+             <div class="card">
+              <div class="card-header">Product Discription </div>
+               <div class="px-3">
+                  <div class="form-group mt-3">
+                      <div class="form-input">
+                         <textarea id="txttohtml_editor" class="txt_to_html" name = "product_description"></textarea>
+                      </div>
+                  </div>
+               </div>
+             </div>
+             <div class="card">
+                <div class="card-header">Product Price</div>
+                <div class="px-3 mt-3">
+                    <div class="form-group">
+                        <label class="col-form-label form-control-label">Product Price Type <span style="color:red">*</span></label>
+                        <div class="form-input">
+                            <select class="form-control" name="product_price_type" id="product_price_type_id">
+                                <option value="--">Select Product Price Type</option>
+                                <option value="$" selected="">$</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+             </div>
+              <div class="card">
+                  <div class="card-header">Select Variants
+                  </div>
+                  <div class="px-3">
+                      <div class="d-flex flex-wrap">
+                          <div class="col-md-6 col-12 pl-0">
+                              <div class="form-group">
+                                  <label class="col-form-label form-control-label">Add Colors <span style="color:red">*</span></label>
+                                  <div class="form-input">
+                                      <select class="form-control" id="vr_color_select" multiple="multiple" name="product_colors">
+                                          <option value="Black">Black</option>
+                                          <option value="Blue">Blue</option>
+                                          <option value="Green">Green</option>
+                                          <option value="Grey">Grey</option>
+                                          <option value="Gold">Gold</option>
+                                          <option value="Indigo">Indigo</option>
+                                          <option value="Orange">Orange</option>
+                                          <option value="Pink">Pink</option>
+                                          <option value="Purple">Purple</option>
+                                          <option value="Red">Red</option>
+                                          <option value="Silver">Silver</option>
+                                          <option value="Violet">Violet</option>
+                                          <option value="White">White</option>
+                                          <option value="Yellow">Yellow</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-12 pl-0">
+                              <div class="form-group">
+                                  <label class="col-form-label form-control-label">Add Sizes <span style="color:red">*</span></label>
+                                  <div class="form-input">
+                                      <select class="form-control" id="vr_size_select" multiple="multiple" name="product_sizes">
+                                          <option value="XS">XS</option>
+                                          <option value="S">S</option>
+                                          <option value="M">M</option>
+                                          <option value="L">L</option>
+                                          <option value="XL">XL</option>
+                                          <option value="XXL">XXL</option>
+                                          <option value="XXXL">XXXL</option>
+                                          <option value="28">28</option>
+                                          <option value="30">30</option>
+                                          <option value="32">32</option>
+                                          <option value="34">34</option>
+                                          <option value="36">36</option>
+                                          <option value="38">38</option>
+                                          <option value="40">40</option>
+                                          <option value="42">42</option>
+                                          <option value="44">44</option>
+                                          <option value="46">46</option>
+                                          <option value="48">48</option>
+                                          <option value="50">50</option>
+                                          <option value="52">52</option>
+                                          <option value="US-5">US-5</option>
+                                          <option value="US-5.5">US-5.5</option>
+                                          <option value="US-6">US-6</option>
+                                          <option value="US-6.5">US-6.5</option>
+                                          <option value="US-7">US-7</option>
+                                          <option value="US-7.5">US-7.5</option>
+                                          <option value="US-8">US-8</option>
+                                          <option value="US-8.5">US-8.5</option>
+                                          <option value="US-9">US-9</option>
+                                          <option value="US-9.5">US-9.5</option>
+                                          <option value="US-10">US-10</option>
+                                          <option value="US-10.5">US-10.5</option>
+                                          <option value="US-11">US-11</option>
+                                          <option value="US-11.5">US-11.5</option>
+                                          <option value="US-12">US-12</option>
+                                          <option value="US-13">US-13</option>
+                                          <option value="US-14">US-14</option>
+                                          <option value="US-15">US-15</option>
+                                          <option value="US-16">US-16</option>
+                                          <option value="14-Inch">14-Inch</option>
+                                          <option value="16-Inch">16-Inch</option>
+                                          <option value="18-Inch">18-Inch</option>
+                                          <option value="22-Inch">22-Inch</option>
+                                          <option value="24-Inch">24-Inch</option>
+                                          <option value="26-Inch">26-Inch</option>
+                                          <option value="30-Inch">30-Inch</option>
+                                          <option value="33-Inch">33-Inch</option>
+                                          <option value="36-Inch">36-Inch</option>
+                                          <option value="King">King</option>
+                                          <option value="Queen">Queen</option>
+                                      </select>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+             <div class="form-group">
+                      <label class="col-form-label form-control-label"></label>
+                      <div class="form-input text-center">
+                          <input type="button" class="btn btn-white mx-auto theme-btn" value="Save" onclick="validateSpecialProductForm()">
+                      </div>
+             </div>
+           </form>
+        </div>
+       
+     </main>
+  </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.richtext.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/select2.min.js"></script>
+<script src="js/jquery-ui.js"></script> 
+ <script>
+        $("#vr_color_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#vr_size_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#pr_return_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        $("#pr_shipment_select").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+        // $('#datepicker').datepicker({
+        //     uiLibrary: 'bootstrap4',
+        // });
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+        });
+        $(document).ready(function() {
+            $('.txt_to_html').richText();
+        });
+
+         $(document).ready(function() {
+          $('#example').DataTable();
+      } );
+    </script>
+
+</body>
+</html>

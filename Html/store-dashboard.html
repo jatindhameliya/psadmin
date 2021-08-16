@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/richtext.min.css">
+
+<title></title>
+</head>
+<body>
+  <div class="all-content-holder">
+  	<aside class="sidebar-main">
+        <div class="brand-logo">
+          <a href="dashboard.html">
+             <img src="img/user-icon.png" class="img-fluid logo-icon" alt="">
+             <h5>Top Admin</h5>            
+          </a>
+          <hr>
+        </div>
+         <ul class="sidebar-menu">
+           <li class="active">
+             <a href="dashboard.html">
+               <i class="fa fa-tachometer" aria-hidden="true"></i>
+               <span>Deshbord</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="cat-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="cat-list.html">
+               <i class="fa fa-list-alt" aria-hidden="true"></i>
+               <span>Categories</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="pp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="pp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Popular</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="sp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Special</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+             <a href="tp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="tp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Trending </span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="vp-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="vp-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Variant</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="sup-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="sup-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Suppliers</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="influ-form.html" class="add-box">
+               <i class="fa fa-plus-circle" aria-hidden="true"></i>
+             </a>
+             <a href="influ-list.html">
+               <i class="fa fa-list" aria-hidden="true"></i>
+               <span>Influencers</span>
+             </a>
+           </li>
+           <hr>
+           <li>
+             <a href="order-list.html">
+               <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+               <span>List Orders</span>
+             </a>
+           </li>
+           <hr>
+            <li>
+              <a href="Countries-list.html">
+               <i class="fa fa-flag" aria-hidden="true"></i>
+               <span>Countries</span>
+             </a>
+           </li>
+           <hr>
+         </ul>
+     </aside>  
+  	 <main class="main-content">
+  	 	  <header class="header">
+            <h5 class="title-bar">Store Dashboard</h5>
+            <div class="logout-icon">
+              <ul class="d-flex">
+                <li class="bell-ico"><a href=""class="fa fa-sign-out"></a></li>
+              </ul>
+           </div>
+        </header>
+        <div class="page-content">
+          <div class="analytics-content">
+            <ul class="nav nav-tabs" role="tablist">
+              <li  class="nav-item"><a data-toggle="tab" class="nav-link active" href="#tab_1">Installed Stores</a></li>
+              <li  class="nav-item"><a data-toggle="tab" class="nav-link" href="#tab_2">UnInstalled Stores</a></li>
+              <li  class="nav-item"><a data-toggle="tab" class="nav-link" href="#tab_3">Store Countries</a></li>
+              <li  class="nav-item"><a data-toggle="tab" class="nav-link" href="#tab_4">Plans</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab_1" class="tab-pane active">
+                  <div class="card mb-3">
+                    <div class="card-header">Store Install Counts <span class="ml-auto tt-count">Total Install: <strong> 800+</strong></span></div>
+                    <div class="card-body">
+                      <div class="count-row"> 
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            Today
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            This Week
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            This Month
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            Previous Month
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card all-mix-count">
+                    <div class="card-header">Store List </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table id="example" class="table table-bordered" style="width:100%"> 
+                      <thead>
+                          <tr>
+                              <th width="5%">No.</th>
+                              <th width="25%">Store URL</th>
+                              <th width="10%">Country</th>
+                              <th width="20%">Email</th>
+                              <th width="9%">plan</th>
+                              <th width="5%">Products Added</th>
+                              <th width="10%">Installed Date</th>
+                              <th width="13%">Action</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>1</td>
+                              <td class="tb-pro-name">
+                                <span > 
+                                  topproductsdev.myshopify.com
+                                </span>
+                              </td>
+                              <td>
+                                India
+                              </td>
+                              <td>
+                                admin@positivescript.com
+                              </td>
+                              <td>
+                                enterprisePlan
+                              </td>
+                              <td>
+                                155
+                              </td>
+                              <td>10-Dec-2020</td>
+                              <td>
+                                <a href="" class="btn-icon mr-3" title="Edit Product"> <i class="fa fa-edit "> </i></a>
+                                <a href="" class="btn-icon" style="color:#EA4335" title="Delete Product"> <i class="fa fa-envelope"> </i></a>
+                              </td>
+                          </tr>
+          
+                        </tbody>
+                      </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tab_2" class="tab-pane fade">
+                  <div class="card mb-3">
+                    <div class="card-header">Store UnInstall Counts <span class="ml-auto tt-count">Total UnInstall: <strong> 800+</strong></span></div>
+                    <div class="card-body">
+                      <div class="count-row"> 
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            Today
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            This Week
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            This Month
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item col-md-3">
+                          <div class="count-name">
+                            <i class=" fa fa-calendar"></i>
+                            Previous Month
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card all-mix-count">
+                    <div class="card-header">Store List</div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table id="example" class="table table-bordered" style="width:100%"> 
+                          <thead>
+                              <tr>
+                                  <th width="5%">No.</th>
+                                  <th width="20%">Store URL</th>
+                                  <th width="10%">Country</th>
+                                  <th width="15%">Email</th>
+                                  <th width="12%">plan</th>
+                                  <th width="5%">Products Added</th>
+                                  <th width="10%">Installed Date</th>
+                                  <th width="10%">UnIntalled Date</th>
+                                  <th width="10%">Action</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                              <td>1</td>
+                              <td class="tb-pro-name">
+                                <span > 
+                                  topproductsdev.myshopify.com
+                                </span>
+                              </td>
+                              <td>
+                                India
+                              </td>
+                              <td>
+                                admin@positivescript.com
+                              </td>
+                              <td>
+                                enterprisePlan
+                              </td>
+                              <td>
+                                155
+                              </td>
+                              <td>10-Dec-2020</td>
+                              <td>10-Dec-2020</td>
+                              <td>
+                                <a href="" class="btn-icon" style="color:#EA4335" title="Delete Product"> <i class="fa fa-envelope"> </i></a>
+                              </td>
+                          </tr>
+                          </tbody>
+                      </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tab_3" class="tab-pane fade">
+                  <div class="card all-mix-count all-ctry-count st-ctry-count">
+                    <div class="card-header">Store Countries <span class="ml-auto tt-count">Total Countries: <strong> 16</strong></span></div>
+                    <div class="card-body">
+                      <div class="count-row">
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Australia
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Canada
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            China
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            India
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            New Zealand
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Spain
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Turkey
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            United Arab Emirates
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            United Kingdom
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            United States of America
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            France
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Rasia
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Italy
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            Germany
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                        <div class="count-item col-md-3 mb-3">
+                          <div class="count-name">
+                            <i class="fa fa-flag"></i>
+                            South Africa
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                          <span class="c4p-row">
+                            <span class="count4panding">
+                              <strong>Bp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Stp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Sdp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Pp.</strong>
+                              20
+                            </span>
+                            <span class="count4panding">
+                              <strong>Ep.</strong>
+                              20
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tab_4" class="tab-pane fade">
+                  <div class="card mb-3">
+                    <div class="card-header">Plan Types <span class="ml-auto tt-count">Total Stores: <strong> 800+</strong></span></div>
+                    <div class="card-body">
+                      <div class="count-row"> 
+                        <div class="count-item sp-box">
+                          <div class="count-name">
+                            <i class=" fa fa-dollar"></i>
+                            Basic Plan
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item sp-box">
+                          <div class="count-name">
+                            <i class=" fa fa-dollar"></i>
+                            StartUp Plan
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item sp-box">
+                          <div class="count-name">
+                            <i class=" fa fa-dollar"></i>
+                            Standard Plan
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item sp-box">
+                          <div class="count-name">
+                            <i class=" fa fa-dollar"></i>
+                            Professional Plan
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                        <div class="count-item sp-box">
+                          <div class="count-name">
+                            <i class=" fa fa-dollar"></i>
+                            Enterprise Plan
+                          </div>
+                          <div class="count-dgt">
+                            400
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+
+        </div>
+  	 </main>
+  </div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.richtext.js"></script>
+<script src="js/popper.min"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap4.min.js"></script>
+<script src="js/select2.min.js"></script> 
+<script>  
+  $(document).ready(function() {
+      $('#example').DataTable();
+  } );
+  </script>
+</body>
+</html>
