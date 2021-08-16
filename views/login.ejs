@@ -3,9 +3,15 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/style.css">
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/angular/angular.min.js"></script>
+	<script src="/javascripts/constants.js"></script>
+	<script src="/javascripts/services.js"></script>
+	<script src="/javascripts/directives.js"></script>
+	<script src="/assets/js/sweetalert.min.js"></script>
 	<title>PS Admin</title>
 	<style>
 		.login-content-holder {
@@ -30,8 +36,9 @@
 		}
 	</style>
 </head>
-<body>
-	<div class="login-content-holder">
+<body ng-app="psAdminLogin" ng-cloak>
+	<script src="/javascripts/controllers/login.controller.js"></script>
+	<div class="login-content-holder"  ng-controller="LoginController">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="logoholder d-flex align-items-center ">
@@ -45,30 +52,23 @@
 						<h3>Login</h3>
 					</div>
 					<div class="card-body">
-						<form action="/" method="post" id="loginForm" class="login-form">
+						<form class="login-form" ng-submit="onSubmit()">
 							<div class="fom-group">
 								<label for="">User Name</label>
-								<input type="text" name="username" id="Username" class="form-control"
+								<input type="text" ng-model="username" class="form-control"
 									placeholder="Enter Username">
 							</div>
 							<div class="fom-group mt-3">
 								<label for="">Password</label>
-								<input type="password" name="password" id="Password" class="form-control"
+								<input type="password" ng-model="password" class="form-control"
 									placeholder="Enter Password">
 							</div>
-							<button type="button" onclick="validateForm()" class="btn theme-btn mt-3 mx-auto">Sign
-								In</button>
+							<button type="submit" class="btn theme-btn mt-3 mx-auto">Sign In</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="/assets/js/jquery.min.js"></script>
-	<script>
-		function validateForm() {
-			$('#loginForm').submit();
-		}
-	</script>
 </body>
 </html>

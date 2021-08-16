@@ -38,7 +38,7 @@ mongoose.connection.once('open', () => {
 });
 const paths = [
 	{ pathUrl: '/', routeFile: 'login' },
-// 	{ pathUrl: '/main', routeFile: 'main' },
+	{ pathUrl: '/dashboard', routeFile: 'dashboard' },
 // 	{ pathUrl: '/category', routeFile: 'category' },
 // 	{ pathUrl: '/product', routeFile: 'product' },
 // 	{ pathUrl: '/order', routeFile: 'order' },
