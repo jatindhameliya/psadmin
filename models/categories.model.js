@@ -1,64 +1,18 @@
 let mongoose = require('mongoose');
 let mongoosePaginate = require("mongoose-paginate-v2");
-let attributeSchema = new mongoose.Schema({
-	attributeid: { type: mongoose.Schema.ObjectId, auto: true },
-	attributevalue: {
-		type: String,
-		default: '',
-	},
-	attributeimg: {
-		type: String,
-		default: '',
-	}
-}, { _id: false });
 let schema = new mongoose.Schema({
-	parent_vendor: {
-		type: mongoose.Types.ObjectId,
-		default: null
-	},
-	productreferenceID: {
+	category_name:{
 		type: String,
 		default: '',
 		require: true
 	},
-	productname: {
+	category_description:{
 		type: String,
-		default: '',
-		require: true
+		default: ''
 	},
-	productcategory: {
-		type: mongoose.Types.ObjectId,
-		default: null
-	},
-	producthsncode: {
-		type: String,
-		default: '',
-		require: true
-	},
-	productsku: {
-		type: String,
-		default: '',
-		require: true
-	},
-	producttags: [],
-	productprice: {
-		type: Number,
-		default: 0.00
-	},
-	productmrp: {
-		type: Number,
-		default: 0.00
-	},
-	productdescription: {
-		type: String,
-		default: '',
-		require: true
-	},
-	attributes: [attributeSchema],
-	productImages: [],
-	status: {
+	category_status:{
 		type: Boolean,
-		default: false
+		default: true
 	},
 	createdBy: {
 		type: mongoose.Types.ObjectId,
@@ -67,7 +21,7 @@ let schema = new mongoose.Schema({
 	updatedBy: {
 		type: mongoose.Types.ObjectId,
 		default: null
-	},
+	}
 }, { timestamps: true, strict: false });
 schema.plugin(mongoosePaginate);
-module.exports = mongoose.model('products', schema);
+module.exports = mongoose.model('categories', schema);

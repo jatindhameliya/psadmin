@@ -1,4 +1,629 @@
-<main class="main-content">
+<script src="/javascripts/controllers/categories.controller.js"></script>
+<div class="app-content content" ng-controller="CategoriesController">
+	<div class="content-overlay"></div>
+	<div class="header-navbar-shadow"></div>
+	<div class="content-wrapper">
+		<div class="content-header row">
+			<div class="content-header-left col-md-9 col-12 mb-2">
+				<div class="row breadcrumbs-top">
+					<div class="col-12">
+						<h2 class="content-header-title float-left mb-0">Categories</h2>
+						<div class="breadcrumb-wrapper">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/">Home</a>
+								</li>
+								<li class="breadcrumb-item active">Categories List
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+				<div class="form-group breadcrumb-right">
+					<div class="dropdown">
+						<button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+								data-feather="grid"></i></button>
+						<div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="app-todo.html"><i
+									class="mr-1" data-feather="check-square"></i><span
+									class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i
+									class="mr-1" data-feather="message-square"></i><span
+									class="align-middle">Chat</span></a><a class="dropdown-item"
+								href="app-email.html"><i class="mr-1" data-feather="mail"></i><span
+									class="align-middle">Email</span></a><a class="dropdown-item"
+								href="app-calendar.html"><i class="mr-1" data-feather="calendar"></i><span
+									class="align-middle">Calendar</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-body">
+			<!-- Contextual classes start -->
+
+			<div class="row" id="table-contextual">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="input-group input-group-merge col-lg-10">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon-search2"><svg
+												xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-search">
+												<circle cx="11" cy="11" r="8"></circle>
+												<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+											</svg></span>
+									</div>
+									<input type="text" class="form-control" placeholder="Search..."
+										aria-label="Search..." aria-describedby="basic-addon-search2">
+								</div>
+
+								<div class="input-group input-group-merge col-lg-2">
+									<select class="form-control" id="basicSelect">
+										<option>10 Records</option>
+										<option>25 Records</option>
+										<option>50 Records</option>
+										<option>100 Records</option>
+										<option>All Records</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Project</th>
+										<th>Client</th>
+										<th>Users</th>
+										<th>Status</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="table-default">
+										<td>
+											<img src="/assets/images/icons/figma.svg" class="mr-75" height="20"
+												width="20" alt="Figma" />
+											<span class="font-weight-bold">Figma Project</span>
+										</td>
+										<td>Ronnie Shane</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-primary mr-1">Active</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-active">
+										<td>
+											<img src="/assets/images/icons/react.svg" class="mr-75" height="20"
+												width="20" alt="React" />
+											<span class="font-weight-bold">React Project</span>
+										</td>
+										<td>Ronald Frest</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-success mr-1">Completed</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-primary">
+										<td>
+											<img src="/assets/images/icons/angular.svg" class="mr-75" height="20"
+												width="20" alt="Angular" />
+											<span class="font-weight-bold">Angular Project</span>
+										</td>
+										<td>Peter Charls</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-primary mr-1">Active</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-secondary">
+										<td>
+											<img src="/assets/images/icons/vuejs.svg" class="mr-75" height="20"
+												width="20" alt="Vuejs" />
+											<span class="font-weight-bold">Vuejs Project</span>
+										</td>
+										<td>Jack Obes</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-secondary mr-1">Scheduled</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-success">
+										<td>
+											<img src="/assets/images/icons/bootstrap.svg" class="mr-75" height="20"
+												width="20" alt="Bootstrap" />
+											<span class="font-weight-bold">Bootstrap Project</span>
+										</td>
+										<td>Jerry Milton</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-success mr-1">Pending</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-danger">
+										<td>
+											<img src="/assets/images/icons/figma.svg" class="mr-75" height="20"
+												width="20" alt="Figma" />
+											<span class="font-weight-bold">Figma Project</span>
+										</td>
+										<td>Janne Ale</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-danger mr-1">Active</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-warning">
+										<td>
+											<img src="/assets/images/icons/react.svg" class="mr-75" height="20"
+												width="20" alt="React" />
+											<span class="font-weight-bold">React Custom</span>
+										</td>
+										<td>Ted Richer</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-warning mr-1">Scheduled</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-info">
+										<td>
+											<img src="/assets/images/icons/bootstrap.svg" class="mr-75" height="20"
+												width="20" alt="Bootstrap" />
+											<span class="font-weight-bold">Latest Bootstrap</span>
+										</td>
+										<td>Perry Parker</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-info mr-1">Pending</span></td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-light">
+										<td>
+											<img src="/assets/images/icons/angular.svg" class="mr-75" height="20"
+												width="20" alt="Angular" />
+											<span class="font-weight-bold">Angular UI</span>
+										</td>
+										<td>Ana Bell</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-primary mr-1">Completed</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="table-dark">
+										<td>
+											<img src="/assets/images/icons/bootstrap.svg" class="mr-75" height="20"
+												width="20" alt="Bootstrap" />
+											<span class="font-weight-bold">Bootstrap UI</span>
+										</td>
+										<td>Jerry Milton</td>
+										<td>
+											<div class="avatar-group">
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Lilian Nenez">
+													<img src="/assets/images/portrait/small/avatar-s-5.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-6.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+												<div data-toggle="tooltip" data-popup="tooltip-custom"
+													data-placement="top" title="" class="avatar pull-up my-0"
+													data-original-title="Alberto Glotzbach">
+													<img src="/assets/images/portrait/small/avatar-s-7.jpg"
+														alt="Avatar" height="26" width="26" />
+												</div>
+											</div>
+										</td>
+										<td><span class="badge badge-pill badge-light-dark mr-1">Completed</span>
+										</td>
+										<td>
+											<div class="dropdown">
+												<button type="button" class="btn btn-sm dropdown-toggle hide-arrow"
+													data-toggle="dropdown">
+													<i data-feather="more-vertical"></i>
+												</button>
+												<div class="dropdown-menu">
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="edit-2" class="mr-50"></i>
+														<span>Edit</span>
+													</a>
+													<a class="dropdown-item" href="javascript:void(0);">
+														<i data-feather="trash" class="mr-50"></i>
+														<span>Delete</span>
+													</a>
+												</div>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="col-lg-12 col-md-12">
+							<div class="card-body">
+								<ul class="pagination start-links" style="justify-content: center;">
+									<li class="page-item first"><a href="#" class="page-link">First</a></li>
+									<li class="page-item prev"><a href="#" class="page-link">Prev</a></li>
+									<li class="page-item"><a href="#" class="page-link">6</a></li>
+									<li class="page-item"><a href="#" class="page-link">7</a></li>
+									<li class="page-item"><a href="#" class="page-link">8</a></li>
+									<li class="page-item"><a href="#" class="page-link">9</a></li>
+									<li class="page-item active"><a href="#" class="page-link">10</a></li>
+									<li class="page-item next disabled"><a href="#" class="page-link">Next</a></li>
+									<li class="page-item last disabled"><a href="#" class="page-link">Last</a></li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Contextual classes end -->
+
+		</div>
+	</div>
+</div>
+
+<!-- <style>
+	.badge-success {
+		font-size: 12px;
+		background-color: #44a675
+	}
+	.badge-danger {
+		font-size: 12px;
+		background-color: #f44336
+	}
+</style>
+<script src="/javascripts/controllers/categories.controller.js"></script>
+<main class="main-content" ng-controller="CategoriesController">
 	<header class="header">
 		<h5 class="title-bar">Categories</h5>
 		<div class="logout-icon">
@@ -14,6 +639,35 @@
 					<i class="fa fa-plus-circle ml-3"></i>
 				</a>
 			</div>
+
+			<div class="card-header">
+				<div class="row align-items-center">
+					<div class="col">
+						<form>
+							<div class="input-group input-group-flush input-group-merge input-group-reverse">
+								<input class="form-control list-search" type="search" ng-model="search" ng-keyup="getCategories()"
+									placeholder="Search">
+								<span class="input-group-text">
+									<i class="fa fa-search"></i>
+								</span>
+							</div>
+						</form>
+					</div>
+					<div class="col-auto me-n3">
+						<form>
+							<select class="form-select form-select-sm form-control-flush" ng-model="limit"
+								ng-change="onLimitChange()">
+								<option value="10">10 per page</option>
+								<option value="25">25 per page</option>
+								<option value="50">50 per page</option>
+								<option value="100">100 per page</option>
+							</select>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
 			<table id="example" class="table table-bordered" style="width:100%">
 				<thead>
 					<tr>
@@ -26,29 +680,55 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr ng-repeat="category in Categories.docs">
 						<td>1</td>
 						<td class="tb-pro-name">
-							<span>
-								Sport-Optics,Hunting & Shooting
+							<a href="#" ng-click="onEdit(category._id)"><span>
+								{{category.category_name}}
 							</span>
+							</a>
 						</td>
 						<td style="white-space: pre-wrap;">
-							-Sport Optics -Hunting -Outdoor & Survival -Apparel & Footwear -Eyewear -Military & Tactical
-							-Police,Fire,EMS -Sports & Hobbies -Lab & Science
+							{{category.category_description}}
 						</td>
 						<td>
-							Active
+							<span class="item-name badge badge-{{(category.category_status) ? 'success' : 'danger'}}">{{(category.category_status)
+								? 'Active' : 'In-Active'}}</span>
 						</td>
-						<td>2011/04/25</td>
+						<td><span class="item-email">{{category.createdAt | date:'medium'}}</span></td>
 						<td>
-							<a href="" class="btn-icon mr-3" title="Edit Product"> <i class="fa fa-edit "> </i></a>
-							<a href="" class="btn-icon" style="color:red" title="Delete Product">
+							<a href="#" ng-click="onEdit(category._id)" class="btn-icon mr-3" title="Edit Product"> <i class="fa fa-edit "> </i></a>
+							<a href="#" ng-click="onDelete(category._id)" class="btn-icon" style="color:red" title="Delete Product">
 								<i class="fa fa-trash "> </i></a>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+
+<div class="card-footer d-flex justify-content-between">
+	<ul class="list-pagination-prev pagination pagination-tabs card-pagination">
+		<li class="page-item {{ Categories.hasPrevPage ? '' : 'disabled' }}">
+			<a class="page-link ps-0 pe-4 border-end" href="#" ng-click="switchPage(Categories.prevPage)">
+				<i class="fe fe-arrow-left me-1"></i> Prev
+			</a>
+		</li>
+	</ul>
+	<ul class="list-pagination pagination pagination-tabs card-pagination">
+		<li class="page-item {{ page == n ? 'active' : '' }} {{ n==0 ? 'disabled' : '' }}"
+			ng-repeat="n in pageNumberList track by $index">
+			<a href="" class="page-link" ng-click="switchPage(n)">
+				{{n==0?'...':n}}
+			</a>
+		</li>
+	</ul>
+	<ul class="list-pagination-next pagination pagination-tabs card-pagination">
+		<li class="page-item {{ Categories.hasNextPage ? '' : 'disabled' }}">
+			<a class="page-link  ps-4 pe-0 border-start" href="#" ng-click="switchPage(Categories.nextPage)">
+				Next <i class="fe fe-arrow-right ms-1"></i>
+			</a>
+		</li>
+	</ul>
+</div>
 	</div>
-</main>
+</main> -->

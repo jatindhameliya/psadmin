@@ -1,62 +1,108 @@
-<main class="main-content">
-	<header class="header">
-		<h5 class="title-bar">Add / Edit Category <Category></Category>
-		</h5>
-		<div class="logout-icon">
-			<ul class="d-flex">
-				<li class="bell-ico"><a href="" class="fa fa-sign-out"></a></li>
-			</ul>
+<script src="/javascripts/controllers/categories.controller.js"></script>
+<div class="app-content content" ng-controller="CategoriesController">
+	<div class="content-overlay"></div>
+	<div class="header-navbar-shadow"></div>
+	<div class="content-wrapper">
+		<div class="content-header row">
+			<div class="content-header-left col-md-9 col-12 mb-2">
+				<div class="row breadcrumbs-top">
+					<div class="col-12">
+						<h2 class="content-header-title float-left mb-0">Form Layouts</h2>
+						<div class="breadcrumb-wrapper">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a>
+								</li>
+								<li class="breadcrumb-item"><a href="#">Forms</a>
+								</li>
+								<li class="breadcrumb-item active"><a href="#">Form Layouts</a>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+				<div class="form-group breadcrumb-right">
+					<div class="dropdown">
+						<button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i data-feather="grid"></i></button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<a class="dropdown-item" href="app-todo.html">
+								<i class="mr-1" data-feather="check-square"></i>
+								<span class="align-middle">Todo</span>
+							</a>
+							<a class="dropdown-item" href="app-chat.html">
+								<i class="mr-1" data-feather="message-square"></i>
+								<span class="align-middle">Chat</span>
+							</a>
+							<a class="dropdown-item" href="app-email.html">
+								<i class="mr-1" data-feather="mail"></i>
+								<span class="align-middle">Email</span>
+							</a>
+							<a class="dropdown-item" href="app-calendar.html">
+								<i class="mr-1" data-feather="calendar"></i>
+								<span class="align-middle">Calendar</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-	</header>
-	<div class="page-content">
-		<form method="POST">
-			<div class="row">
-				<div class="col-12 col-lg-12">
-					<div class="card">
-						<div class="card-header">Add / Edit Category </div>
-						<div class="px-3">
-							<div class="form-group mt-3 mb-0">
-								<label class="col-form-label form-control-label">Category Name <span
-										style="color:red">*</span></label>
-								<div class="form-input">
-									<input class="form-control" type="text" name="category_name" id="category_name_id">
-								</div>
+		<div class="content-body">
+			<section id="multiple-column-form">
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-header">
+								<h4 class="card-title">Add / Edit Category</h4>
 							</div>
-						</div>
-						<div class="px-3">
-							<div class="form-group mt-3 mb-0">
-								<label class="col-form-label form-control-label">Category Description <span
-										style="color:red">*</span></label>
-								<div class="form-input">
-									<textarea id="category_description_id" class="pro_interest_area form-control"
-										name="category_description"></textarea>
-								</div>
-							</div>
-						</div>
-						<div class="px-3">
-							<div class="form-group mt-3">
-								<label class="col-form-label form-control-label">Select Category Status <span
-										style="color:red">*</span></label>
-								<div class="form-input">
-									<select class="form-control" name="category_status" id="category_status_id">
-										<option value="Active">Active</option>
-										<option value="InActive">InActive</option>
-									</select>
-								</div>
+							<div class="card-body">
+								<form class="form" ng-submit="onSubmit()">
+									<div class="row">
+										<div class="col-md-5 col-12">
+											<div class="form-group">
+												<label for="first-name-column">Category Name</label>
+												<input type="text" id="first-name-column" class="form-control"
+													placeholder="First Name" ng-model="category_name" required />
+											</div>
+										</div>
+										<div class="col-md-5 col-12">
+											<div class="form-group">
+												<label for="last-name-column">Category Description</label>
+												<input type="text" id="last-name-column" class="form-control"
+													placeholder="Last Name" ng-model="category_description" />
+											</div>
+										</div>
+										<div class="col-md-2 col-12">
+											<div class="custom-control custom-switch custom-switch-success">
+												<p class="mb-50">Is Active ?</p>
+												<input type="checkbox" class="custom-control-input" id="customSwitch111" ng-model="category_status" checked="{{category_status}}">
+												<label class="custom-control-label" for="customSwitch111">
+													<span class="switch-icon-left"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+															viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" class="feather feather-check">
+															<polyline points="20 6 9 17 4 12"></polyline>
+														</svg></span>
+													<span class="switch-icon-right"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+															viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+															stroke-linejoin="round" class="feather feather-x">
+															<line x1="18" y1="6" x2="6" y2="18"></line>
+															<line x1="6" y1="6" x2="18" y2="18"></line>
+														</svg></span>
+												</label>
+											</div>
+										</div>
+										<div class="col-12">
+											<button type="submit" class="btn btn-primary mr-1">Save Changes</button>
+											<button type="reset" class="btn btn-outline-secondary">Reset</button>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="form-group">
-					<label class="col-form-label form-control-label"></label>
-					<div class="form-input text-center">
-						<input type="button" class="btn theme-btn mx-auto" value="Save Changes"
-							onclick="validateCategoryForm()">
-					</div>
-				</div>
-			</div>
-		</form>
+			</section>
+		</div>
 	</div>
-</main>
+</div>
