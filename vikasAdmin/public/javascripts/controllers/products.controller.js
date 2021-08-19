@@ -407,7 +407,7 @@ app.controller("ProductsController", ($scope, $http, HelperService) => {
 		}
 	};
 	$scope.onEditLoad();
-	$scope.removeEditedFile = (index) =>{
+	$scope.removeEditedFile = (index) => {
 		$scope.productEditImages.splice(index,1);
 	}
 	$scope.$watch("page", () => $scope.getProducts());

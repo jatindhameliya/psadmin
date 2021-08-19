@@ -1,0 +1,76 @@
+<script src="/javascripts/controllers/gsettings.controller.js"></script>
+<div class="main-content" ng-controller="GlobalSettingController">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+				<div class="header mt-md-5">
+					<div class="header-body">
+						<div class="row align-items-center">
+							<div class="col">
+								<h6 class="header-pretitle">
+									Global Settings
+								</h6>
+								<h1 class="header-title">
+									Global Configuration Settings
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+				<form class="mb-4" ng-submit="onSubmit()">
+					<div class="row">
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Over all mark-up Percentage <small class="fe fe-help-circle text-muted"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" ng-model="overallmarkup" placeholder="Enter mark-up Percentage" min="0" max="100" required>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Linked based mark-up Percentage <small class="fe fe-help-circle text-muted"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" ng-model="linkbasemarkup" placeholder="Enter mark-up Percentage" min="0" max="100" required>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Over all Discount Percentage <small class="fe fe-help-circle text-muted"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" ng-model="overalldiscount" placeholder="Enter Discount Percentage" min="0"
+									max="100" required>
+							</div>
+						</div>
+						<div class="col-12 col-md-6">
+							<div class="form-group">
+								<label class="form-label">
+									Linked based Discount Percentage <small class="fe fe-help-circle text-muted"
+										title="This will be used for API reference.">
+									</small> <b class="text-danger">*</b>
+								</label>
+								<input type="text" class="form-control" ng-model="linkbasediscount" placeholder="Enter Discount Percentage"
+									min="0" max="100" required>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<hr class="mt-5 mb-5">
+						<button type="submit" class="btn w-100 btn-primary">Save Changes</button>
+						<a href="#" class="btn w-100 btn-link text-muted mt-2">
+							Cancel
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

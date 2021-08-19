@@ -195,7 +195,7 @@
 						aria-controls="sidebarGeneralSettings">
 						<i class="fe fe-settings"></i> General Settings
 					</a>
-					<div class="collapse " id="sidebarGeneralSettings">
+					<div class="collapse <%if(activepage == 'Gsettings'){%>show<%}%>" id="sidebarGeneralSettings">
 						<ul class="nav nav-sm flex-column">
 							<li class="nav-item">
 								<a href="#" class="nav-link ">
@@ -205,6 +205,11 @@
 							<li class="nav-item">
 								<a href="#" class="nav-link ">
 									<i class="fe fe-globe"></i> Multi-Language
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="/gsettings" class="nav-link <%if(activepage == 'Gsettings'){%>active<%}%>">
+									<i class="fe fe-globe"></i> Global Settings
 								</a>
 							</li>
 

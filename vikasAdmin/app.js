@@ -31,6 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use("/angular", express.static(__dirname + "/node_modules/angular"));
 app.use("/ngdropzone", express.static(__dirname + "/node_modules/ngdropzone/dist"));
+mongoose.set('runValidators', true);
 mongoose.connect(process.env.MONGODB_URI, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
@@ -56,7 +57,8 @@ const paths = [
 	{ pathUrl: '/tags', routeFile: 'tags' },
 	{ pathUrl: '/vendors', routeFile: 'vendors' },
 	{ pathUrl: '/upload', routeFile: 'upload'},
-	{ pathUrl: '/gst', routeFile: 'gst'}
+	{ pathUrl: '/gst', routeFile: 'gst'},
+	{ pathUrl: '/gsettings', routeFile: 'gsettings'}
 ];
 paths.forEach((path) => {
 	app.use(path.pathUrl, require('./routes/' + path.routeFile));
