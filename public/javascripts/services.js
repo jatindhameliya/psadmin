@@ -1,4 +1,5 @@
 //CUSTOM SERVICES
+
 app.service('HelperService', function () {
 	this.queryString = function (key) {
 		var url_string = window.location.href;
@@ -28,5 +29,39 @@ app.service('HelperService', function () {
 		return range(1, sideWidth)
 			.concat(0, range(page - leftWidth, page + rightWidth),
 				0, range(totalPages - sideWidth + 1, totalPages));
+	}
+	this.getRandomColors = function (doc_Length) {
+		let arrayList = [];
+		const Colors = [
+			'table-primary',
+			'table-secondary',
+			'table-success',
+			'table-danger',
+			'table-warning',
+			'table-info',
+			'table-light',
+			'table-dark'
+		];
+		let selectedColors = [];
+		function regenerate() {
+			let rNumber = Math.floor((Math.random() * 8));
+			let newColor = Colors[rNumber];
+			if (selectedColors.length > 0) {
+				let index = selectedColors.length - 1;
+				let lastColor = selectedColors[index];
+				if (lastColor == newColor && index != undefined) {
+					regenerate();
+				} else {
+					return newColor;
+				}
+			} else {
+				return newColor;
+			}
+		}
+		for (let i = 0; i < doc_Length; i++) {
+			let color = regenerate();
+			selectedColors.push(color);
+		}
+		return selectedColors;
 	}
 });

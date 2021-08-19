@@ -1,4 +1,5 @@
 app.controller("CategoriesController", ($scope, $http, HelperService) => {
+	$scope.colorsSet = [];
 	$scope.CategoryId = 0;
 	$scope.category_name = '';
 	$scope.category_description = '';
@@ -73,6 +74,7 @@ app.controller("CategoriesController", ($scope, $http, HelperService) => {
 			function (response) {
 				if (response.data.IsSuccess == true) {
 					$scope.Categories = response.data.Data.results;
+					$scope.colorsSet = HelperService.getRandomColors(response.data.Data.results.docs.length);
 					response.data.Data.count.forEach((element) => {
 						if (element.status) {
 							$scope.Counts.active = element.count
