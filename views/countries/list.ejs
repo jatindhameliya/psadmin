@@ -91,7 +91,9 @@
 								<tbody>
 									<tr class="{{colorsSet[$index]}}" ng-repeat="country in Countries.docs">
 										<td width="2%">{{(page - 1) * limit + $index + 1}}</td>
-										<td width="5%">{{country.flag}}</td>
+										<td>
+											<img ng-src="{{s3_image_url}}{{country.flag}}" class="mr-75" height="20" width="30" alt="{{country.flag}}" />
+										</td>
 										<td class="tb-pro-name" width="15%">
 											<a href="#" ng-click="onEdit(country._id)"><span>
 													{{country.name}}

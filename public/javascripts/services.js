@@ -40,11 +40,10 @@ app.service('HelperService', function () {
 			'table-warning',
 			'table-info',
 			'table-light',
-			'table-dark'
 		];
 		let selectedColors = [];
 		function regenerate() {
-			let rNumber = Math.floor((Math.random() * 8));
+			let rNumber = Math.floor((Math.random() * 7));
 			let newColor = Colors[rNumber];
 			if (selectedColors.length > 0) {
 				let index = selectedColors.length - 1;
