@@ -1,0 +1,148 @@
+<script src="/javascripts/controllers/pproducts.controller.js"></script>
+<div class="app-content content" ng-controller="PProductsController">
+	<div class="content-overlay"></div>
+	<div class="header-navbar-shadow"></div>
+	<div class="content-wrapper">
+		<div class="content-header row">
+			<div class="content-header-left col-md-9 col-12 mb-2">
+				<div class="row breadcrumbs-top">
+					<div class="col-12">
+						<h2 class="content-header-title float-left mb-0">Popular Products</h2>
+						<div class="breadcrumb-wrapper">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/">Home</a>
+								</li>
+								<li class="breadcrumb-item active">Popular Products List
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
+				<div class="form-group breadcrumb-right">
+					<div class="dropdown">
+						<button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+								data-feather="grid"></i></button>
+						<div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="app-todo.html"><i
+									class="mr-1" data-feather="check-square"></i><span
+									class="align-middle">Todo</span></a><a class="dropdown-item" href="app-chat.html"><i
+									class="mr-1" data-feather="message-square"></i><span
+									class="align-middle">Chat</span></a><a class="dropdown-item"
+								href="app-email.html"><i class="mr-1" data-feather="mail"></i><span
+									class="align-middle">Email</span></a><a class="dropdown-item"
+								href="app-calendar.html"><i class="mr-1" data-feather="calendar"></i><span
+									class="align-middle">Calendar</span></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-body">
+			<div class="row" id="table-contextual">
+				<div class="col-12">
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+								<div class="input-group input-group-merge col-lg-10">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon-search2"><svg
+												xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+												viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+												stroke-linecap="round" stroke-linejoin="round"
+												class="feather feather-search">
+												<circle cx="11" cy="11" r="8"></circle>
+												<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+											</svg></span>
+									</div>
+									<input type="text" class="form-control" placeholder="Search..."
+										aria-label="Search..." aria-describedby="basic-addon-search2" ng-model="search"
+										ng-keyup="getPProducts()">
+								</div>
+
+								<div class="input-group input-group-merge col-lg-2">
+									<select class="form-control" id="basicSelect" ng-model="limit"
+										ng-change="onLimitChange()">
+										<option value="10">10 Records</option>
+										<option value="25">25 Records</option>
+										<option value="50">50 Records</option>
+										<option value="100">100 Records</option>
+										<option value="500">500 Records</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th width="2%">No.</th>
+										<th width="5%">Img</th>
+										<th width="15%">Product Name</th>
+										<th width="5%">Source</th>
+										<th width="5%">Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="{{colorsSet[$index]}}" ng-repeat="pproduct in PProducts.docs">
+										<td width="2%">{{(page - 1) * limit + $index + 1}}</td>
+										<td>
+											<img ng-src="{{s3_image_url}}{{pproduct.product_main_image}}" class="mr-75" height="20"
+												width="30" alt="{{pproduct.product_main_image}}" />
+										</td>
+										<td class="tb-pro-name" width="15%">
+											<a href="#" ng-click="onEdit(pproduct._id)"><span>
+													{{pproduct.product_name}}
+												</span>
+											</a>
+										</td>
+										<td width="5%">{{pproduct.product_source}}</td>
+										<td width="5%">
+											<a href="#" ng-click="onEdit(country._id)" class="btn-icon mr-3"
+												title="Edit Product"> <i class="fa fa-edit "> </i></a>
+											<a href="#" ng-click="onDelete(country._id)" class="btn-icon"
+												style="color:red" title="Delete Product">
+												<i class="fa fa-trash "> </i></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="col-lg-12 col-md-12">
+							<div class="card-body">
+								<ul class="pagination start-links" style="justify-content: center;">
+									<li class="page-item first {{page ==1 ? 'disabled':'' }}">
+										<a href="#" class="page-link" ng-click="switchPage(1)">First</a>
+									</li>
+									<li class="page-item prev {{ PProducts.hasPrevPage ? '' : 'disabled' }}">
+										<a class="page-link ps-0 pe-4 border-end" href="#"
+											ng-click="switchPage(PProducts.prevPage)">
+											<i class="fe fe-arrow-left me-1"></i> Prev
+										</a>
+									</li>
+									<li class="page-item {{ page == n ? 'active' : '' }} {{ n==0 ? 'disabled' : '' }}"
+										ng-repeat="n in pageNumberList track by $index">
+										<a href="" class="page-link" ng-click="switchPage(n)">
+											{{n==0?'...':n}}
+										</a>
+									</li>
+									<li class="page-item next {{ PProducts.hasNextPage ? '' : 'disabled' }}">
+										<a class="page-link  ps-4 pe-0 border-start" href="#"
+											ng-click="switchPage(PProducts.nextPage)">
+											Next <i class="fe fe-arrow-right ms-1"></i>
+										</a>
+									</li>
+									<li class="page-item last {{page == PProducts.totalPages ? 'disabled' :'' }}">
+										<a href="#" class="page-link"
+											ng-click="switchPage(PProducts.totalPages)">Last</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

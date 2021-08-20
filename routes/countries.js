@@ -77,7 +77,7 @@ routes.post('/save', (req, res, next) => {
 routes.get('/edit', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
 		if (req.query.cid != '' && req.query.cid != undefined && req.query.cid != 0 && req.query.cid != null) {
-			res.render('countries/category', { 'ociurl': process.env.S3_IMAGE_URL });
+			res.render('countries/country', { 'ociurl': process.env.S3_IMAGE_URL });
 		} else {
 			var goto = process.env.APP_URI + '/countries';
 			res.redirect(goto);
@@ -123,8 +123,8 @@ routes.post('/list', (req, res, next) => {
 			const aggregatorOpts = [
 				{
 					$group: {
-						"_id": "$category_status",
-						"category_status": { "$first": "$category_status" },
+						"_id": "$status",
+						"status": { "$first": "$status" },
 						"count": { "$sum": 1 }
 					}
 				},
@@ -142,6 +142,26 @@ routes.post('/list', (req, res, next) => {
 		}).catch((err) => {
 			return ResponseManager.onError(err, res);
 		});
+	} else {
+		return ResponseManager.unauthorisedRequest(res);
+	}
+});
+routes.post('/getcountrybyId', (req, res, next) => {
+	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
+		if (req.body.cid != '' && req.body.cid != undefined && req.body.cid != null && req.body.cid != 0) {
+			CountryModel.findById(req.body.cid).lean().then((country) => {
+				if (country != null) {
+					country.s3_img_url = process.env.S3_IMAGE_URL;
+					return ResponseManager.onSuccess('country', country, res);
+				} else {
+					return ResponseManager.onSuccess('country', 0, res);
+				}
+			}).catch((err) => {
+				return ResponseManager.onError(err, res);
+			});
+		} else {
+			return ResponseManager.unauthorisedRequest(res);
+		}
 	} else {
 		return ResponseManager.unauthorisedRequest(res);
 	}
