@@ -31,4 +31,4 @@ let schema = new mongoose.Schema({
 	}
 }, { timestamps: true, strict: false });
 schema.plugin(mongoosePaginate);
-module.exports = mongoose.model('admin_users', schema);
+module.exports = mongoose.model('adminusers', schema);

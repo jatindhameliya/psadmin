@@ -5,7 +5,7 @@ const async = require('async');
 const appURI = process.env.DOMAIN_NAME;
 routes.get('/', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('suppliers/list', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('suppliers/list', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'suppliers' });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });
@@ -14,7 +14,7 @@ routes.get('/', (req, res, next) => {
 });
 routes.get('/add', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('suppliers/supplier', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('suppliers/supplier', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'suppliers' });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });

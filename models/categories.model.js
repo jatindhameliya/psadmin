@@ -24,4 +24,4 @@ let schema = new mongoose.Schema({
 	}
 }, { timestamps: true, strict: false });
 schema.plugin(mongoosePaginate);
-module.exports = mongoose.model('categories', schema);
+module.exports = mongoose.model('top_categories', schema);

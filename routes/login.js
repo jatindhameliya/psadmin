@@ -21,7 +21,7 @@ routes.post('/', (req, res, next) => {
 	}else{
 		if (req.body.username != "" && req.body.username != undefined && req.body.password != "" && req.body.password != undefined) {
 			var queryObject = { 'username': req.body.username, 'password': req.body.password };
-			MongoUtility.SelectOne('admin_users', queryObject, (err, admin) => {
+			MongoUtility.SelectOne('adminusers', queryObject, (err, admin) => {
 				if (err) {
 					return response.onError(err, res);
 				} else {

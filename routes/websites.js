@@ -6,7 +6,7 @@ const async = require('async');
 const appURI = process.env.DOMAIN_NAME;
 routes.get('/', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('websites/list', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('websites/list', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'websites' });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });
@@ -15,7 +15,7 @@ routes.get('/', (req, res, next) => {
 });
 routes.get('/add', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('websites/website', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('websites/website', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'websites' });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });
@@ -25,7 +25,7 @@ routes.get('/add', (req, res, next) => {
 routes.get('/edit', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
 		if (req.query.wid != '' && req.query.wid != undefined && req.query.wid != 0 && req.query.wid != null) {
-			res.render('websites/website', { 'ociurl': process.env.S3_IMAGE_URL });
+			res.render('websites/website', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'websites' });
 		} else {
 			var goto = process.env.APP_URI + '/websites';
 			res.redirect(goto);
@@ -98,11 +98,11 @@ routes.post('/list', (req, res, next) => {
 			populate: [
 				{
 					path: "createdBy",
-					model: "admin_users",
+					model: "adminusers",
 					select: 'name -_id',
 				}, {
 					path: "updatedBy",
-					model: "admin_users",
+					model: "adminusers",
 					select: 'name -_id',
 				}
 			],

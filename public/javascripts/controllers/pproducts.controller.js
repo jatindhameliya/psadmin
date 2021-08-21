@@ -62,4 +62,41 @@ app.controller("PProductsController", ($scope, $http, HelperService) => {
 		$scope.getPProducts();
 	};
 	$scope.$watch("page", () => $scope.getPProducts());
+
+
+	$scope.ProductId = 0;
+	$scope.uploadIndex = -1;
+	$scope.myfile = null;
+	$scope.producttags = [];
+	$scope.productImages = [];
+	$scope.productEditImages = [];
+	$scope.dzOptions = {
+		url: '/upload/productsimg',
+		paramName: 'productImg',
+		maxFilesize: '20',
+		acceptedFiles: 'image/jpeg, images/jpg, image/png',
+		addRemoveLinks: true,
+	};
+	$scope.dzCallbacks = {
+		'addedfile': function (file) {
+			$scope.newFile = file;
+			$('.dz-image').addClass('avatar');
+			$('.dz-image > img').addClass('avatar-img rounded');
+		},
+		'removedfile': function (file) {
+			let imgId = -1;
+			for (let i = 0; i < $scope.productImages.length; i++) {
+				if ($scope.productImages[i].uniqId == file.upload.uuid) {
+					imgId = i;
+				}
+			}
+			if (imgId != -1) {
+				$scope.productImages.splice(imgId, 1);;
+			}
+		},
+		'success': function (file, xhr) {
+			$scope.productImages.push({ uniqId: file.upload.uuid, uploadUrl: xhr.url });
+		},
+	};
+	$scope.dzMethods = {};
 });

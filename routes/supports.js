@@ -5,7 +5,7 @@ const async = require('async');
 const appURI = process.env.DOMAIN_NAME;
 routes.get('/', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('supports/list', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('supports/list', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'supports' });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });

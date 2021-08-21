@@ -5,7 +5,7 @@ const async = require('async');
 const appURI = process.env.DOMAIN_NAME;
 routes.get('/', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('sproducts/list', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('sproducts/list', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'sproducts'  });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });
@@ -14,7 +14,7 @@ routes.get('/', (req, res, next) => {
 });
 routes.get('/add', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
-		res.render('sproducts/product', { 'ociurl': process.env.S3_IMAGE_URL });
+		res.render('sproducts/product', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'sproducts' });
 	} else {
 		var goto = appURI;
 		res.writeHead(302, { 'Location': goto });
@@ -24,7 +24,7 @@ routes.get('/add', (req, res, next) => {
 routes.get('/edit', (req, res, next) => {
 	if (req.session.admin_id != '' && req.session.admin_id != undefined) {
 		if (req.query.cid != '' && req.query.cid != undefined && req.query.cid != 0 && req.query.cid != null) {
-			res.render('sproducts/product', { 'ociurl': process.env.S3_IMAGE_URL });
+			res.render('sproducts/product', { 'ociurl': process.env.S3_IMAGE_URL, 'page': 'sproducts' });
 		} else {
 			var goto = process.env.APP_URI + '/sproducts';
 			res.redirect(goto);
