@@ -52,8 +52,11 @@ const paths = [
 	{ pathUrl: '/influencers', routeFile: 'influencers' },
 	{ pathUrl: '/suppliers', routeFile: 'suppliers' },
 	{ pathUrl: '/supports', routeFile: 'supports' },
-// 	{ pathUrl: '/awsupload', routeFile: 'awsupload' },
+ 	{ pathUrl: '/awsupload', routeFile: 'awsupload' },
 	{ pathUrl: '/users', routeFile: 'users' },
+	{ pathUrl: '/djstores', routeFile: 'djstores'},
+	{ pathUrl: '/djcheckouts', routeFile: 'djcheckouts'},
+	{ pathUrl: '/slstores', routeFile: 'slstores'}
 ];
 paths.forEach((path) => {
 	app.use(path.pathUrl, require('./routes/' + path.routeFile));

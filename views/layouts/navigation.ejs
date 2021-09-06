@@ -436,7 +436,7 @@
 					<span class="menu-title text-truncate" data-i18n="Email">Dashboard</span>
 				</a>
 			</li>
-			<li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Top &amp; Products</span>
+			<li class=" navigation-header"><span data-i18n="Apps &amp; Pages">Top Products</span>
 				<i data-feather="more-horizontal"></i>
 			</li>
 			<li class="nav-item <%if(page == 'categories'){%>active<%}%>">
@@ -594,7 +594,7 @@
 			<li class=" nav-item <%if(page == 'stores'){%>active<%}%>">
 				<a class="d-flex align-items-center" href="/shops">
 					<i data-feather='user-check'></i>
-					<span class="menu-title text-truncate" data-i18n="Email">Stores</span>
+					<span class="menu-title text-truncate" data-i18n="Email">TP Stores</span>
 				</a>
 			</li>
 			<li class=" nav-item <%if(page == 'suppliers'){%>active<%}%>">
@@ -638,8 +638,24 @@
 				</ul>
 			</li>
 			<li class=" navigation-header">
-				<span data-i18n="User Interface">Other Apps</span>
+				<span data-i18n="User Interface">Draft Jet</span>
 				<i data-feather="more-horizontal"></i>
+			</li>
+			<li class=" nav-item <%if(page == 'djstores'){%>active<%}%>">
+				<a class="d-flex align-items-center" href="/djstores">
+					<i data-feather='user-check'></i>
+					<span class="menu-title text-truncate" data-i18n="Stores">DJ Stores</span>
+				</a>
+			</li>
+			<li class=" navigation-header">
+				<span data-i18n="User Interface">Shipp Logics</span>
+				<i data-feather="more-horizontal"></i>
+			</li>
+			<li class=" nav-item <%if(page == 'djstores'){%>active<%}%>">
+				<a class="d-flex align-items-center" href="/slstores">
+					<i data-feather='user-check'></i>
+					<span class="menu-title text-truncate" data-i18n="Stores">SL Stores</span>
+				</a>
 			</li>
 		</ul>
 	</div>
