@@ -3,6 +3,10 @@
 		border-style:none !important;
 	}
 </style>
+<link rel="stylesheet" type="text/css" href="/assets/vendors/css/editors/quill/katex.min.css">
+<link rel="stylesheet" type="text/css" href="/assets/vendors/css/editors/quill/quill.snow.css">
+<link rel="stylesheet" type="text/css" href="/assets/vendors/css/editors/quill/quill.bubble.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/plugins/forms/form-quill-editor.css">
 <script src="/javascripts/controllers/pproducts.controller.js"></script>
 <div class="app-content content" ng-controller="PProductsController">
 	<div class="content-overlay"></div>
@@ -143,6 +147,40 @@
 										</div>
 									</div>
 
+									<div class="row">
+										<!-- full Editor start -->
+										<section class="full-editor">
+											<div class="row">
+												<div class="col-12">
+													<div class="card">
+														<div class="card-header">
+															<h4 class="card-title">Product Description</h4>
+														</div>
+														<div class="card-body">
+															<p class="card-text">
+																By default all formats are enabled and allowed to exist within a Quill editor and can be configured with the
+																<code>formats</code> option. This is separate from adding a control in the <code>Toolbar</code>. For
+																example, you can configure Quill to allow bolded content to.
+															</p>
+															<div class="row">
+																<div class="col-sm-12">
+																	<div id="full-wrapper">
+																		<div id="full-container">
+																			<div class="editor">
+																				<h1 class="ql-align-center">Quill Rich Text Editor</h1>
+																				<p class="card-text"><br /></p>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+										<!-- full Editor end -->
+									</div>
 
 									<div class="row">
 
