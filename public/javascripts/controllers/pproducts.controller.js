@@ -99,4 +99,52 @@ app.controller("PProductsController", ($scope, $http, HelperService) => {
 		},
 	};
 	$scope.dzMethods = {};
+
+
+	$scope.productLinksDropDwn = [
+		{ key: "Amazon", value: "amazon" },
+		{ key: "Ali Express", value: "aliexpress" },
+		{ key: "Walmart", value: "walmart" },
+	];
+	$scope.productLinks = [{ productLink: "", link: "" }];
+	$scope.addProductLink = () => $scope.productLinks.push({ productLink: "", link: "" });
+	$scope.removeProductLink = (index) => $scope.productLinks.splice(index, 1);
+
+	$scope.forms = {
+		productName: "",
+		productCategory: "",
+		productDesciption: "",
+		productLinks: [],
+		productPrice:{
+			priceType: "",
+			price: 0.0,
+			salesPrice: 0.0,
+			profit: 0.0,
+		},
+		productAnalytics:{
+			source: "",
+			nOrders: 0,
+			nReviews: 0,
+			rating: "",
+		},
+		productEngagement:{
+			nLikes: 0,
+			nComments: 0,
+			nViews: 0,
+		},
+		productInterest: "",
+		productDisplayRate: "",
+		productComments: "",
+		productStatus: "",
+	}
+
+	$scope.onFormSubmit = () =>{
+		let description = $('.ql-editor').html();
+		$scope.forms.productDesciption = description;
+		$scope.forms.productLinks = $scope.productLinks;
+		console.log($scope.forms);
+	}
+
+
+
 });
