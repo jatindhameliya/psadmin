@@ -7,10 +7,14 @@
 <link rel="stylesheet" type="text/css" href="/assets/vendors/css/editors/quill/quill.snow.css">
 <link rel="stylesheet" type="text/css" href="/assets/vendors/css/editors/quill/quill.bubble.css">
 <link rel="stylesheet" type="text/css" href="/assets/css/plugins/forms/form-quill-editor.css">
+<link rel="stylesheet" href="https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/app-assets/vendors/css/file-uploaders/dropzone.min.css">
 <script src="/javascripts/controllers/pproducts.controller.js"></script>
 
 <style>
-	code, .dark-layout code { background-color: transparent; }
+	code,
+	.dark-layout code {
+		background-color: transparent;
+	}
 </style>
 
 
@@ -73,7 +77,7 @@
 								<h4 class="card-title">Add / Edit Popular Products</h4>
 							</div>
 							<div class="card-body">
-								<form class="form">
+								<form class="form" ng-submit="onFormSubmit()">
 									<div class="row">
 										<div class="col-md-5 col-12">
 											<div class="form-group">
@@ -85,7 +89,7 @@
 										<div class="col-md-5 col-12">
 											<div class="form-group">
 												<label for="category">Select Category</label>
-												<select class="form-control" ng-model="forms.productCategory">
+												<select class="form-control" ng-model="forms.productCategory" required>
 													<option value="">Select Category</option>
 													<option value="AK">Alaska</option>
 													<option value="HI">Hawaii</option>
@@ -107,19 +111,28 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<label for="">Product Main Image</label>
-												<input type="file" class="form-control">
-											</div>
-										</div>
+
+									<hr style="margin-top:30px; margin-bottom: 30px;">
+									<div class="card-header p-0 m-0 mb-1">
+										<h4 class="card-title mx-0">Product Images</h4>
 									</div>
 									<div class="row">
-										<div class="col-md-12">
+										<div class="col-md-2">
+											<div class="form-group">
+												<label for="">Product Main Image</label><br />
+												<div class="card mb-1"
+													style="border: 1px solid grey; height: 150px; width: 150px;">
+												</div>
+												<input type="file" class="form-control" style="display: none;" required>
+												<button class="btn btn-primary btn-sm">Upload Image</button>
+											</div>
+										</div>
+										<div class="col-md-10">
 											<div class="form-group">
 												<label for="">Product Sub Image</label>
-												<input type="file" class="form-control">
+												<!-- <form action="#" class="dropzone dropzone-area" id="dpz-multiple-files">
+													<div class="dz-message">Drop files here or click to upload.</div>
+												  </form> -->
 											</div>
 										</div>
 									</div>
@@ -146,7 +159,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Select Link</label>
-												<select class="form-control" ng-model="plink.productLink">
+												<select class="form-control" ng-model="plink.productLink" required>
 													<option value="">~NOTHING SELECTED~</option>
 													<option value="{{p.value}}" ng-repeat="p in productLinksDropDwn">
 														{{p.key}}</option>
@@ -156,7 +169,7 @@
 										<div class="col-md-5">
 											<div class="form-group">
 												<label>Link</label>
-												<input type="text" class="form-control" ng-model="plink.link">
+												<input type="text" class="form-control" ng-model="plink.link" required>
 											</div>
 										</div>
 										<div class="col-md-1">
@@ -182,7 +195,8 @@
 											<div class="col-md-12">
 												<div class="form-group">
 													<label>Product Price Type <code>*</code></label>
-													<select class="form-control" ng-model="forms.productPrice.priceType">
+													<select class="form-control" ng-model="forms.productPrice.priceType"
+														required>
 														<option value="">Select Product Price Type</option>
 													</select>
 												</div>
@@ -191,17 +205,19 @@
 										<div class="row">
 											<div class="col-md-4">
 												<label for="">Price <code>*</code></label>
-												<input type="text" placeholder="Product Price" ng-model="forms.productPrice.price" class="form-control"
-													required>
+												<input type="text" placeholder="Product Price"
+													ng-model="forms.productPrice.price" class="form-control" required>
 											</div>
 											<div class="col-md-4">
 												<label for="">Sales Price <code>*</code></label>
-												<input type="text" placeholder="Product Sales Price" ng-model="forms.productPrice.salesPrice"
-													class="form-control" required>
+												<input type="text" placeholder="Product Sales Price"
+													ng-model="forms.productPrice.salesPrice" class="form-control"
+													required>
 											</div>
 											<div class="col-md-4">
 												<label for="">Profit <code>*</code></label>
-												<input type="text" placeholder="0.00" ng-model="forms.productPrice.profit" class="form-control" required>
+												<input type="text" placeholder="0.00"
+													ng-model="forms.productPrice.profit" class="form-control" required>
 											</div>
 										</div>
 									</div>
@@ -215,7 +231,8 @@
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Source <code>*</code></label>
-													<select class="form-control" ng-model="forms.productAnalytics.source" required>
+													<select class="form-control"
+														ng-model="forms.productAnalytics.source" required>
 														<option value="">Select Product Source</option>
 													</select>
 												</div>
@@ -223,15 +240,17 @@
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Orders <code>*</code></label>
-													<input type="text" placeholder="Number of orders" ng-model="forms.productAnalytics.nOrders"
-														class="form-control" required>
+													<input type="text" placeholder="Number of orders"
+														ng-model="forms.productAnalytics.nOrders" class="form-control"
+														required>
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Reviews <code>*</code></label>
-													<input type="text" placeholder="Number of reviews" ng-model="forms.productAnalytics.nReviews"
-														class="form-control" required>
+													<input type="text" placeholder="Number of reviews"
+														ng-model="forms.productAnalytics.nReviews" class="form-control"
+														required>
 												</div>
 											</div>
 										</div>
@@ -239,7 +258,8 @@
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Give Rating <code>*</code></label>
-													<select class="form-control" ng-model="forms.productAnalytics.rating">
+													<select class="form-control"
+														ng-model="forms.productAnalytics.rating" required>
 														<option value="">Select Rating</option>
 														<option value="5">5</option>
 														<option value="4">4</option>
@@ -261,22 +281,25 @@
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Like <code>*</code></label>
-													<input type="text" placeholder="Number of likes" ng-model="forms.productEngagement.nLikes"
-														class="form-control" required>
+													<input type="text" placeholder="Number of likes"
+														ng-model="forms.productEngagement.nLikes" class="form-control"
+														required>
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Comments <code>*</code></label>
-													<input type="text" placeholder="Number of comments" ng-model="forms.productEngagement.nComments"
+													<input type="text" placeholder="Number of comments"
+														ng-model="forms.productEngagement.nComments"
 														class="form-control" required>
 												</div>
 											</div>
 											<div class="col-md-4">
 												<div class="form-group">
 													<label for="">Views <code>*</code></label>
-													<input type="text" placeholder="Number of views" ng-model="forms.productEngagement.nViews"
-														class="form-control" required>
+													<input type="text" placeholder="Number of views"
+														ng-model="forms.productEngagement.nViews" class="form-control"
+														required>
 												</div>
 											</div>
 										</div>
@@ -290,7 +313,9 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<textarea class="form-control" rows="3" placeholder="Product Interest" ng-model="forms.productInterest"></textarea>
+													<textarea class="form-control" rows="3"
+														placeholder="Product Interest" ng-model="forms.productInterest"
+														required></textarea>
 												</div>
 											</div>
 										</div>
@@ -304,7 +329,9 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="text" class="form-control" placeholder="Select Product Display Rate" ng-model="forms.productDisplayRate">
+													<input type="text" class="form-control"
+														placeholder="Select Product Display Rate"
+														ng-model="forms.productDisplayRate" required>
 												</div>
 											</div>
 										</div>
@@ -318,7 +345,9 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<textarea class="form-control" rows="3" placeholder="Product Comments" ng-model="forms.productComments"></textarea>
+													<textarea class="form-control" rows="3"
+														placeholder="Product Comments" ng-model="forms.productComments"
+														required></textarea>
 												</div>
 											</div>
 										</div>
@@ -332,7 +361,8 @@
 										<div class="row">
 											<div class="col-md-12">
 												<div class="form-group">
-													<select class="form-control" ng-model="forms.productStatus">
+													<select class="form-control" ng-model="forms.productStatus"
+														required>
 														<option value="">Product Status</option>
 														<option value="active">Active</option>
 														<option value="deactivate">Deactivate</option>
@@ -344,7 +374,8 @@
 
 									<div class="row">
 										<div class="col-12">
-											<button type="button" ng-click="onFormSubmit()" class="btn btn-primary mr-1">Save Changes</button>
+											<button type="submit"
+												class="btn btn-primary mr-1">Save Changes</button>
 											<button type="reset" class="btn btn-outline-secondary">Reset</button>
 										</div>
 									</div>
